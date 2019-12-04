@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const ClientFormIndex = props => {
 
   return (
     <div class="testbox">
       <form action="/">
-        <div class="banner">
+        <div className="banner">
           <h1>Volunteer Signup</h1>
         </div>
         <br/>
@@ -30,17 +30,27 @@ const ClientFormIndex = props => {
           </div>
           <div class="item">
             <label for="age">Age<span>*</span></label>
-            <input id="age" type="number" maximum   name="age" required/>
+            <input id="age" type="number" min="18" max="120" name="age" required/>
           </div>
           <div class="item">
-            <label for="state">State<span>*</span></label>
-            <input id="state" type="text"   name="state" required/>
+            <label for="equity">Home Equity<span>*</span></label>
+            <input id="equity" type="text"   name="equity" required/>
           </div>
-          <div class="item">
-            <label for="zip">Zip<span>*</span></label>
-            <input id="zip" type="text"   name="zip" required/>
+          <div class="question">
+            <label>Planning for Kids?</label>
+            <div class="question-answer">
+              <div>
+                <input onClick={props.handleKidsAnswer} type="radio" value="true" id="radio_1" name="info"/>
+                <label for="radio_1" class="radio"><span>Yes</span></label>
+              </div>
+              <div>
+                <input onClick={props.handleNoKidsAnswer} type="radio" value="false" id="radio_2" name="info"/>
+                <label for="radio_2" class="radio"><span>No</span></label>
+              </div>
+            </div>
           </div>
         </div>
+        <div>{props.kids}</div>
         <div class="question">
           <label>Include my contact information on lists distributed to other attendees.</label>
           <div class="question-answer">
@@ -53,16 +63,6 @@ const ClientFormIndex = props => {
               <label for="radio_2" class="radio"><span>No</span></label>
             </div>
           </div>
-        </div>
-        <div class="item">
-          <p>Meal Preference</p>
-          <select>
-            <option selected value="" disabled selected></option>
-            <option value="b" >Beef</option>
-            <option value="ch">Chicken</option>
-            <option value="v">Vegetarian</option>
-            <option value="n">None</option>
-          </select>
         </div>
         <div class="week">
           <div class="question">
