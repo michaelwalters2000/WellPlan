@@ -9,9 +9,33 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- *= require foundation_and_overrides
+  */
+  .modal {
+     position: fixed;
+     z-index: 1;
+     padding-top: 100px;
+     left: 0;
+     top: 0;
+     width: 50%;
+     height: 100%;
+     overflow: auto;
+     background-color: black;
+     background-color: rgba(0,0,0,0.4);
+   }
+   //rgb(0,0,0);
 
- */
+   .modal-content {
+     background-color: #fefefe;
+     margin: auto;
+     padding: 20px;
+     border: 1px solid #888;
+     width: 50%;
+     font-style: normal;
+     font-size: 40px;
+   }
+
+   .number-textbox {
+     width: 51.5%;
+     text-align: center;
+     padding-left: 48.5%;
+   }

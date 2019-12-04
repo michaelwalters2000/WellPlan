@@ -10,10 +10,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_02_220722) do
+ActiveRecord::Schema.define(version: 2019_12_03_000837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.bigint "client_id"
+    t.bigint "advisor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["advisor_id"], name: "index_accounts_on_advisor_id"
+    t.index ["client_id"], name: "index_accounts_on_client_id"
+  end
+
+  create_table "advisors", force: :cascade do |t|
+    t.integer "experience_years"
+    t.integer "client_number"
+    t.integer "avg_client_investable_assets"
+    t.integer "total_client_income"
+    t.integer "total_clients_investable_assets"
+    t.integer "mutual_funds_ETFs"
+    t.boolean "individual_securities"
+    t.integer "total_stock_and_bonds"
+    t.decimal "client_business_owners"
+    t.boolean "discipinary_action"
+    t.text "explination"
+    t.integer "client_capacity"
+    t.integer "client_rating"
+    t.boolean "CFP"
+    t.boolean "AIF"
+    t.boolean "PFS"
+    t.boolean "CHFC"
+    t.boolean "NAPFA"
+    t.boolean "FPA"
+    t.boolean "independent"
+    t.string "firm"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.integer "age"
+    t.boolean "spouse"
+    t.boolean "kids"
+    t.integer "kids_0to5"
+    t.integer "kids_6to12"
+    t.integer "kids_13to18"
+    t.boolean "home_owner"
+    t.integer "home_equity"
+    t.integer "number_of_homes"
+    t.boolean "business_owner"
+    t.integer "income"
+    t.integer "four_o_one_k"
+    t.integer "stocks_and_bonds"
+    t.boolean "pension"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
