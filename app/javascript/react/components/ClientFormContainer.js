@@ -8,16 +8,13 @@ const ClientFormContainer = props => {
         <label>Age</label>
         <input type="number" id="age"/>
       </div>
-      </div>
-      <div class="form-group">
-      <div class="checkbox">
+      <div className="checkbox">
         <label><input type="checkbox"/>Spouse</label>
       </div>
-      </div>
-      <div>
-      <div class="checkbox">
+      <div className="checkbox">
         <label><input type="checkbox"/>Kids</label>
       </div>
+      <div className="selectbox">
         <label for="exampleFormControlSelect1">Kids (0-5)</label>
         <select class="form-control" id="exampleFormControlSelect1">
           <option>1</option>
@@ -27,7 +24,7 @@ const ClientFormContainer = props => {
           <option>5+</option>
         </select>
       </div>
-      <div class="form-group">
+      <div className="selectbox">
         <label for="exampleFormControlSelect1">Kids (6-12)</label>
         <select class="form-control" id="exampleFormControlSelect1">
           <option>1</option>
@@ -37,7 +34,7 @@ const ClientFormContainer = props => {
           <option>5+</option>
         </select>
       </div>
-      <div class="form-group">
+      <div className="selectbox">
         <label for="exampleFormControlSelect1">Kids (13-18)</label>
         <select class="form-control" id="exampleFormControlSelect1">
           <option>1</option>
@@ -47,14 +44,14 @@ const ClientFormContainer = props => {
           <option>5+</option>
         </select>
       </div>
-      <div class="checkbox">
+      <div className="checkbox">
         <label><input type="checkbox"/>Home Owner</label>
       </div>
-      <div class="form-group">
+      <div>
         <label for="email">Home Equity</label>
         <input type="email" class="form-control" id="email"/>
       </div>
-      <div class="form-group">
+      <div className="selectbox">
         <label for="exampleFormControlSelect1">Number of Homes:</label>
         <select class="form-control" id="exampleFormControlSelect1">
           <option>1</option>
@@ -64,16 +61,17 @@ const ClientFormContainer = props => {
           <option>5+</option>
         </select>
       </div>
-      <div class="checkbox">
+      <div className="checkbox">
         <label><input type="checkbox"/>Business Owner</label>
       </div>
 
-      <div class="form-group">
+      <div className="form-group">
         <label for="exampleFormControlTextarea1">About</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
       </div>
 
       <input type="submit" value="Submit"/>
+        </div>
     </form>
       )
     }
