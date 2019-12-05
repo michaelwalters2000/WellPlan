@@ -2,164 +2,146 @@ import React, { useState } from 'react'
 
 const ClientFormIndex = props => {
 
+  let income1 = "< $50,000"
+  let income2 = "$50,000 -"
+  let income3 = "$100,000 -"
+  let income4 = "$200,000 <"
+
+  let income5 = "$100,000"
+  let income6 = "$200,000"
+
   return (
     <div class="testbox">
       <form action="/">
         <div className="banner">
           <h1>Volunteer Signup</h1>
         </div>
-        <br/>
-        <p>The HELP Group is seeking volunteers to serve our community. Fill in the information below to indicate how you would like to become involved.</p>
-        <br/>
-        <div class="colums">
-          <div class="item">
-            <label for="fname">First Name<span>*</span></label>
-            <input id="fname" type="text" name="fname" required/>
+      <br/>
+    <p>The HELP Group is seeking volunteers to serve our community. Fill in the information below to indicate how you would like to become involved.</p>
+      <br/>
+    <div class="colums">
+      <div class="item">
+        <label for="fname">First Name<span>*</span></label>
+        <input id="fname" type="text" name="fname" required/>
+      </div>
+      <div class="item">
+        <label for="lname">Last Name<span>*</span></label>
+        <input id="lname" type="text"   name="lname" required/>
+      </div>
+      <div class="item">
+        <label for="phone">Phone<span>*</span></label>
+        <input id="phone" type="tel"   name="phone" required/>
+      </div>
+      <div class="item">
+        <label for="eaddress">Email<span>*</span></label>
+        <input id="eaddress" type="text"   name="eaddress" required/>
+      </div>
+      <div class="item">
+        <label for="age">Age<span>*</span></label>
+        <input id="age" type="number" min="18" max="120" name="age" required/>
+      </div>
+      <div class="item">
+        <label for="equity">Home Equity<span>*</span></label>
+        <input id="equity" type="text"   name="equity" required/>
+      </div>
+    </div>
+    <div class="question">
+      <div className="center-question">
+        <label>Are you Married?</label>
+      </div>
+      <div className="checkboxes">
+        <div class="question-answer">
+          <div>
+            <input type="radio" value="none" id="radio_1" name="spouse"/>
+            <label for="radio_1" class="radio"><span>Yes</span></label>
           </div>
-          <div class="item">
-            <label for="lname">Last Name<span>*</span></label>
-            <input id="lname" type="text"   name="lname" required/>
+          <div>
+            <input  type="radio" value="none" id="radio_2" name="spouse"/>
+            <label for="radio_2" class="radio"><span>No</span></label>
           </div>
-          <div class="item">
-            <label for="phone">Phone<span>*</span></label>
-            <input id="phone" type="tel"   name="phone" required/>
+        </div>
+      </div>
+    </div>
+    <div className="question">
+      <div className="center-question">
+        <label>Do you have Kids?</label>
+      </div>
+      <div className="checkboxes">
+        <div className="question-answer">
+          <div>
+            <input onClick={props.handleKidsAnswer} type="radio" value="none" id="radio_3" name="kids"/>
+            <label for="radio_3" class="radio"><span>Yes</span></label>
           </div>
-          <div class="item">
-            <label for="eaddress">Email<span>*</span></label>
-            <input id="eaddress" type="text"   name="eaddress" required/>
+          <div>
+            <input onClick={props.handleNoKidsAnswer} type="radio" value="none" id="radio_4" name="kids"/>
+            <label for="radio_4" class="radio"><span>No</span></label>
           </div>
-          <div class="item">
-            <label for="age">Age<span>*</span></label>
-            <input id="age" type="number" min="18" max="120" name="age" required/>
+        </div>
+      </div>
+    </div>
+    <div>{props.kids}</div>
+    <div class="question">
+      <div className="center-question">
+        <label>Are you a Home Owner?</label>
+      </div>
+      <div className="checkboxes">
+        <div class="question-answer">
+          <div>
+            <input type="radio" value="none" id="radio_5" name="home-owner"/>
+            <label for="radio_5" class="radio"><span>Yes</span></label>
           </div>
-          <div class="item">
-            <label for="equity">Home Equity<span>*</span></label>
-            <input id="equity" type="text"   name="equity" required/>
+          <div>
+            <input  type="radio" value="none" id="radio_6" name="home-owner"/>
+            <label for="radio_6" class="radio"><span>No</span></label>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="question">
+      <div className="center-question">
+        <label>Are you a Business Owner?</label>
+      </div>
+      <div className="checkboxes">
+        <div class="question-answer">
+          <div>
+            <input type="radio" value="none" id="radio_7" name="business"/>
+            <label for="radio_7" class="radio"><span>Yes</span></label>
           </div>
-          <br/>
-          <div className="center-question">
-            <label>Planning for Kids?</label>
-            </div>
-            <div className="kidscheckboxes">
-            <div class="question-answer">
-              <div>
-                <input onClick={props.handleKidsAnswer} type="radio" value="true" id="radio_1" name="info"/>
-                <label for="radio_1" class="radio"><span>Yes</span></label>
-              </div>
-              <div>
-                <input onClick={props.handleNoKidsAnswer} type="radio" value="false" id="radio_2" name="info"/>
-                <label for="radio_2" class="radio"><span>No</span></label>
-              </div>
-            </div>
-          </div>
-          <br/>
-        <div>{props.kids}</div>
-        <div className="center-question">
-          <label>Are You a Home Owner?</label>
-          </div>
-          <div className="kidscheckboxes">
-          <div class="question-answer">
             <div>
-              <input onClick={props.handleKidsAnswer} type="radio" value="true" id="radio_1" name="info"/>
-              <label for="radio_1" class="radio"><span>Yes</span></label>
-            </div>
-            <div>
-              <input onClick={props.handleNoKidsAnswer} type="radio" value="false" id="radio_2" name="info"/>
-              <label for="radio_2" class="radio"><span>No</span></label>
+              <input  type="radio" value="none" id="radio_8" name="business"/>
+              <label for="radio_8" class="radio"><span>No</span></label>
             </div>
           </div>
         </div>
-        <div class="question">
-          <label>Include my contact information on lists distributed to other attendees.</label>
-          <div class="question-answer">
-            <div>
-              <input type="radio" value="none" id="radio_1" name="info"/>
-              <label for="radio_1" class="radio"><span>Yes</span></label>
-            </div>
-            <div>
-              <input  type="radio" value="none" id="radio_2" name="info"/>
-              <label for="radio_2" class="radio"><span>No</span></label>
-            </div>
-          </div>
+      </div>
+
+      <div class="question">
+      <div className="center-question">
+        <label>Income Bracket?</label>
         </div>
-        <div class="week">
-          <div class="question">
-            <label>Days Attending </label>
-            <div class="question-answer">
-              <div>
-                <input type="radio" value="none" id="radio_3" name="day"/>
-                <label for="radio_3" class="radio"><span>Sunday</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_4" name="day"/>
-                <label for="radio_4" class="radio"><span>Monday</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_5" name="day"/>
-                <label for="radio_5" class="radio"><span>Tuesday</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_6" name="day"/>
-                <label for="radio_6" class="radio"><span>Wednesday</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_7" name="day"/>
-                <label for="radio_7" class="radio"><span>Thursday</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_8" name="day"/>
-                <label for="radio_8" class="radio"><span>Friday</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_9" name="day"/>
-                <label for="radio_9" class="radio"><span>Saturday</span></label>
-              </div>
-            </div>
-          </div>
-          <div class="question">
-            <label>Activities Attending</label>
-            <div class="question-answer">
-              <div>
-                <input type="radio" value="none" id="radio_10" name="activity"/>
-                <label for="radio_10" class="radio"><span>CEO luncheon</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_11" name="activity"/>
-                <label for="radio_11" class="radio"><span>Finance seminar</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_12" name="activity"/>
-                <label for="radio_12" class="radio"><span>Leadership seminar</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_13" name="activity"/>
-                <label for="radio_13" class="radio"><span>Marketing workshop</span></label>
-              </div>
-              <div>
-                <input  type="radio" value="none" id="radio_14" name="activity"/>
-                <label for="radio_14" class="radio"><span>Teamwork seminar</span></label>
-              </div>
-            </div>
-          </div>
+        <div className="income">
+        <ul className="income-options">
+        <div>
+          <input  type="radio" value="none" id="radio_9" name="bracket"/>
+          <label className="income-bracket-title" for="radio_9" class="radio"><span>{income1}<br/> </span></label>
         </div>
-        <div class="item">
-          <label for="visit">Special Requirements</label>
-          <textarea id="visit" rows="3"></textarea>
+        <div>
+          <input type="radio" value="none" id="radio_10" name="bracket"/>
+          <label className="income-bracket-title" for="radio_10" for="radio_10" class="radio"><span>{income2}{income5}</span></label>
         </div>
-        <div class="question">
-          <label>Did you attend last years conference?</label>
-          <div class="question-answer">
-            <div>
-              <input type="radio" value="none" id="radio_15" name="contact"/>
-              <label for="radio_15" class="radio"><span>Yes</span></label>
-            </div>
-            <div>
-              <input  type="radio" value="none" id="radio_16" name="contact"/>
-              <label for="radio_16" class="radio"><span>No</span></label>
-            </div>
+        <div>
+          <input  type="radio" value="none" id="radio_11" name="bracket"/>
+          <label className="income-bracket-title" for="radio_11" for="radio_11" class="radio"><span>{income3}{income6}</span></label>
+        </div>
+        <div>
+          <input  type="radio" value="none" id="radio_12" name="bracket"/>
+          <label className="income-bracket-title" for="radio_12" for="radio_12" class="radio"><span>{income4}</span></label>
+        </div>
+          </ul>
           </div>
-        </div>
+         </div>
+
+
         <div class="btn-block">
           <button type="submit" href="/">Submit</button>
         </div>
@@ -167,5 +149,9 @@ const ClientFormIndex = props => {
     </div>
       )
     }
+    // <div class="item">
+    //   <label for="visit">Special Requirements</label>
+    //   <textarea id="visit" rows="3"></textarea>
+    // </div>
 
     export default ClientFormIndex

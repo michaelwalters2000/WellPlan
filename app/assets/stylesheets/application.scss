@@ -204,10 +204,6 @@
       }
       }
 
-      #numberofkids {
-        display: inline-block;
-      }
-
       .center-question {
         text-align: center;
         width: 100%;
@@ -217,10 +213,10 @@
         display: inline-block;
       }
 
-      .kidscheckboxes {
+      .checkboxes {
         text-align: center;
         padding-left: 47%;
-        padding-right: 41%;
+        padding-right: 43%;
       }
 
       .kids-ages-options li {
@@ -231,4 +227,24 @@
 
       .kids-options {
         padding-right: 2.5%;
+      }
+
+
+      .income-checkboxes li {
+        display: inline-block;
+        padding-left: 45%;
+        padding-right: 40%;
+        width: 100%;
+      }
+
+      .income {
+        padding-right: 2.5%;
+        text-align: center;
+      }
+
+      .income-options div {
+        display: inline-block;
+        font-size: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
       }
