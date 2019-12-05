@@ -6,10 +6,11 @@ const ClientFormPage = (props) => {
 
   function handleKidsAnswer() {
          setKids(
-           <div id="numberofkids" className="numberofkids" class="item">
+           <div className="center-question">
              <label>Number of Kids</label>
-             <nobr>
-             <p>Ages (0-5)</p>
+             <div className="kids-options">
+             <ul className="kids-ages-options">
+             <li><p>Ages (0-5)</p>
                <select>
                  <option selected value="" disabled selected></option>
                  <option value="1">1</option>
@@ -18,8 +19,8 @@ const ClientFormPage = (props) => {
                  <option value="4">4</option>
                  <option value="5">5</option>
                  <option value="6+">6+</option>
-               </select>
-             <p>Ages (6-12)</p>
+               </select></li>
+               <li><p>Ages (6-12)</p>
                <select>
                  <option selected value="" disabled selected></option>
                  <option value="1" >1</option>
@@ -28,8 +29,8 @@ const ClientFormPage = (props) => {
                  <option value="4">4</option>
                  <option value="5">5</option>
                  <option value="6+">6+</option>
-               </select>
-            <p>Ages (13-18)</p>
+               </select></li>
+              <li><p>Ages (13-18)</p>
                <select>
                  <option selected value="" disabled selected></option>
                  <option value="1" >1</option>
@@ -38,9 +39,11 @@ const ClientFormPage = (props) => {
                  <option value="4">4</option>
                  <option value="5">5</option>
                  <option value="6+">6+</option>
-               </select>
-               </nobr>
-            </div>)
+               </select></li>
+               </ul>
+               </div>
+              </div>
+        )
        }
 
   function handleNoKidsAnswer() {

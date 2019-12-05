@@ -36,8 +36,12 @@ const ClientFormIndex = props => {
             <label for="equity">Home Equity<span>*</span></label>
             <input id="equity" type="text"   name="equity" required/>
           </div>
-          <div class="question">
+          </div>
+          <br/>
+          <div className="center-question">
             <label>Planning for Kids?</label>
+            </div>
+            <div className="kidscheckboxes">
             <div class="question-answer">
               <div>
                 <input onClick={props.handleKidsAnswer} type="radio" value="true" id="radio_1" name="info"/>
@@ -49,8 +53,23 @@ const ClientFormIndex = props => {
               </div>
             </div>
           </div>
-        </div>
+          <br/>
         <div>{props.kids}</div>
+        <div className="center-question">
+          <label>Are You a Home Owner?</label>
+          </div>
+          <div className="kidscheckboxes">
+          <div class="question-answer">
+            <div>
+              <input onClick={props.handleKidsAnswer} type="radio" value="true" id="radio_1" name="info"/>
+              <label for="radio_1" class="radio"><span>Yes</span></label>
+            </div>
+            <div>
+              <input onClick={props.handleNoKidsAnswer} type="radio" value="false" id="radio_2" name="info"/>
+              <label for="radio_2" class="radio"><span>No</span></label>
+            </div>
+          </div>
+        </div>
         <div class="question">
           <label>Include my contact information on lists distributed to other attendees.</label>
           <div class="question-answer">

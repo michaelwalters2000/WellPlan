@@ -204,6 +204,31 @@
       }
       }
 
-      .numberofkids {
-        border: 3px solid black;
+      #numberofkids {
+        display: inline-block;
+      }
+
+      .center-question {
+        text-align: center;
+        width: 100%;
+      }
+
+      .center-options {
+        display: inline-block;
+      }
+
+      .kidscheckboxes {
+        text-align: center;
+        padding-left: 47%;
+        padding-right: 41%;
+      }
+
+      .kids-ages-options li {
+        display: inline-block;
+        font-size: 20px;
+        padding: 20px;
+      }
+
+      .kids-options {
+        padding-right: 2.5%;
       }
