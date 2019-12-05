@@ -1,14 +1,10 @@
 import React, { useState } from 'react'
 
 const ClientFormIndex = props => {
-
   let income1 = "< $50,000"
-  let income2 = "$50,000 -"
-  let income3 = "$100,000 -"
+  let income2 = "$50,000 - $100,000"
+  let income3 = "$100,000 - $200,000"
   let income4 = "$200,000 <"
-
-  let income5 = "$100,000"
-  let income6 = "$200,000"
 
   return (
     <div class="testbox">
@@ -52,11 +48,11 @@ const ClientFormIndex = props => {
       <div className="checkboxes">
         <div class="question-answer">
           <div>
-            <input type="radio" value="none" id="radio_1" name="spouse"/>
+            <input onClick={props.handleSpouseAnswer} type="radio" value="none" id="radio_1" name="spouse"/>
             <label for="radio_1" class="radio"><span>Yes</span></label>
           </div>
           <div>
-            <input  type="radio" value="none" id="radio_2" name="spouse"/>
+            <input onClick={props.handleNoSpouseAnswer} type="radio" value="none" id="radio_2" name="spouse"/>
             <label for="radio_2" class="radio"><span>No</span></label>
           </div>
         </div>
@@ -114,7 +110,6 @@ const ClientFormIndex = props => {
           </div>
         </div>
       </div>
-
       <div class="question">
       <div className="center-question">
         <label>Income Bracket?</label>
@@ -123,15 +118,15 @@ const ClientFormIndex = props => {
         <ul className="income-options">
         <div>
           <input  type="radio" value="none" id="radio_9" name="bracket"/>
-          <label className="income-bracket-title" for="radio_9" class="radio"><span>{income1}<br/> </span></label>
+          <label className="income-bracket-title" for="radio_9" class="radio"><span>{income1}<br/></span></label>
         </div>
         <div>
           <input type="radio" value="none" id="radio_10" name="bracket"/>
-          <label className="income-bracket-title" for="radio_10" for="radio_10" class="radio"><span>{income2}{income5}</span></label>
+          <label className="income-bracket-title" for="radio_10" for="radio_10" class="radio"><span>{income2}</span></label>
         </div>
         <div>
           <input  type="radio" value="none" id="radio_11" name="bracket"/>
-          <label className="income-bracket-title" for="radio_11" for="radio_11" class="radio"><span>{income3}{income6}</span></label>
+          <label className="income-bracket-title" for="radio_11" for="radio_11" class="radio"><span>{income3}</span></label>
         </div>
         <div>
           <input  type="radio" value="none" id="radio_12" name="bracket"/>
@@ -140,8 +135,7 @@ const ClientFormIndex = props => {
           </ul>
           </div>
          </div>
-
-
+         <div>{props.spouseincome}</div>
         <div class="btn-block">
           <button type="submit" href="/">Submit</button>
         </div>
