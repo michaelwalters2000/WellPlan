@@ -54,16 +54,19 @@ ActiveRecord::Schema.define(version: 2019_12_03_000837) do
     t.integer "age"
     t.boolean "spouse"
     t.boolean "kids"
-    t.integer "kids_0to5"
-    t.integer "kids_6to12"
-    t.integer "kids_13to18"
+    t.string "kids_0to5"
+    t.string "kids_6to12"
+    t.string "kids_13to18"
     t.boolean "home_owner"
-    t.integer "home_equity"
-    t.integer "number_of_homes"
+    t.string "home_equity"
+    t.boolean "morethan1home"
     t.boolean "business_owner"
-    t.integer "income"
-    t.integer "four_o_one_k"
-    t.integer "stocks_and_bonds"
+    t.string "income"
+    t.string "spouses_income"
+    t.boolean "four_o_onek"
+    t.string "four_o_onek_amount"
+    t.boolean "stocks_and_bonds"
+    t.string "stocks_and_bonds_amount"
     t.boolean "pension"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -71,6 +74,9 @@ ActiveRecord::Schema.define(version: 2019_12_03_000837) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "phone", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

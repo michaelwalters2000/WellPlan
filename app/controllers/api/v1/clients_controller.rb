@@ -1,17 +1,17 @@
 class Api::V1::ClientsController < ApplicationController
-  def create
-  new_client = Client.new(client_params)
-
-  if new_review.save
-    render json: { client: new_client }
-  else
-    render json: {status: "error"}
-  end
-end
-
+  skip_before_action :verify_authenticity_token
   def index
-    render json: Client.all
+    render json: { clients: Client.all }
   end
+
+  def create
+      client = Client.new(client_params)
+      if client.save
+        render json: {}
+      else
+        render json: {status: "error"}
+      end
+    end
 
 private
 
@@ -25,11 +25,14 @@ private
       :kids_13to18,
       :home_owner,
       :home_equity,
-      :number_of_homes,
+      :morethan1home,
       :business_owner,
       :income,
-      :four_o_one_k,
+      :spouses_income,
+      :four_o_onek,
+      :four_o_onek_amount,
       :stocks_and_bonds,
+      :stocks_and_bonds_amount,
       :pension
     )
   end

@@ -52,7 +52,6 @@
       .banner {
       position: relative;
       height: 300px;
-      background-image: url("/uploads/media/default/0001/02/8070c999efd1a155ad843379a5508d16f544aeaf.jpeg");
       background-size: cover;
       display: flex;
       justify-content: center;
@@ -248,3 +247,28 @@
         padding-left: 10px;
         padding-right: 10px;
       }
+
+      .equity-options div {
+        display: inline-block;
+        font-size: 20px;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      .navbar {
+    background-color: darkgreen;
+    height: inherit;
+  }
+
+.navbar-title {
+  color: limegreen;
+  text-align: center;
+  padding-left: 10%;
+  padding-bottom: 15px;
+}
+
+.navbar-options {
+  text-align: right;
+  padding-right: 5%;
+  color: limegreen;
+}

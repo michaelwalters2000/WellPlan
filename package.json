@@ -5,7 +5,6 @@
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-transform-destructuring": "^7.6.0",
     "@babel/plugin-transform-regenerator": "^7.4.5",
     "@babel/plugin-transform-runtime": "^7.5.5",
@@ -19,9 +18,11 @@
     "react": "~16.8.0",
     "react-dom": "~16.8.0",
     "react-router-dom": "5.0.0",
+    "react-select": "^3.0.8",
     "redbox-react": "1.6.0"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
     "babel-jest": "^24.9.0",
     "enzyme": "~3.10.0",
     "enzyme-adapter-react-16": "~1.14.0",

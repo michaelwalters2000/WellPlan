@@ -4,17 +4,21 @@ class CreateClients < ActiveRecord::Migration[5.2]
       t.integer :age
       t.boolean :spouse
       t.boolean :kids
-      t.integer :kids_0to5
-      t.integer :kids_6to12
-      t.integer :kids_13to18
+      t.string :kids_0to5
+      t.string :kids_6to12
+      t.string :kids_13to18
       t.boolean :home_owner
-      t.integer :home_equity
-      t.integer :number_of_homes
+      t.string :home_equity
+      t.boolean :morethan1home
       t.boolean :business_owner
-      t.integer :income
-      t.integer :four_o_one_k
-      t.integer :stocks_and_bonds
+      t.string :income
+      t.string :spouses_income
+      t.boolean :four_o_onek
+      t.string :four_o_onek_amount
+      t.boolean :stocks_and_bonds
+      t.string :stocks_and_bonds_amount
       t.boolean :pension
+
       t.timestamps
     end
   end
