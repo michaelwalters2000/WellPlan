@@ -6,110 +6,70 @@ import _ from 'lodash'
 const ClientFormPage = (props) => {
   const[errors, setErrors] = useState({})
   const[shouldRedirect, setShouldRedirect] = useState(false)
+  const [selectNumber, setSelectNumber] = useState();
   const[newClient, setNewClient] = useState({
-    first_name: "",
-    last_name: "",
-    phone: "",
-    email: "",
     age: "",
     spouse: "",
     kids: "",
-    kids_0to5: "",
-    kids_6to12: "",
-    kids_13to18: "",
-    home_owner: "",
-    home_equity: "",
+    kids0to5: "",
+    kids6to12: "",
+    kids13to18: "",
+    homeowner: "",
+    equity: "",
     morethan1home: "",
-    business_owner: "",
+    businessowner: "",
     income: "",
-    spouses_income: "",
-    four_o_onek: "",
-    four_o_onek_amount: "",
-    stocks_and_bonds: "",
-    stocks_and_bonds_amount: "",
+    spousesincome: "",
+    retirement: "",
+    retirementamount: "",
+    stocksbonds: "",
+    stocksbondsamount: "",
     pension: ""
   })
 
-  let income1 = "< $50,000"
-  let income2 = "$50,000 - $100,000"
-  let income3 = "$100,000 - $200,000"
-  let income4 = "$200,000 <"
+  const equityValues = ["< $0", "$0 - $200,000", "$200,000 <"]
+  const incomeValues = ["< $50,000", "$50,000 - $100,000", "$100,000 - $200,000", "$200,000 <"]
+  const spouseIncomeValues = ["< $50,000", "$50,000 - $100,000","$100,000 - $200,000", "$200,000 <"]
+  const valuesOf401k = ["< $250,000", "$250,000 - $500,000", "$500,000 - $1,000,000", "$1,000,000 <"]
+  const stocksValues = ["< $250,000", "$250,000 - $500,000", "$500,000 - $1,000,000", "$1,000,000 <"]
 
-  let equity1 = "< $0"
-  let equity2 = "$0 - $200,000"
-
-  let four_o_one_k1 = "< $250,000"
-  let four_o_one_k2 = "$250,000 - $500,000"
-  let four_o_one_k3 = "$500,000 - $1,000,000"
-  let four_o_one_k4 = "$1,000,000 <"
-
-  const handle401kOne = event => {
+  const equityInput = event => {
+    let selectId = parseInt(event.currentTarget.id);
     setNewClient({
       ...newClient,
-      [event.currentTarget.name]: "< $250,000"
+      [event.currentTarget.name]: equityValues[selectId]
     })
   }
 
-  const handle401kTwo = event => {
+  const incomeInput = event => {
+    let selectId = parseInt(event.currentTarget.id) - 3;
     setNewClient({
       ...newClient,
-      [event.currentTarget.name]: "$250,000 - $500,000"
+      [event.currentTarget.name]: incomeValues[selectId]
     })
   }
 
-  const handle401kThree = event => {
+  const spouseIncomeInput = event => {
+    let selectId = parseInt(event.currentTarget.id) - 7;
     setNewClient({
       ...newClient,
-      [event.currentTarget.name]: "$500,000 - $1,000,000"
+      [event.currentTarget.name]: spouseIncomeValues[selectId]
     })
   }
 
-  const handle401kFour = event => {
+  const inputOf401kValue = event => {
+    let selectId = parseInt(event.currentTarget.id) - 11;
     setNewClient({
       ...newClient,
-      [event.currentTarget.name]: "$1,000,000 <"
+      [event.currentTarget.name]: valuesOf401k[selectId]
     })
   }
 
-  const handleEquityOne = event => {
+  const stocksBondsInput = event => {
+    let selectId = parseInt(event.currentTarget.id) - 15;
     setNewClient({
       ...newClient,
-      [event.currentTarget.name]: "< $0"
-    })
-  }
-
-  const handleEquityTwo = event => {
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: "$0 - $200,000"
-    })
-  }
-
-  const handleIncomeOne = event => {
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: "< $50,000"
-    })
-  }
-
-  const handleIncomeTwo = event => {
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: "$50,000 - $100,000"
-    })
-  }
-
-  const handleIncomeThree = event => {
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: "$100,000 - $200,000"
-    })
-  }
-
-  const handleIncomeFour = event => {
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: "$200,000 <"
+      [event.currentTarget.name]: stocksValues[selectId]
     })
   }
 
@@ -117,6 +77,14 @@ const ClientFormPage = (props) => {
     setNewClient({
       ...newClient,
       [event.currentTarget.name]: event.currentTarget.value
+    })
+  }
+
+  const handleSelect = event => {
+    setNewClient({
+      ...newClient,
+      [event.currentTarget.id]: event.currentTarget.value
+
     })
   }
 
@@ -134,78 +102,25 @@ const ClientFormPage = (props) => {
     })
   }
 
-  const handleSelectNone = event => {
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: ""
-    })
-  }
-
-  const handleSelectOne = event => {
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: "1"
-    })
-  }
-
-  const handleSelectTwo = event => {
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: "2"
-    })
-  }
-
-  const handleSelectThree = event => {
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: "3"
-    })
-  }
-
-  const handleSelectFour = event => {
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: "4"
-    })
-  }
-
-  const handleSelectFive = event => {
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: "5"
-    })
-  }
-
-  const handleSelectSixPlus = event => {
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: "6+"
-    })
-  }
-
   const clearFields = (event) => {
     event.preventDefault()
     setNewClient({
-      first_name: "",
-      last_name: "",
-      phone: "",
-      email: "",
       age: "",
       spouse: "",
       kids: "",
-      kids_0to5: "",
-      kids_6to12: "",
-      kids_13to18: "",
-      home_owner: "",
-      home_equity: "",
+      kids0to5: "",
+      kids6to12: "",
+      kids13to18: "",
+      homeowner: "",
+      equity: "",
       morethan1home: "",
-      business_owner: "",
+      businessowner: "",
       income: "",
-      spouses_income: "",
-      four_o_onek: "",
-      four_o_onek_amount: "",
-      stocks_and_bonds: "",
-      stocks_and_bonds_amount: "",
+      spousesincome: "",
+      retirement: "",
+      retirementamount: "",
+      stocksbonds: "",
+      stocksbondsamount: "",
       pension: ""
     })
     setErrors({})
@@ -225,7 +140,7 @@ const ClientFormPage = (props) => {
     setErrors(submitErrors)
     return _.isEmpty(submitErrors)
   }
-//, "spouse", "kids", "home_owner", "business_owner", "income", "four_o_onek", "stocks_and_bonds", "pension"
+//, "spouse", "kids", "homeowner", "businessowner", "income", "retirement", "stocksbonds", "pension"
   const handleClientSubmit = (event) => {
   event.preventDefault()
   if (!validForSubmission()){
@@ -236,20 +151,20 @@ const ClientFormPage = (props) => {
     age:newClient.age,
     spouse:newClient.spouse,
     kids:newClient.kids,
-    kids_0to5:newClient.kids_0to5,
-    kids_6to12:newClient.kids_6to12,
-    kids_13to18:newClient.kids_13to18,
-    home_owner:newClient.home_owner,
-    home_equity:newClient.home_equity,
+    kids0to5:newClient.kids0to5,
+    kids6to12:newClient.kids6to12,
+    kids13to18:newClient.kids13to18,
+    homeowner:newClient.homeowner,
+    equity:newClient.equity,
     morethan1home:newClient.morethan1home,
-    business_owner:newClient.business_owner,
+    businessowner:newClient.businessowner,
     income:newClient.income,
-    spouses_income:newClient.spouses_income,
-    four_o_onek:newClient.four_o_onek,
-    four_o_onek_amount:newClient.four_o_onek_amount,
-    stocks_and_bonds:newClient.stocks_and_bonds,
-    stocks_and_bonds_amount:newClient.stocks_and_bonds_amount,
-    pension:newClient.pension
+    spousesincome:newClient.spousesincome,
+    retirement:newClient.retirement,
+    retirementamount:newClient.retirementamount,
+    stocksbonds:newClient.stocksbonds,
+    stocksbondsamount:newClient.stocksbondsamount,
+    pension:newClient.pesnion
   }
 
   addNewClient(payload)
@@ -257,19 +172,19 @@ const ClientFormPage = (props) => {
     age: "",
     spouse: "",
     kids: "",
-    kids_0to5: "",
-    kids_6to12: "",
-    kids_13to18: "",
-    home_owner: "",
-    home_equity: "",
+    kids0to5: "",
+    kids6to12: "",
+    kids13to18: "",
+    homeowner: "",
+    equity: "",
     morethan1home: "",
-    business_owner: "",
+    businessowner: "",
     income: "",
-    spouses_income: "",
-    four_o_onek: "",
-    four_o_onek_amount: "",
-    stocks_and_bonds: "",
-    stocks_and_bonds_amount: "",
+    spousesincome: "",
+    retirement: "",
+    retirementamount: "",
+    stocksbonds: "",
+    stocksbondsamount: "",
     pension: ""
   })
 }
@@ -312,24 +227,14 @@ if (shouldRedirect){
     handleFieldChange={handleFieldChange}
     handleRadioTrue={handleRadioTrue}
     handleRadioFalse={handleRadioFalse}
-    handleSelectOne={handleSelectOne}
-    handleSelectTwo={handleSelectTwo}
-    handleSelectThree={handleSelectThree}
-    handleSelectFour={handleSelectFour}
-    handleSelectFive={handleSelectFive}
-    handleSelectSixPlus={handleSelectSixPlus}
-    handleSelectNone={handleSelectNone}
+    setNewClient={setNewClient}
     newClient={newClient}
-    handleIncomeOne={handleIncomeOne}
-    handleIncomeTwo={handleIncomeTwo}
-    handleIncomeThree={handleIncomeThree}
-    handleIncomeFour={handleIncomeFour}
-    handleEquityOne={handleEquityOne}
-    handleEquityTwo={handleEquityTwo}
-    handle401kOne={handle401kOne}
-    handle401kTwo={handle401kTwo}
-    handle401kThree={handle401kThree}
-    handle401kFour={handle401kFour} />
+    equityInput={equityInput}
+    incomeInput={incomeInput}
+    spouseIncomeInput={spouseIncomeInput}
+    inputOf401kValue={inputOf401kValue}
+    stocksBondsInput={stocksBondsInput}
+     />
   )
 }
 

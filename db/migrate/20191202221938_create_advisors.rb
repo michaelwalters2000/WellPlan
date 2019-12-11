@@ -9,7 +9,7 @@ class CreateAdvisors < ActiveRecord::Migration[5.2]
       t.integer :mutual_funds_ETFs
       t.boolean :individual_securities
       t.integer :total_stock_and_bonds
-      t.decimal :client_business_owners
+      t.decimal :client_businessowners
       t.boolean :discipinary_action
       t.text :explination
       t.integer :client_capacity
