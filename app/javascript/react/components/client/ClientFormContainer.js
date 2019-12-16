@@ -20,6 +20,9 @@ const ClientFormContainer = props => {
       newClient={props.newClient}
       handleClientSubmit={props.handleClientSubmit}
       handleFieldChange={props.handleFieldChange}
+      handleSelectChange={props.handleSelectChange}
+      handleSelectValue={props.handleSelectValue}
+      selected={props.selected}
       handleRadioTrue={props.handleRadioTrue}
       handleRadioFalse={props.handleRadioFalse}
       equityInput={props.equityInput}

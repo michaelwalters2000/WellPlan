@@ -4,9 +4,10 @@ import ClientFormContainer from "./ClientFormContainer"
 import _ from 'lodash'
 
 const ClientFormPage = (props) => {
-  const[errors, setErrors] = useState({})
-  const[shouldRedirect, setShouldRedirect] = useState(false)
+  const[errors, setErrors] = useState({});
+  const[shouldRedirect, setShouldRedirect] = useState(false);
   const [selectNumber, setSelectNumber] = useState();
+  const [select, setSelect] = useState();
   const[newClient, setNewClient] = useState({
     age: "",
     spouse: "",
@@ -80,10 +81,17 @@ const ClientFormPage = (props) => {
     })
   }
 
-  const handleSelect = event => {
+  let selected
+
+  const handleSelectValue = event => {
+    let selected = event.currentTarget.value;
+    return selected;
+  }
+
+  const handleSelectChange = event => {
     setNewClient({
       ...newClient,
-      [event.currentTarget.id]: event.currentTarget.value
+      [event.currentTarget.name]: selected
 
     })
   }
@@ -164,7 +172,7 @@ const ClientFormPage = (props) => {
     retirementamount:newClient.retirementamount,
     stocksbonds:newClient.stocksbonds,
     stocksbondsamount:newClient.stocksbondsamount,
-    pension:newClient.pesnion
+    pension:newClient.pension
   }
 
   addNewClient(payload)
@@ -225,6 +233,9 @@ if (shouldRedirect){
     <ClientFormContainer
     handleClientSubmit={handleClientSubmit}
     handleFieldChange={handleFieldChange}
+    handleSelectChange={handleSelectChange}
+    handleSelectValue={handleSelectValue}
+    selected={selected}
     handleRadioTrue={handleRadioTrue}
     handleRadioFalse={handleRadioFalse}
     setNewClient={setNewClient}

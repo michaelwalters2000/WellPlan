@@ -18,7 +18,7 @@ const ClientForm = props => {
     <div className="testbox">
       <form onSubmit={props.handleClientSubmit} action="/">
         <div className="banner">
-          <h1>Volunteer Signup</h1>
+          <h1>Client Signup</h1>
         </div>
       <br/>
     <p>The HELP Group is seeking volunteers to serve our community. Fill in the inhtmlFormation below to indicate how you would like to become involved.</p>
@@ -66,32 +66,38 @@ const ClientForm = props => {
     <div className="kids-options">
     <ul className="kids-ages-options">
     <li><p>Ages (0-5)</p>
-     <select>
-       <option selected onChange={props.handleFieldChange} value={newClient.kids0to5} selected></option>
-       <option value="1">1</option>
-       <option value="2">2</option>
-       <option value="3">3</option>
-       <option value="4">4</option>
-       <option value="5">5</option>
-       <option value="6+">6+</option>
-     </select></li>
-     </ul>
-     </div>
-     <div className="kids-options">
-     <ul className="kids-ages-options">
-     <li><p>Ages (6-12)</p>
-      <select>
-        <option selected onChange={props.handleFieldChange} value={newClient.kids0to5} selected></option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6+">6+</option>
-      </select></li>
-      </ul>
-      </div>
-    </div>
+    <select>
+   <option selected name="kids0to5" onClick={props.handleSelectChange} value={newClient.kids0to5} selected></option>
+   <option name="kids0to5" onClick={props.handleSelectValue} value="1">1</option>
+   <option name="kids0to5" onClick={props.handleSelectValue} value="2">2</option>
+   <option name="kids0to5" onClick={props.handleSelectValue} value="3">3</option>
+   <option name="kids0to5" onClick={props.handleSelectValue} value="4">4</option>
+   <option name="kids0to5" onClick={props.handleSelectValue} value="5">5</option>
+   <option name="kids0to5" onClick={props.handleSelectValue} value="6+">6+</option>
+ </select></li>
+ <li><p>Ages (6-12)</p>
+ <select>
+   <option selected onChange={props.handleSelectChange} value={newClient.kids6to12} selected></option>
+   <option value="1" >1</option>
+   <option value="2">2</option>
+   <option value="3">3</option>
+   <option value="4">4</option>
+   <option value="5">5</option>
+   <option value="6+">6+</option>
+ </select></li>
+<li><p>Ages (13-18)</p>
+ <select>
+   <option selected onChange={props.handleFieldChange} value={newClient.kids13to18} disabled selected></option>
+   <option value="1" >1</option>
+   <option value="2">2</option>
+   <option value="3">3</option>
+   <option value="4">4</option>
+   <option value="5">5</option>
+   <option value="6+">6+</option>
+ </select></li>
+ </ul>
+ </div>
+</div>
    <div className="question">
    <div className="center-question">
      <label>Are you a Home Owner ?</label>
@@ -194,19 +200,19 @@ const ClientForm = props => {
          <div className="income">
          <ul className="income-options">
          <div>
-           <input name="spousesincome" onClick={newClient.spouseIncomeInput} type="radio" value={newClient.spousesincome} id="7"/>
+           <input name="spousesincome" onClick={props.spouseIncomeInput} type="radio" value={newClient.spousesincome} id="7"/>
            <label htmlFor="7" className="radio"><span>{income1}<br/></span></label>
          </div>
          <div>
-           <input name="spousesincome" onClick={newClient.spouseIncomeInput} type="radio" value={newClient.spousesincome} id="8"/>
+           <input name="spousesincome" onClick={props.spouseIncomeInput} type="radio" value={newClient.spousesincome} id="8"/>
            <label htmlFor="8" className="radio"><span>{income2}</span></label>
          </div>
          <div>
-           <input name="spousesincome" onClick={newClient.spouseIncomeInput} type="radio" value={newClient.spousesincome} id="9"/>
+           <input name="spousesincome" onClick={props.spouseIncomeInput} type="radio" value={newClient.spousesincome} id="9"/>
            <label htmlFor="9" className="radio"><span>{income3}</span></label>
          </div>
          <div>
-           <input name="spousesincome" onClick={newClient.spouseIncomeInput} type="radio" value={newClient.spousesincome} id="10"/>
+           <input name="spousesincome" onClick={props.spouseIncomeInput} type="radio" value={newClient.spousesincome} id="10"/>
            <label htmlFor="10" className="radio"><span>{income4}</span></label>
          </div>
            </ul>
