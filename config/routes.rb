@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'homes#index'
+  get 'clients', to: 'homes#index'
   get 'advisors', to: 'homes#index'
   devise_for :users
 
