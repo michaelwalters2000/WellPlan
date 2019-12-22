@@ -1,25 +1,20 @@
 class CreateAdvisors < ActiveRecord::Migration[5.2]
   def change
     create_table :advisors do |t|
-      t.integer :experience_years
-      t.integer :client_number
-      t.integer :avg_client_investable_assets
-      t.integer :total_client_income
-      t.integer :total_clients_investable_assets
-      t.integer :mutual_funds_ETFs
-      t.boolean :individual_securities
-      t.integer :total_stock_and_bonds
-      t.decimal :client_businessowners
-      t.boolean :discipinary_action
+      t.integer :experienceYears
+      t.integer :clientNumber
+      t.integer :avgClientInvestableAssets
+      t.integer :totalClientIncome
+      t.integer :totalClientsInvestableAssets
+      t.integer :mutualFundsETFs
+      t.boolean :individualSecurities
+      t.integer :totalStocksAndBonds
+      t.decimal :clientBusinessowners
+      t.boolean :discipinaryAction
       t.text :explination
-      t.integer :client_capacity
-      t.integer :client_rating
-      t.boolean :CFP
-      t.boolean :AIF
-      t.boolean :PFS
-      t.boolean :CHFC
-      t.boolean :NAPFA
-      t.boolean :FPA
+      t.integer :clientCapacity
+      t.integer :clientRating
+      t.boolean :certifications
       t.boolean :independent
       t.string :firm
 

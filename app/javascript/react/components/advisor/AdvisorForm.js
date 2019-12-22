@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
 const AdvisorForm = props => {
+  let newAdvisor = props.newAdvisor;
   let lessThanOne = "<1"
 
   return (
     <div className="testbox">
-      <form >
+      <form onSubmit={props.handleAdvisorSubmit}>
         <div className="banner">
           <h1>Advisor Signup</h1>
         </div>
@@ -13,12 +14,8 @@ const AdvisorForm = props => {
     <p>The HELP Group is seeking volunteers to serve our community. Fill in the inhtmlFormation below to indicate how you would like to become involved.</p>
       <br/>
       <div className="item">
-        <label htmlFor="experience_years">Years of Experience<span>*</span></label>
-        <input id="experience_years" type="number" name="experience_years" required/>
-      </div>
-      <div className="item">
         <label htmlFor="client_number">Number of Clients<span>*</span></label>
-        <input id="client_number" type="number" name="client_number" required/>
+        <input id="client_number" type="number" name="client_number" />
       </div>
       <div className="center-question">
        <label>Years of Experience</label>
@@ -26,7 +23,7 @@ const AdvisorForm = props => {
        <ul className="kids-ages-options">
        <li>
        <select>
-      <option selected name="experience_years" selected></option>
+      <option selected name="experienceYears" onClick={props.handleSelectChange} value={newAdvisor.experienceYears} selected></option>
       <option value={lessThanOne}>{lessThanOne}</option>
       <option value="1">1</option>
       <option value="2">2</option>

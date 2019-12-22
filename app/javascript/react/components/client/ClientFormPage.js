@@ -8,7 +8,7 @@ const ClientFormPage = (props) => {
   const[shouldRedirect, setShouldRedirect] = useState(false);
   const [selectNumber, setSelectNumber] = useState();
   const [select, setSelect] = useState();
-  const[newClient, setNewClient] = useState({
+  const [newClient, setNewClient] = useState({
     age: "",
     spouse: "",
     kids: "",
@@ -244,8 +244,7 @@ if (shouldRedirect){
     incomeInput={incomeInput}
     spouseIncomeInput={spouseIncomeInput}
     inputOf401kValue={inputOf401kValue}
-    stocksBondsInput={stocksBondsInput}
-     />
+    stocksBondsInput={stocksBondsInput} />
   )
 }
 
