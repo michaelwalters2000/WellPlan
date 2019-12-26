@@ -23,9 +23,9 @@ const ClientForm = props => {
       <br/>
     <p>The HELP Group is seeking volunteers to serve our community. Fill in the inhtmlFormation below to indicate how you would like to become involved.</p>
       <br/>
-      <div className="item">
-        <label htmlFor="age">Age<span>*</span></label>
-        <input onChange={props.handleFieldChange} value={newClient.age} id="age" type="number" min="18" max="120" name="age" required/>
+      <div className="center-input">
+        <label htmlFor="age">Age</label><br/>
+        <input className="short-input-bar" name="age" value={newClient.age} onChange={props.handleFieldChange} id="age" type="number" min="18" max="120" required/>
       </div>
       <div className="question">
       <div className="center-question">

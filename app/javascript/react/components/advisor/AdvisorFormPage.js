@@ -17,9 +17,9 @@ const AdvisorFormPage = (props) => {
     mutualFundsETFs: "",
     individualSecurities: "",
     totalStocksAndBonds: "",
-    clientBusinessowners: "",
+    clientBusinessOwners: "",
     discipinaryAction: "",
-    explination: "",
+    explanation: "",
     clientCapacity: "",
     clientRating: "",
     certifications: "",
@@ -27,20 +27,20 @@ const AdvisorFormPage = (props) => {
     firm: ""
   })
 
-  // const equityValues = ["< $0", "$0 - $200,000", "$200,000 <"]
-  // const incomeValues = ["< $50,000", "$50,000 - $100,000", "$100,000 - $200,000", "$200,000 <"]
+  // const clientAmount = ["< 50", "$50 - 100", "100 <"]
+  // const investableAssets = ["< $50,000", "$50,000 - $100,000", "$100,000 - $200,000", "$200,000 <"]
   // const spouseIncomeValues = ["< $50,000", "$50,000 - $100,000","$100,000 - $200,000", "$200,000 <"]
   // const valuesOf401k = ["< $250,000", "$250,000 - $500,000", "$500,000 - $1,000,000", "$1,000,000 <"]
   // const stocksValues = ["< $250,000", "$250,000 - $500,000", "$500,000 - $1,000,000", "$1,000,000 <"]
 
-  // const equityInput = event => {
-  //   let selectId = parseInt(event.currentTarget.id);
+  // const clientNumberInput = event => {
+  //   let selectId = parseInt(event.currentTarget.id) - 19;
   //   setNewAdvisor({
   //     ...newAdvisor,
-  //     [event.currentTarget.name]: equityValues[selectId]
+  //     [event.currentTarget.name]: clientAmount[selectId]
   //   })
   // }
-  //
+
   // const incomeInput = event => {
   //   let selectId = parseInt(event.currentTarget.id) - 3;
   //   setNewAdvisor({
@@ -120,9 +120,9 @@ const AdvisorFormPage = (props) => {
       mutualFundsETFs: "",
       individualSecurities: "",
       totalStocksAndBonds: "",
-      clientBusinessowners: "",
+      clientBusinessOwners: "",
       discipinaryAction: "",
-      explination: "",
+      explanation: "",
       clientCapacity: "",
       clientRating: "",
       certifications: "",
@@ -147,6 +147,7 @@ const AdvisorFormPage = (props) => {
     return _.isEmpty(submitErrors)
   }
 //, "spouse", "kids", "homeowner", "businessowner", "income", "retirement", "stocksbonds", "pension"
+
   const handleAdvisorSubmit = (event) => {
   event.preventDefault()
   if (!validForSubmission()){
@@ -162,9 +163,9 @@ const AdvisorFormPage = (props) => {
     mutualFundsETFs:newAdvisor.mutualFundsETFs,
     individualSecurities:newAdvisor.individualSecurities,
     totalStocksAndBonds:newAdvisor.totalStocksAndBonds,
-    clientBusinessowners:newAdvisor.clientBusinessowners,
+    clientBusinessOwners:newAdvisor.clientBusinessOwners,
     discipinaryAction:newAdvisor.discipinaryAction,
-    explination:newAdvisor.explination,
+    explanation:newAdvisor.explanation,
     clientCapacity:newAdvisor.clientCapacity,
     clientRating:newAdvisor.clientRating,
     certifications:newAdvisor.certifications,
@@ -182,9 +183,9 @@ const AdvisorFormPage = (props) => {
     mutualFundsETFs: "",
     individualSecurities: "",
     totalStocksAndBonds: "",
-    clientBusinessowners: "",
+    clientBusinessOwners: "",
     discipinaryAction: "",
-    explination: "",
+    explanation: "",
     clientCapacity: "",
     clientRating: "",
     certifications: "",
