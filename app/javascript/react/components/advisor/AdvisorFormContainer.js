@@ -13,7 +13,7 @@ const AdvisorFormContainer = props => {
   const clientAmount = ["< 50", "50 - 100", "100 <"]
   const investableAssets = ["< $250,000", "< $1,000,000", "$1,000,000 <"]
   const businessOwners = ["< 5%", "< 10%", "10% <"]
-  const certificationList = ["CFP","AIF","PFS","CHFC","NAPFA","FPA"]
+  const certificationsList = ["CFP","AIF","PFS","CHFC","NAPFA","FPA"]
 
   const clientNumberInput = event => {
     let selectId = parseInt(event.currentTarget.id) - 19;
@@ -47,12 +47,29 @@ const AdvisorFormContainer = props => {
     })
   }
 
-  const certificationsInput = event => {
-    let cList = []
-    cList.push(event.currentTarget.name);
-    let newList = cList.toString();
+  let cList = []
+
+  const cfpInput = event => {cList.push("CFP")}
+  const aifInput = event => {cList.push("AIF")}
+  const pfsInput = event => {cList.push("PFS")}
+  const chfcInput = event => {cList.push("CHFC")}
+  const napfaInput = event => {cList.push("NAPFA")}
+  const fpaInput = event => {cList.push("FPA")}
+
+  const handleIndependentTrue = event => {
+    let newList = cList.toString()
     setNewAdvisor({
       ...newAdvisor,
+      independent: "true",
+      certifications: newList
+    });
+}
+
+  const handleIndependentFalse = event => {
+    let newList = cList.toString()
+    setNewAdvisor({
+      ...newAdvisor,
+      independent: "false",
       certifications: newList
     })
   }
@@ -79,7 +96,14 @@ const AdvisorFormContainer = props => {
       investableAssetsInput={investableAssetsInput}
       clientIncomeInput={clientIncomeInput}
       businessOwnersInput={businessOwnersInput}
-      certificationsInput={certificationsInput} />
+      handleIndependentTrue={handleIndependentTrue}
+      handleIndependentFalse={handleIndependentFalse}
+      cfpInput={cfpInput}
+      aifInput={aifInput}
+      pfsInput={pfsInput}
+      chfcInput={chfcInput}
+      napfaInput={napfaInput}
+      fpaInput={fpaInput} />
   )
 }
 

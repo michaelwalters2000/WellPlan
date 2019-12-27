@@ -205,28 +205,28 @@ const AdvisorForm = props => {
                   <div className="income">
                   <ul className="income-options">
                   <div>
-                    <input type="radio" id="39" name="CFP" value={newAdvisor.certifications} onChange={props.certificationsInput}/>
+                    <input type="radio" id="39" name="CFP" value={newAdvisor.cfpInput} onChange={props.certificationsInput}/>
                     <label htmlFor="39" className="radio"><span>CFP<br/></span></label>
                   </div>
                   <div>
-                    <input type="radio" id="40" name="AIF" onChange={props.certificationsInput}/>
+                    <input type="radio" id="40" name="AIF" onChange={props.aifInput}/>
                     <label htmlFor="40" className="radio"><span>AIF</span></label>
                   </div>
                   <div>
-                    <input type="radio" id="41" name="PFS" onChange={props.certificationsInput}/>
+                    <input type="radio" id="41" name="PFS" onChange={props.pfsInput}/>
                     <label htmlFor="41" className="radio"><span>PFS</span></label>
                   </div>
                   <div>
-                    <input type="radio" id="42" name="CHFC" onChange={props.certificationsInput}/>
+                    <input type="radio" id="42" name="CHFC" onChange={props.chfcInput}/>
                     <label htmlFor="42" className="radio"><span>CHFC</span></label>
                   </div>
                   <div>
-                    <input type="radio" id="43" name="NAPFA" onChange={props.certificationsInput}/>
-                    <label htmlFor="42" className="radio"><span>NAPFA</span></label>
+                    <input type="radio" id="43" name="NAPFA" onChange={props.napfaInput}/>
+                    <label htmlFor="43" className="radio"><span>NAPFA</span></label>
                   </div>
                   <div>
-                    <input type="radio" id="44" name="FPA" onChange={props.certificationsInput}/>
-                    <label htmlFor="42" className="radio"><span>FPA</span></label>
+                    <input type="radio" id="44" name="FPA" onChange={props.fpaInput}/>
+                    <label htmlFor="44" className="radio"><span>FPA</span></label>
                   </div>
                     </ul>
                     </div>
@@ -238,12 +238,12 @@ const AdvisorForm = props => {
            <div className="checkboxes">
              <div className="question-answer">
                <div>
-                 <input name="independent" value={newAdvisor.independent} onChange={props.handleRadioTrue} type="radio" id="43"/>
-                 <label htmlFor="43" className="radio"><span>Yes</span></label>
+                 <input name="independent" value={newAdvisor.independent} onChange={props.handleIndependentTrue} type="radio" id="45"/>
+                 <label htmlFor="45" className="radio"><span>Yes</span></label>
                </div>
                <div>
-                 <input name="independent" value={newAdvisor.independent} onChange={props.handleRadioFalse} type="radio" id="44"/>
-                 <label htmlFor="44" className="radio"><span>No</span></label>
+                 <input name="independent" value={newAdvisor.independent} onChange={props.handleIndependentFalse} type="radio" id="46"/>
+                 <label htmlFor="46" className="radio"><span>No</span></label>
                </div>
              </div>
            </div>

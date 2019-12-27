@@ -13,6 +13,8 @@
       <center class="navbar-options">
         <%- if current_user -%>
           <ul><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></ul>
+          <ul><%=link_to "Client", clients_path, class: 'link-to-text-color' %></ul>
+          <ul><%=link_to "Advisor", advisors_path, class: 'link-to-text-color' %></ul>
         <%- else -%>
           <ul><%= link_to 'Sign Up', new_user_registration_path %></ul>
           <ul><%= link_to 'Sign In', new_user_session_path %></ul>
@@ -22,7 +24,7 @@
   </nav>
 
   <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= ksey %>">
+    <div class="flash flash-<%= key %>">
       <%= value %>
     </div>
   <%- end -%>
