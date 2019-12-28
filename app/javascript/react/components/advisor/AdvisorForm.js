@@ -13,7 +13,6 @@ const AdvisorForm = props => {
           <h1>Advisor Signup</h1>
         </div>
       <br/>
-    <p>The HELP Group is seeking volunteers to serve our community. Fill in the inhtmlFormation below to indicate how you would like to become involved.</p>
       <br/>
       <div className="center-question">
        <label>Years of Experience</label>

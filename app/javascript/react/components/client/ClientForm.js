@@ -1,17 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 const ClientForm = props => {
-  let income1 = "< $50,000"
-  let income2 = "$50,000 - $100,000"
-  let income3 = "$100,000 - $200,000"
-  let income4 = "$200,000 <"
-  let equity1 = "< $0"
-  let equity2 = "$0 - $200,000"
-
-  let four_o_one_k1 = "< $250,000"
-  let four_o_one_k2 = "$250,000 - $500,000"
-  let four_o_one_k3 = "$500,000 - $1,000,000"
-  let four_o_one_k4 = "$1,000,000 <"
+  let lessGreaterThan = "<"
   let newClient = props.newClient
 
   return (
@@ -21,7 +11,6 @@ const ClientForm = props => {
           <h1>Client Signup</h1>
         </div>
       <br/>
-    <p>The HELP Group is seeking volunteers to serve our community. Fill in the inhtmlFormation below to indicate how you would like to become involved.</p>
       <br/>
       <div className="center-input">
         <label htmlFor="age">Age</label><br/>
@@ -123,15 +112,15 @@ const ClientForm = props => {
  <ul className="equity-options">
  <div>
    <input onClick={props.equityInput} type="radio" value={newClient.equity} id="0" name="equity"/>
-   <label className="equity-title" htmlFor="0" className="radio"><span>{equity1}<br/></span></label>
+   <label className="equity-title" htmlFor="0" className="radio"><span>{lessGreaterThan} $0<br/></span></label>
  </div>
  <div>
    <input onClick={props.equityInput} type="radio" value={newClient.equity} id="1" name="equity"/>
-   <label className="equity-title-2" htmlFor="1" className="radio"><span>{equity2}</span></label>
+   <label className="equity-title-2" htmlFor="1" className="radio"><span>$0 - $200,000</span></label>
  </div>
  <div>
    <input onClick={props.equityInput} type="radio" value={newClient.equity} id="2" name="equity"/>
-   <label className="equity-title" htmlFor="2" className="radio"><span>{income4}</span></label>
+   <label className="equity-title" htmlFor="2" className="radio"><span>$200,000 {lessGreaterThan}</span></label>
  </div>
    </ul>
    </div>
@@ -176,19 +165,19 @@ const ClientForm = props => {
         <ul className="income-options">
         <div>
           <input onChange={props.incomeInput} type="radio" value={newClient.income} id="3" name="income"/>
-          <label htmlFor="3" className="radio"><span>{income1}<br/></span></label>
+          <label htmlFor="3" className="radio"><span>{lessGreaterThan} $50,000<br/></span></label>
         </div>
         <div>
           <input onChange={props.incomeInput} type="radio" value={newClient.income} id="4" name="income"/>
-          <label htmlFor="4" className="radio"><span>{income2}</span></label>
+          <label htmlFor="4" className="radio"><span>$50,000 - $100,000</span></label>
         </div>
         <div>
           <input onChange={props.incomeInput} type="radio" value={newClient.income} id="5" name="income"/>
-          <label htmlFor="5" className="radio"><span>{income3}</span></label>
+          <label htmlFor="5" className="radio"><span>$100,000 - $200,000</span></label>
         </div>
         <div>
           <input onChange={props.incomeInput} type="radio" value={newClient.income} id="6" name="income"/>
-          <label htmlFor="6" className="radio"><span>{income4}</span></label>
+          <label htmlFor="6" className="radio"><span>$200,000 {lessGreaterThan}</span></label>
         </div>
           </ul>
           </div>
@@ -201,19 +190,19 @@ const ClientForm = props => {
          <ul className="income-options">
          <div>
            <input name="spousesincome" onClick={props.spouseIncomeInput} type="radio" value={newClient.spousesincome} id="7"/>
-           <label htmlFor="7" className="radio"><span>{income1}<br/></span></label>
+           <label htmlFor="7" className="radio"><span>{lessGreaterThan} $50,000<br/></span></label>
          </div>
          <div>
            <input name="spousesincome" onClick={props.spouseIncomeInput} type="radio" value={newClient.spousesincome} id="8"/>
-           <label htmlFor="8" className="radio"><span>{income2}</span></label>
+           <label htmlFor="8" className="radio"><span>$50,000 - $100,000</span></label>
          </div>
          <div>
            <input name="spousesincome" onClick={props.spouseIncomeInput} type="radio" value={newClient.spousesincome} id="9"/>
-           <label htmlFor="9" className="radio"><span>{income3}</span></label>
+           <label htmlFor="9" className="radio"><span>$100,000 - $200,000</span></label>
          </div>
          <div>
            <input name="spousesincome" onClick={props.spouseIncomeInput} type="radio" value={newClient.spousesincome} id="10"/>
-           <label htmlFor="10" className="radio"><span>{income4}</span></label>
+           <label htmlFor="10" className="radio"><span>$200,000 {lessGreaterThan}</span></label>
          </div>
            </ul>
            </div>
@@ -243,19 +232,19 @@ const ClientForm = props => {
          <ul className="income-options">
          <div>
            <input onChange={props.inputOf401kValue} type="radio" value={newClient.retirementamount} id="11" name="retirementamount"/>
-           <label htmlFor="11" className="radio"><span>{four_o_one_k1}<br/></span></label>
+           <label htmlFor="11" className="radio"><span>{lessGreaterThan} $250,000<br/></span></label>
          </div>
          <div>
            <input onChange={props.inputOf401kValue} type="radio" value={newClient.retirementamount} id="12" name="retirementamount"/>
-           <label htmlFor="12" className="radio"><span>{four_o_one_k2}</span></label>
+           <label htmlFor="12" className="radio"><span>$250,000 - $500,000</span></label>
          </div>
          <div>
            <input onChange={props.inputOf401kValue} type="radio" value={newClient.retirementamount} id="13" name="retirementamount"/>
-           <label htmlFor="13" className="radio"><span>{four_o_one_k3}</span></label>
+           <label htmlFor="13" className="radio"><span>$500,000 - $1,000,000</span></label>
          </div>
          <div>
            <input onChange={props.inputOf401kValue} type="radio" value={newClient.retirementamount} id="14" name="retirementamount"/>
-           <label htmlFor="14" className="radio"><span>{four_o_one_k4}</span></label>
+           <label htmlFor="14" className="radio"><span>$1,000,000 {lessGreaterThan}</span></label>
          </div>
            </ul>
            </div>
@@ -285,19 +274,19 @@ const ClientForm = props => {
          <ul className="income-options">
          <div>
            <input onChange={props.stocksBondsInput} type="radio" value={newClient.stocksbondsamount} id="15" name="stocksbondsamount"/>
-           <label htmlFor="15" className="radio"><span>{four_o_one_k1}</span></label>
+           <label htmlFor="15" className="radio"><span>{lessGreaterThan} $250,000</span></label>
          </div>
          <div>
            <input onChange={props.stocksBondsInput} type="radio" value={newClient.stocksbondsamount} id="16" name="stocksbondsamount"/>
-           <label htmlFor="16" className="radio"><span>{four_o_one_k2}</span></label>
+           <label htmlFor="16" className="radio"><span>$250,000 - $500,000</span></label>
          </div>
          <div>
            <input onChange={props.stocksBondsInput} type="radio" value={newClient.stocksbondsamount} id="17" name="stocksbondsamount"/>
-           <label htmlFor="17" className="radio"><span>{four_o_one_k3}</span></label>
+           <label htmlFor="17" className="radio"><span>$500,000 - $1,000,000</span></label>
          </div>
          <div>
            <input onChange={props.stocksBondsInput} type="radio" value={newClient.stocksbondsamount} id="18" name="stocksbondsamount"/>
-           <label htmlFor="18" className="radio"><span>{four_o_one_k4}</span></label>
+           <label htmlFor="18" className="radio"><span>$1,000,000 {lessGreaterThan}</span></label>
          </div>
            </ul>
            </div>

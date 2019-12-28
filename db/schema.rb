@@ -10,19 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_000837) do
+ActiveRecord::Schema.define(version: 2019_12_28_222450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "accounts", force: :cascade do |t|
-    t.bigint "client_id"
-    t.bigint "advisor_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["advisor_id"], name: "index_accounts_on_advisor_id"
-    t.index ["client_id"], name: "index_accounts_on_client_id"
-  end
 
   create_table "advisors", force: :cascade do |t|
     t.string "experienceYears"
@@ -41,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_12_03_000837) do
     t.string "certifications"
     t.boolean "independent"
     t.string "firm"
+    t.integer "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -63,8 +55,14 @@ ActiveRecord::Schema.define(version: 2019_12_03_000837) do
     t.boolean "stocksbonds"
     t.string "stocksbondsamount"
     t.boolean "pension"
+    t.integer "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.string "advisor"
+    t.string "client"
   end
 
   create_table "users", force: :cascade do |t|
