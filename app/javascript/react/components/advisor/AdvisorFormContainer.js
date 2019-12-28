@@ -74,14 +74,6 @@ const AdvisorFormContainer = props => {
     })
   }
 
-  // let id = event.currentTarget.id;
-  // let idArray = id.split("");
-  // let newIdArray = idArray.splice(2,10);
-  // let certificationArray = idArray.splice(0,2);
-  // let newId = newIdArray.toString();
-  // let certification = certificationArray.toString();
-  // let selectId = parseInt(newId) - 39;
-
   return(
     <AdvisorForm
       newAdvisor={props.newAdvisor}

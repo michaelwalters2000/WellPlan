@@ -12,7 +12,7 @@ const AdvisorOrClientPage = props => {
   </div>
   </form>
   </center>
-)
+  )
 }
 
 export default AdvisorOrClientPage
