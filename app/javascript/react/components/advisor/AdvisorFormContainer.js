@@ -5,8 +5,10 @@ const AdvisorFormContainer = props => {
   let newAdvisor = props.newAdvisor;
   let setNewAdvisor = props.setNewAdvisor;
   const [score, setScore] = useState(0)
-  const [tally, setTally] = useState(0)
-  const [tryOne, setTryOne] = useState()
+  const [clientTally, setClientTally] = useState(0)
+  const [assetTally, setAssetTally] = useState(0)
+  const [lastValue, setLastValue] = useState()
+  const [lastValueTwo, setLastValueTwo] = useState()
 
   const [equity, setEquity] = useState(<div></div>)
   const [four, setFour] = useState(<div></div>)
@@ -18,33 +20,44 @@ const AdvisorFormContainer = props => {
 
   const clientNumberInput = event => {
     let selectId = parseInt(event.currentTarget.id) - 19;
-    setTally(tally + 1);
-    setScore(score + clientAmount[selectId].value)
-    if (tally < 1) {
+    setClientTally(clientTally + 1);
+    if (clientTally < 1) {
     setNewAdvisor({
       ...newAdvisor,
       [event.currentTarget.name]: clientAmount[selectId].key,
-      irrelevant: clientAmount[selectId].value,
-      level: clientAmount[selectId].value})
+      level: (newAdvisor.level + clientAmount[selectId].value) * 1
+    });
+    setLastValue(clientAmount[selectId].value)
   } else {
       setNewAdvisor({
         ...newAdvisor,
         [event.currentTarget.name]: clientAmount[selectId].key,
-        irrelevant: clientAmount[selectId].value,
-        level: (newAdvisor.level - newAdvisor.irrelevant + clientAmount[selectId].value) * 1
-      })
+        level: (newAdvisor.level - lastValue + clientAmount[selectId].value) * 1
+      });
+      setLastValue(clientAmount[selectId].value)
     }
   }
 
   const investableAssetsInput = event => {
     let selectId = parseInt(event.currentTarget.id) - 22;
-    setScore(score + investableAssets[selectId].value)
-    setNewAdvisor({
-      ...newAdvisor,
-      [event.currentTarget.name]: investableAssets[selectId].key,
-      level: (newAdvisor.level + investableAssets[selectId].value) * 1
-    })
+    setAssetTally(assetTally + 1);
+    if (assetTally < 1) {
+      setNewAdvisor({
+        ...newAdvisor,
+        [event.currentTarget.name]: investableAssets[selectId].key,
+        level: (newAdvisor.level + investableAssets[selectId].value) * 1
+      });
+      setLastValueTwo(investableAssets[selectId].value)
+    } else {
+      setNewAdvisor({
+        ...newAdvisor,
+        [event.currentTarget.name]: investableAssets[selectId].key,
+        level: (newAdvisor.level - lastValueTwo + investableAssets[selectId].value) * 1
+      });
+      setLastValueTwo(investableAssets[selectId].value)
+    }
   }
+
 console.log(score)
   const clientIncomeInput = event => {
     let selectId = parseInt(event.currentTarget.id) - 25;

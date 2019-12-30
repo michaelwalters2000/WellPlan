@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2019_12_28_222450) do
   enable_extension "plpgsql"
 
   create_table "advisors", force: :cascade do |t|
+    t.integer "level"
+    t.integer "score"
     t.string "experienceYears"
     t.string "clientNumber"
     t.string "avgClientInvestableAssets"
@@ -32,8 +34,8 @@ ActiveRecord::Schema.define(version: 2019_12_28_222450) do
     t.string "certifications"
     t.boolean "independent"
     t.string "firm"
-    t.integer "level"
     t.integer "irrelevant"
+    t.integer "irrelevantTwo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

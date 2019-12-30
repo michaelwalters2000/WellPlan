@@ -16,6 +16,8 @@ class Api::V1::AdvisorsController < ApplicationController
 private
   def advisor_params
     params.require(:advisor).permit(
+      :level,
+      :score,
       :experienceYears,
       :clientNumber,
       :avgClientInvestableAssets,
@@ -31,9 +33,7 @@ private
       :clientRating,
       :certifications,
       :independent,
-      :firm,
-      :level,
-      :irrelevant
+      :firm
     )
   end
 end
