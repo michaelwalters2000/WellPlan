@@ -19,21 +19,13 @@ const AdvisorFormContainer = props => {
   const clientNumberInput = event => {
     let selectId = parseInt(event.currentTarget.id) - 19;
     setTally(tally + 1);
-    setScore(score + clientAmount[selectId].value);
-<<<<<<< HEAD
-    setNewAdvisor({
-      ...newAdvisor,
-      [event.currentTarget.name]: clientAmount[selectId].key,
-      level: (newAdvisor.level + clientAmount[selectId].value) * 1
-=======
+    setScore(score + clientAmount[selectId].value)
     if (tally < 1) {
     setNewAdvisor({
       ...newAdvisor,
       [event.currentTarget.name]: clientAmount[selectId].key,
       irrelevant: clientAmount[selectId].value,
-      level: clientAmount[selectId].value
->>>>>>> aform
-    })
+      level: clientAmount[selectId].value})
   } else {
       setNewAdvisor({
         ...newAdvisor,

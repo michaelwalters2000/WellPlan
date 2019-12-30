@@ -24,9 +24,7 @@ const AdvisorFormPage = (props) => {
     clientRating: "",
     certifications: "",
     independent: "",
-    firm: "",
-<<<<<<< HEAD
-    level: "",
+    firm: "",level: "",
     irrelevant: ""
   })
 

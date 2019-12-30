@@ -33,10 +33,7 @@ ActiveRecord::Schema.define(version: 2019_12_28_222450) do
     t.boolean "independent"
     t.string "firm"
     t.integer "level"
-<<<<<<< HEAD
-=======
     t.integer "irrelevant"
->>>>>>> aform
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
