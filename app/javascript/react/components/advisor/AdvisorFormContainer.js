@@ -4,33 +4,49 @@ import AdvisorForm from "./AdvisorForm"
 const AdvisorFormContainer = props => {
   let newAdvisor = props.newAdvisor;
   let setNewAdvisor = props.setNewAdvisor;
-  const [income, setIncome] = useState([])
+  const [score, setScore] = useState(0)
+  const [tally, setTally] = useState(0)
+  const [tryOne, setTryOne] = useState()
 
   const [equity, setEquity] = useState(<div></div>)
   const [four, setFour] = useState(<div></div>)
   const [stocks, setStocks] = useState(<div></div>)
 
-  const clientAmount = ["< 50", "50 - 100", "100 <"]
-  const investableAssets = ["< $250,000", "< $1,000,000", "$1,000,000 <"]
+  const clientAmount = [{key:"< 50", value:1}, {key:"50 - 100", value:3},{key:"100 <",value:5}]
+  const investableAssets = [{key:"< $250,000", value:1},{key:"< $1,000,000", value:5},{key:"$1,000,000 <", value:10}]
   const businessOwners = ["< 5%", "< 10%", "10% <"]
-  const certificationsList = ["CFP","AIF","PFS","CHFC","NAPFA","FPA"]
 
   const clientNumberInput = event => {
     let selectId = parseInt(event.currentTarget.id) - 19;
+    setTally(tally + 1);
+    setScore(score + clientAmount[selectId].value);
+    if (tally < 1) {
     setNewAdvisor({
       ...newAdvisor,
-      [event.currentTarget.name]: clientAmount[selectId]
+      [event.currentTarget.name]: clientAmount[selectId].key,
+      irrelevant: clientAmount[selectId].value,
+      level: clientAmount[selectId].value
     })
+  } else {
+      setNewAdvisor({
+        ...newAdvisor,
+        [event.currentTarget.name]: clientAmount[selectId].key,
+        irrelevant: clientAmount[selectId].value,
+        level: (newAdvisor.level - newAdvisor.irrelevant + clientAmount[selectId].value) * 1
+      })
+    }
   }
 
   const investableAssetsInput = event => {
     let selectId = parseInt(event.currentTarget.id) - 22;
+    setScore(score + investableAssets[selectId].value)
     setNewAdvisor({
       ...newAdvisor,
-      [event.currentTarget.name]: investableAssets[selectId]
+      [event.currentTarget.name]: investableAssets[selectId].key,
+      level: (newAdvisor.level + investableAssets[selectId].value) * 1
     })
   }
-
+console.log(score)
   const clientIncomeInput = event => {
     let selectId = parseInt(event.currentTarget.id) - 25;
     setNewAdvisor({
@@ -73,14 +89,6 @@ const AdvisorFormContainer = props => {
       certifications: newList
     })
   }
-
-  // let id = event.currentTarget.id;
-  // let idArray = id.split("");
-  // let newIdArray = idArray.splice(2,10);
-  // let certificationArray = idArray.splice(0,2);
-  // let newId = newIdArray.toString();
-  // let certification = certificationArray.toString();
-  // let selectId = parseInt(newId) - 39;
 
   return(
     <AdvisorForm

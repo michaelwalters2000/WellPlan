@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2019_12_03_000837) do
     t.string "certifications"
     t.boolean "independent"
     t.string "firm"
+    t.integer "level"
+    t.integer "irrelevant"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

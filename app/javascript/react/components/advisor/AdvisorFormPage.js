@@ -24,7 +24,9 @@ const AdvisorFormPage = (props) => {
     clientRating: "",
     certifications: "",
     independent: "",
-    firm: ""
+    firm: "",
+    level: "",
+    irrelevant: ""
   })
 
   // const clientAmount = ["< 50", "$50 - 100", "100 <"]
@@ -127,7 +129,9 @@ const AdvisorFormPage = (props) => {
       clientRating: "",
       certifications: "",
       independent: "",
-      firm: ""
+      firm: "",
+      level: "",
+      irrelevant: ""
     })
     setErrors({})
   }
@@ -170,7 +174,9 @@ const AdvisorFormPage = (props) => {
     clientRating:newAdvisor.clientRating,
     certifications:newAdvisor.certifications,
     independent:newAdvisor.independent,
-    firm:newAdvisor.firm
+    firm:newAdvisor.firm,
+    level:newAdvisor.level,
+    irrelevant:newAdvisor.irrelevant
   }
 
   addNewAdvisor(payload)
@@ -190,7 +196,9 @@ const AdvisorFormPage = (props) => {
     clientRating: "",
     certifications: "",
     independent: "",
-    firm: ""
+    firm: "",
+    level: "",
+    irrelevant: ""
   })
 }
 

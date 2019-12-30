@@ -17,6 +17,8 @@ class CreateAdvisors < ActiveRecord::Migration[5.2]
       t.string :certifications
       t.boolean :independent
       t.string :firm
+      t.integer :level
+      t.integer :irrelevant
 
       t.timestamps
     end
