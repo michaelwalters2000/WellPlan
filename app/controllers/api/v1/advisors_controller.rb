@@ -31,7 +31,8 @@ private
       :clientRating,
       :certifications,
       :independent,
-      :firm
+      :firm,
+      :level
     )
   end
 end
