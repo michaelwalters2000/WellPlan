@@ -32,12 +32,8 @@ private
       :certifications,
       :independent,
       :firm,
-<<<<<<< HEAD
-      :level
-=======
       :level,
       :irrelevant
->>>>>>> aform
     )
   end
 end

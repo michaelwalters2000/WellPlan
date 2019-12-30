@@ -18,10 +18,7 @@ class CreateAdvisors < ActiveRecord::Migration[5.2]
       t.boolean :independent
       t.string :firm
       t.integer :level
-<<<<<<< HEAD
-=======
       t.integer :irrelevant
->>>>>>> aform
 
       t.timestamps
     end
