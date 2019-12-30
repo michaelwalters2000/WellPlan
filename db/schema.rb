@@ -29,13 +29,12 @@ ActiveRecord::Schema.define(version: 2019_12_28_222450) do
     t.string "clientBusinessOwners"
     t.boolean "discipinaryAction"
     t.text "explanation"
+    t.boolean "moreThan10PercentAnnuitiesOrEmployerPensions"
     t.integer "clientCapacity"
     t.integer "clientRating"
     t.string "certifications"
     t.boolean "independent"
     t.string "firm"
-    t.integer "irrelevant"
-    t.integer "irrelevantTwo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

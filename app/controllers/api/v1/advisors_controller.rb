@@ -29,6 +29,7 @@ private
       :clientBusinessOwners,
       :discipinaryAction,
       :explanation,
+      :moreThan10PercentAnnuitiesOrEmployerPensions,
       :clientCapacity,
       :clientRating,
       :certifications,

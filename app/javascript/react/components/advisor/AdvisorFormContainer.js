@@ -7,8 +7,21 @@ const AdvisorFormContainer = props => {
   const [score, setScore] = useState(0)
   const [clientTally, setClientTally] = useState(0)
   const [assetTally, setAssetTally] = useState(0)
+  const [incomeTally, setIncomeTally] = useState(0)
+  const [annuitiesTally, setAnnuitiesTally] = useState(0)
+
   const [lastValue, setLastValue] = useState()
   const [lastValueTwo, setLastValueTwo] = useState()
+  const [lastValueThree, setLastValueThree] = useState()
+  const [lastValueFour, setLastValueFour] = useState()
+
+  const [cfp, setCfp] = useState("")
+  const [aif, setAif] = useState("")
+  const [pfs, setPfs] = useState("")
+  const [chfc, setChfc] = useState("")
+  const [napfa, setNapfa] = useState("")
+  const [fpa, setFpa] = useState("")
+  const [certificationCount, setCertificationCount] = useState(0)
 
   const [equity, setEquity] = useState(<div></div>)
   const [four, setFour] = useState(<div></div>)
@@ -16,6 +29,7 @@ const AdvisorFormContainer = props => {
 
   const clientAmount = [{key:"< 50", value:1}, {key:"50 - 100", value:3},{key:"100 <",value:5}]
   const investableAssets = [{key:"< $250,000", value:1},{key:"< $1,000,000", value:5},{key:"$1,000,000 <", value:10}]
+  const combinedIncome = [{key:"< $200,000", value:1},{key:"$200,000 - $500,000", value:3},{key:"$500,000 - $1,000,000", value:5},{key:"$1,000,000 <", value:10}]
   const businessOwners = ["< 5%", "< 10%", "10% <"]
 
   const clientNumberInput = event => {
@@ -25,22 +39,14 @@ const AdvisorFormContainer = props => {
     setNewAdvisor({
       ...newAdvisor,
       [event.currentTarget.name]: clientAmount[selectId].key,
-<<<<<<< HEAD
       score: (newAdvisor.score + clientAmount[selectId].value) * 1
-=======
-      level: (newAdvisor.level + clientAmount[selectId].value) * 1
->>>>>>> master
     });
     setLastValue(clientAmount[selectId].value)
   } else {
       setNewAdvisor({
         ...newAdvisor,
         [event.currentTarget.name]: clientAmount[selectId].key,
-<<<<<<< HEAD
         score: (newAdvisor.score - lastValue + clientAmount[selectId].value) * 1
-=======
-        level: (newAdvisor.level - lastValue + clientAmount[selectId].value) * 1
->>>>>>> master
       });
       setLastValue(clientAmount[selectId].value)
     }
@@ -53,70 +59,104 @@ const AdvisorFormContainer = props => {
       setNewAdvisor({
         ...newAdvisor,
         [event.currentTarget.name]: investableAssets[selectId].key,
-<<<<<<< HEAD
         score: (newAdvisor.score + investableAssets[selectId].value) * 1
-=======
-        level: (newAdvisor.level + investableAssets[selectId].value) * 1
->>>>>>> master
       });
       setLastValueTwo(investableAssets[selectId].value)
     } else {
       setNewAdvisor({
         ...newAdvisor,
         [event.currentTarget.name]: investableAssets[selectId].key,
-<<<<<<< HEAD
         score: (newAdvisor.score - lastValueTwo + investableAssets[selectId].value) * 1
-=======
-        level: (newAdvisor.level - lastValueTwo + investableAssets[selectId].value) * 1
->>>>>>> master
       });
       setLastValueTwo(investableAssets[selectId].value)
     }
   }
 
-console.log(score)
   const clientIncomeInput = event => {
     let selectId = parseInt(event.currentTarget.id) - 25;
-    setNewAdvisor({
-      ...newAdvisor,
-      [event.currentTarget.name]: investableAssets[selectId]
-    })
+    setIncomeTally(incomeTally + 1);
+    if (incomeTally < 1) {
+      setNewAdvisor({
+        ...newAdvisor,
+        [event.currentTarget.name]: combinedIncome[selectId].key,
+        score: (newAdvisor.score + combinedIncome[selectId].value) * 1
+      });
+      setLastValueThree(combinedIncome[selectId].value)
+    } else {
+      setNewAdvisor({
+        ...newAdvisor,
+        [event.currentTarget.name]: combinedIncome[selectId].key,
+        score: (newAdvisor.score - lastValueThree + combinedIncome[selectId].value) * 1
+      });
+      setLastValueThree(combinedIncome[selectId].value)
+    }
   }
 
   const businessOwnersInput = event => {
-    let selectId = parseInt(event.currentTarget.id) - 32;
+    let selectId = parseInt(event.currentTarget.id) - 33;
     setNewAdvisor({
       ...newAdvisor,
       [event.currentTarget.name]: businessOwners[selectId]
     })
   }
 
-  let cList = []
-
-  const cfpInput = event => {cList.push("CFP")}
-  const aifInput = event => {cList.push("AIF")}
-  const pfsInput = event => {cList.push("PFS")}
-  const chfcInput = event => {cList.push("CHFC")}
-  const napfaInput = event => {cList.push("NAPFA")}
-  const fpaInput = event => {cList.push("FPA")}
-
-  const handleIndependentTrue = event => {
-    let newList = cList.toString()
-    setNewAdvisor({
-      ...newAdvisor,
-      independent: "true",
-      certifications: newList
-    });
+  const annuitiesOrEmployerPensions = event => {
+    let annuitiesAnswer
+    let selectId = parseInt(event.currentTarget.id);
+    if (selectId === 38) {
+      annuitiesAnswer = "true";
+      setAnnuitiesTally(annuitiesTally + 1);
+      setNewAdvisor({
+        ...newAdvisor,
+        moreThan10PercentAnnuitiesOrEmployerPensions: annuitiesAnswer,
+        score: newAdvisor.score + 10
+      })
+  } else if (selectId === 39) {
+    annuitiesAnswer = "false";
+    if (annuitiesTally > 0) {
+      setNewAdvisor({
+        ...newAdvisor,
+        score: newAdvisor.score - 10,
+        moreThan10PercentAnnuitiesOrEmployerPensions: annuitiesAnswer
+      })
+    } else {
+      setNewAdvisor({
+        ...newAdvisor,
+        moreThan10PercentAnnuitiesOrEmployerPensions: annuitiesAnswer
+      })
+    }
+  }
 }
 
-  const handleIndependentFalse = event => {
-    let newList = cList.toString()
-    setNewAdvisor({
-      ...newAdvisor,
-      independent: "false",
-      certifications: newList
+  const cfpInput = event => {setCfp("CFP"); setCertificationCount(certificationCount + 1)}
+  const aifInput = event => {setAif("AIF"); setCertificationCount(certificationCount + 1)}
+  const pfsInput = event => {setPfs("PFS"); setCertificationCount(certificationCount + 1)}
+  const chfcInput = event => {setChfc("CHFC"); setCertificationCount(certificationCount + 1)}
+  const napfaInput = event => {setNapfa("NAPFA"); setCertificationCount(certificationCount + 1)}
+  const fpaInput = event => {setFpa("FPA"); setCertificationCount(certificationCount + 1)}
+
+  let certificationsList = [cfp, aif, pfs, chfc, napfa, fpa]
+  let newList = certificationsList.toString()
+
+  const handleIndependentAnswer = event => {
+    let independentAnswer
+    let selectId = parseInt(event.currentTarget.id);
+    if (selectId === 46) {independentAnswer = "true"} else if (selectId === 47) {independentAnswer = "false"};
+    if (certificationCount > 1) {
+      setNewAdvisor({
+        ...newAdvisor,
+        independent: independentAnswer,
+        certifications: newList,
+        score: newAdvisor.score + 10
+      })
+    } else {
+      setNewAdvisor({
+        ...newAdvisor,
+        independent: independentAnswer,
+        certifications: newList,
     })
   }
+}
 
   return(
     <AdvisorForm
@@ -132,8 +172,8 @@ console.log(score)
       investableAssetsInput={investableAssetsInput}
       clientIncomeInput={clientIncomeInput}
       businessOwnersInput={businessOwnersInput}
-      handleIndependentTrue={handleIndependentTrue}
-      handleIndependentFalse={handleIndependentFalse}
+      annuitiesOrEmployerPensions={annuitiesOrEmployerPensions}
+      handleIndependentAnswer={handleIndependentAnswer}
       cfpInput={cfpInput}
       aifInput={aifInput}
       pfsInput={pfsInput}

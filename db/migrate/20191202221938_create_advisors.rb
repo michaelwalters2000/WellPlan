@@ -14,6 +14,7 @@ class CreateAdvisors < ActiveRecord::Migration[5.2]
       t.string :clientBusinessOwners
       t.boolean :discipinaryAction
       t.text :explanation
+      t.boolean :moreThan10PercentAnnuitiesOrEmployerPensions
       t.integer :clientCapacity
       t.integer :clientRating
       t.string :certifications
