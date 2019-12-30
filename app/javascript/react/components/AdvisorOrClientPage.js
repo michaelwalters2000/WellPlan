@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom'
 const AdvisorOrClientPage = props => {
   return(
   <center>
-  <form className="advisor-client-box">
-  <div className="advisor-client-question">I am a</div>
-  <div className="colums">
-  <div><Link to={`/clients/`} className="client-box">Client</Link></div>
-  <div><Link to={`/advisors/`} className="advisor-box">Advisor</Link></div>
-  </div>
-  </form>
+    <form className="advisor-client-box">
+      <div className="advisor-client-question">I am a</div>
+      <div className="colums">
+        <div><Link to={`/clients/`} className="client-box">Client</Link></div>
+        <div><Link to={`/advisors/`} className="advisor-box">Advisor</Link></div>
+      </div>
+    </form>
   </center>
-)
+  )
 }
 
 export default AdvisorOrClientPage

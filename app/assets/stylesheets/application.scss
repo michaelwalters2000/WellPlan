@@ -309,24 +309,27 @@
 
 .client-box {
   border: 3px solid;
-  width: 50%;
+  padding: 30% 30%;
+  position: relative;
+  top: 240px; left: 0px;
   text-align:center;
   background-color: blue;
   color: white;
   font-size: 75px;
-  height: 400px;
   margin-top: 50px;
   border-radius: 25px;
+  font-family:Roboto, Arial, sans-serif
 }
 
 .advisor-box {
   border: 3px solid;
-  width: 50%;
+  padding: 30% 25%;
+  position: relative;
+  top: 240px; left: 0px;
   text-align:center;
   background-color: green;
   color: white;
   font-size: 75px;
-  height: 400px;
   margin-top: 50px;
   border-radius: 25px;
   font-family:Roboto, Arial, sans-serif

@@ -9,6 +9,8 @@ const AdvisorFormPage = (props) => {
   const [selectNumber, setSelectNumber] = useState();
   const [select, setSelect] = useState();
   const [newAdvisor, setNewAdvisor] = useState({
+    level: "",
+    score: "",
     experienceYears: "",
     clientNumber: "",
     avgClientInvestableAssets: "",
@@ -24,9 +26,7 @@ const AdvisorFormPage = (props) => {
     clientRating: "",
     certifications: "",
     independent: "",
-    firm: "",
-    level: "",
-    irrelevant: ""
+    firm: ""
   })
 
   // const clientAmount = ["< 50", "$50 - 100", "100 <"]
@@ -114,6 +114,8 @@ const AdvisorFormPage = (props) => {
   const clearFields = (event) => {
     event.preventDefault()
     setNewAdvisor({
+      level: "",
+      score: "",
       experienceYears: "",
       clientNumber: "",
       avgClientInvestableAssets: "",
@@ -129,9 +131,7 @@ const AdvisorFormPage = (props) => {
       clientRating: "",
       certifications: "",
       independent: "",
-      firm: "",
-      level: "",
-      irrelevant: ""
+      firm: ""
     })
     setErrors({})
   }
@@ -159,6 +159,8 @@ const AdvisorFormPage = (props) => {
   }
 
   let payload = {
+    level:newAdvisor.level,
+    score:newAdvisor.score,
     experienceYears:newAdvisor.experienceYears,
     clientNumber:newAdvisor.clientNumber,
     avgClientInvestableAssets:newAdvisor.avgClientInvestableAssets,
@@ -174,13 +176,13 @@ const AdvisorFormPage = (props) => {
     clientRating:newAdvisor.clientRating,
     certifications:newAdvisor.certifications,
     independent:newAdvisor.independent,
-    firm:newAdvisor.firm,
-    level:newAdvisor.level,
-    irrelevant:newAdvisor.irrelevant
+    firm:newAdvisor.firm
   }
 
   addNewAdvisor(payload)
   setNewAdvisor({
+    level: "",
+    score: "",
     experienceYears: "",
     clientNumber: "",
     avgClientInvestableAssets: "",
@@ -196,9 +198,7 @@ const AdvisorFormPage = (props) => {
     clientRating: "",
     certifications: "",
     independent: "",
-    firm: "",
-    level: "",
-    irrelevant: ""
+    firm: ""
   })
 }
 

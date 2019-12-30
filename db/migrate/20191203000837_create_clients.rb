@@ -18,6 +18,7 @@ class CreateClients < ActiveRecord::Migration[5.2]
       t.boolean :stocksbonds
       t.string :stocksbondsamount
       t.boolean :pension
+      t.integer :level
 
       t.timestamps
     end

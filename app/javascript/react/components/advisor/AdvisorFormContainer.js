@@ -25,14 +25,22 @@ const AdvisorFormContainer = props => {
     setNewAdvisor({
       ...newAdvisor,
       [event.currentTarget.name]: clientAmount[selectId].key,
+<<<<<<< HEAD
       score: (newAdvisor.score + clientAmount[selectId].value) * 1
+=======
+      level: (newAdvisor.level + clientAmount[selectId].value) * 1
+>>>>>>> master
     });
     setLastValue(clientAmount[selectId].value)
   } else {
       setNewAdvisor({
         ...newAdvisor,
         [event.currentTarget.name]: clientAmount[selectId].key,
+<<<<<<< HEAD
         score: (newAdvisor.score - lastValue + clientAmount[selectId].value) * 1
+=======
+        level: (newAdvisor.level - lastValue + clientAmount[selectId].value) * 1
+>>>>>>> master
       });
       setLastValue(clientAmount[selectId].value)
     }
@@ -45,14 +53,22 @@ const AdvisorFormContainer = props => {
       setNewAdvisor({
         ...newAdvisor,
         [event.currentTarget.name]: investableAssets[selectId].key,
+<<<<<<< HEAD
         score: (newAdvisor.score + investableAssets[selectId].value) * 1
+=======
+        level: (newAdvisor.level + investableAssets[selectId].value) * 1
+>>>>>>> master
       });
       setLastValueTwo(investableAssets[selectId].value)
     } else {
       setNewAdvisor({
         ...newAdvisor,
         [event.currentTarget.name]: investableAssets[selectId].key,
+<<<<<<< HEAD
         score: (newAdvisor.score - lastValueTwo + investableAssets[selectId].value) * 1
+=======
+        level: (newAdvisor.level - lastValueTwo + investableAssets[selectId].value) * 1
+>>>>>>> master
       });
       setLastValueTwo(investableAssets[selectId].value)
     }
