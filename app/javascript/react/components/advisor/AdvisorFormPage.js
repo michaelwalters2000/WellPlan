@@ -18,6 +18,7 @@ const AdvisorFormPage = (props) => {
     totalClientsInvestableAssets: "",
     mutualFundsETFs: "",
     individualSecurities: "",
+    stocksAndBonds: "",
     totalStocksAndBonds: "",
     clientBusinessOwners: "",
     discipinaryAction: "",
@@ -124,6 +125,7 @@ const AdvisorFormPage = (props) => {
       totalClientsInvestableAssets: "",
       mutualFundsETFs: "",
       individualSecurities: "",
+      stocksAndBonds: "",
       totalStocksAndBonds: "",
       clientBusinessOwners: "",
       discipinaryAction: "",
@@ -170,6 +172,7 @@ const AdvisorFormPage = (props) => {
     totalClientsInvestableAssets:newAdvisor.totalClientsInvestableAssets,
     mutualFundsETFs:newAdvisor.mutualFundsETFs,
     individualSecurities:newAdvisor.individualSecurities,
+    stocksAndBonds:newAdvisor.stocksAndBonds,
     totalStocksAndBonds:newAdvisor.totalStocksAndBonds,
     clientBusinessOwners:newAdvisor.clientBusinessOwners,
     discipinaryAction:newAdvisor.discipinaryAction,
@@ -193,6 +196,7 @@ const AdvisorFormPage = (props) => {
     totalClientsInvestableAssets: "",
     mutualFundsETFs: "",
     individualSecurities: "",
+    stocksAndBonds: "",
     totalStocksAndBonds: "",
     clientBusinessOwners: "",
     discipinaryAction: "",
@@ -235,7 +239,7 @@ const addNewAdvisor = payload => {
   }
 
 if (shouldRedirect){
-  return <Redirect to="/" />
+  return <Redirect to="/match" />
 }
 
   return(

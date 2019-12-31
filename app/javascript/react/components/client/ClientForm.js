@@ -310,7 +310,7 @@ const ClientForm = props => {
            </div>
 
       <div className="btn-block">
-         <button type="submit" href="/">Submit</button>
+         <button type="submit" onClick={props.handleScore} href="/">Submit</button>
        </div>
      </form>
    </div>

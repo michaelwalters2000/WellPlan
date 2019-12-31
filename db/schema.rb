@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_12_28_222450) do
     t.string "totalClientsInvestableAssets"
     t.boolean "mutualFundsETFs"
     t.boolean "individualSecurities"
+    t.boolean "stocksAndBonds"
     t.string "totalStocksAndBonds"
     t.string "clientBusinessOwners"
     t.boolean "discipinaryAction"
@@ -40,6 +41,8 @@ ActiveRecord::Schema.define(version: 2019_12_28_222450) do
   end
 
   create_table "clients", force: :cascade do |t|
+    t.integer "level"
+    t.integer "score"
     t.integer "age"
     t.boolean "spouse"
     t.boolean "kids"
@@ -57,7 +60,6 @@ ActiveRecord::Schema.define(version: 2019_12_28_222450) do
     t.boolean "stocksbonds"
     t.string "stocksbondsamount"
     t.boolean "pension"
-    t.integer "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

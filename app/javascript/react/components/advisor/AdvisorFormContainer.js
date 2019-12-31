@@ -9,6 +9,7 @@ const AdvisorFormContainer = props => {
   const [assetTally, setAssetTally] = useState(0)
   const [incomeTally, setIncomeTally] = useState(0)
   const [annuitiesTally, setAnnuitiesTally] = useState(0)
+  const [stocksTally, setStocksTally] = useState(0)
 
   const [lastValue, setLastValue] = useState()
   const [lastValueTwo, setLastValueTwo] = useState()
@@ -93,17 +94,45 @@ const AdvisorFormContainer = props => {
   }
 
   const businessOwnersInput = event => {
-    let selectId = parseInt(event.currentTarget.id) - 33;
+    let selectId = parseInt(event.currentTarget.id) - 35;
     setNewAdvisor({
       ...newAdvisor,
       [event.currentTarget.name]: businessOwners[selectId]
     })
   }
 
+    const stocksAndBondsBoolean = event => {
+      let stocksAnswer
+      let selectId = parseInt(event.currentTarget.id);
+      if (selectId === 36) {
+        stocksAnswer = "true";
+        setStocksTally(stocksTally + 1);
+        setNewAdvisor({
+          ...newAdvisor,
+          stocksAndBonds: stocksAnswer,
+          score: newAdvisor.score + 10
+        })
+      } else if (selectId === 37) {
+        stocksAnswer = "false";
+        if (stocksTally > 0) {
+          setNewAdvisor({
+            ...newAdvisor,
+            score: newAdvisor.score - 10,
+            stocksAndBonds: stocksAnswer
+          })
+        } else {
+          setNewAdvisor({
+            ...newAdvisor,
+            stocksAndBonds: stocksAnswer
+          })
+        }
+      }
+    }
+
   const annuitiesOrEmployerPensions = event => {
     let annuitiesAnswer
     let selectId = parseInt(event.currentTarget.id);
-    if (selectId === 38) {
+    if (selectId === 40) {
       annuitiesAnswer = "true";
       setAnnuitiesTally(annuitiesTally + 1);
       setNewAdvisor({
@@ -111,7 +140,7 @@ const AdvisorFormContainer = props => {
         moreThan10PercentAnnuitiesOrEmployerPensions: annuitiesAnswer,
         score: newAdvisor.score + 10
       })
-  } else if (selectId === 39) {
+  } else if (selectId === 41) {
     annuitiesAnswer = "false";
     if (annuitiesTally > 0) {
       setNewAdvisor({
@@ -141,7 +170,7 @@ const AdvisorFormContainer = props => {
   const handleIndependentAnswer = event => {
     let independentAnswer
     let selectId = parseInt(event.currentTarget.id);
-    if (selectId === 46) {independentAnswer = "true"} else if (selectId === 47) {independentAnswer = "false"};
+    if (selectId === 48) {independentAnswer = "true"} else if (selectId === 49) {independentAnswer = "false"};
     if (certificationCount > 1) {
       setNewAdvisor({
         ...newAdvisor,
@@ -174,6 +203,7 @@ const AdvisorFormContainer = props => {
       businessOwnersInput={businessOwnersInput}
       annuitiesOrEmployerPensions={annuitiesOrEmployerPensions}
       handleIndependentAnswer={handleIndependentAnswer}
+      stocksAndBondsBoolean={stocksAndBondsBoolean}
       cfpInput={cfpInput}
       aifInput={aifInput}
       pfsInput={pfsInput}

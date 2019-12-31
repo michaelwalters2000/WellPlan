@@ -10,6 +10,7 @@ class CreateAdvisors < ActiveRecord::Migration[5.2]
       t.string :totalClientsInvestableAssets
       t.boolean :mutualFundsETFs
       t.boolean :individualSecurities
+      t.boolean :stocksAndBonds
       t.string :totalStocksAndBonds
       t.string :clientBusinessOwners
       t.boolean :discipinaryAction

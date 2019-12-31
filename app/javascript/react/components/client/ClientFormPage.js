@@ -9,6 +9,8 @@ const ClientFormPage = (props) => {
   const [selectNumber, setSelectNumber] = useState();
   const [select, setSelect] = useState();
   const [newClient, setNewClient] = useState({
+    level: "",
+    score: "",
     age: "",
     spouse: "",
     kids: "",
@@ -113,6 +115,8 @@ const ClientFormPage = (props) => {
   const clearFields = (event) => {
     event.preventDefault()
     setNewClient({
+      level: "",
+      score: "",
       age: "",
       spouse: "",
       kids: "",
@@ -136,7 +140,7 @@ const ClientFormPage = (props) => {
 
   const validForSubmission = () => {
     let submitErrors = {}
-    const requiredFields = ["age", "spouse"]
+    const requiredFields = []
     requiredFields.forEach(field => {
       if (newClient[field].trim() === "") {
         submitErrors = {
@@ -150,12 +154,15 @@ const ClientFormPage = (props) => {
   }
 //, "spouse", "kids", "homeowner", "businessowner", "income", "retirement", "stocksbonds", "pension"
   const handleClientSubmit = (event) => {
+
   event.preventDefault()
   if (!validForSubmission()){
     return
   }
 
   let payload = {
+    level:newClient.level,
+    score:newClient.score,
     age:newClient.age,
     spouse:newClient.spouse,
     kids:newClient.kids,
@@ -177,6 +184,8 @@ const ClientFormPage = (props) => {
 
   addNewClient(payload)
   setNewClient({
+    level: "",
+    score: "",
     age: "",
     spouse: "",
     kids: "",
