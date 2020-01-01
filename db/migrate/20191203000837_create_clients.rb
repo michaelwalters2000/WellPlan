@@ -6,9 +6,7 @@ class CreateClients < ActiveRecord::Migration[5.2]
       t.integer :age
       t.boolean :spouse
       t.boolean :kids
-      t.string :kids0to5
-      t.string :kids6to12
-      t.string :kids13to18
+      t.string :kidsNumber
       t.boolean :homeowner
       t.string :equity
       t.boolean :morethan1home

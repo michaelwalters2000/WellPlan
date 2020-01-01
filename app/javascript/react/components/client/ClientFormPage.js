@@ -14,9 +14,7 @@ const ClientFormPage = (props) => {
     age: "",
     spouse: "",
     kids: "",
-    kids0to5: "",
-    kids6to12: "",
-    kids13to18: "",
+    kidsNumber: "",
     homeowner: "",
     equity: "",
     morethan1home: "",
@@ -30,52 +28,6 @@ const ClientFormPage = (props) => {
     pension: ""
   })
 
-  const equityValues = ["< $0", "$0 - $200,000", "$200,000 <"]
-  const incomeValues = ["< $50,000", "$50,000 - $100,000", "$100,000 - $200,000", "$200,000 <"]
-  const spouseIncomeValues = ["< $50,000", "$50,000 - $100,000","$100,000 - $200,000", "$200,000 <"]
-  const valuesOf401k = ["< $250,000", "$250,000 - $500,000", "$500,000 - $1,000,000", "$1,000,000 <"]
-  const stocksValues = ["< $250,000", "$250,000 - $500,000", "$500,000 - $1,000,000", "$1,000,000 <"]
-
-  const equityInput = event => {
-    let selectId = parseInt(event.currentTarget.id);
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: equityValues[selectId]
-    })
-  }
-
-  const incomeInput = event => {
-    let selectId = parseInt(event.currentTarget.id) - 3;
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: incomeValues[selectId]
-    })
-  }
-
-  const spouseIncomeInput = event => {
-    let selectId = parseInt(event.currentTarget.id) - 7;
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: spouseIncomeValues[selectId]
-    })
-  }
-
-  const inputOf401kValue = event => {
-    let selectId = parseInt(event.currentTarget.id) - 11;
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: valuesOf401k[selectId]
-    })
-  }
-
-  const stocksBondsInput = event => {
-    let selectId = parseInt(event.currentTarget.id) - 15;
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: stocksValues[selectId]
-    })
-  }
-
   const handleFieldChange = event => {
     setNewClient({
       ...newClient,
@@ -88,14 +40,6 @@ const ClientFormPage = (props) => {
   const handleSelectValue = event => {
     let selected = event.currentTarget.value;
     return selected;
-  }
-
-  const handleSelectChange = event => {
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: selected
-
-    })
   }
 
   const handleRadioTrue = event => {
@@ -120,9 +64,7 @@ const ClientFormPage = (props) => {
       age: "",
       spouse: "",
       kids: "",
-      kids0to5: "",
-      kids6to12: "",
-      kids13to18: "",
+      kidsNumber: "",
       homeowner: "",
       equity: "",
       morethan1home: "",
@@ -166,9 +108,7 @@ const ClientFormPage = (props) => {
     age:newClient.age,
     spouse:newClient.spouse,
     kids:newClient.kids,
-    kids0to5:newClient.kids0to5,
-    kids6to12:newClient.kids6to12,
-    kids13to18:newClient.kids13to18,
+    kidsNumber:newClient.kidsNumber,
     homeowner:newClient.homeowner,
     equity:newClient.equity,
     morethan1home:newClient.morethan1home,
@@ -189,9 +129,7 @@ const ClientFormPage = (props) => {
     age: "",
     spouse: "",
     kids: "",
-    kids0to5: "",
-    kids6to12: "",
-    kids13to18: "",
+    kidsNumber: "",
     homeowner: "",
     equity: "",
     morethan1home: "",
@@ -242,18 +180,12 @@ if (shouldRedirect){
     <ClientFormContainer
     handleClientSubmit={handleClientSubmit}
     handleFieldChange={handleFieldChange}
-    handleSelectChange={handleSelectChange}
     handleSelectValue={handleSelectValue}
     selected={selected}
     handleRadioTrue={handleRadioTrue}
     handleRadioFalse={handleRadioFalse}
     setNewClient={setNewClient}
-    newClient={newClient}
-    equityInput={equityInput}
-    incomeInput={incomeInput}
-    spouseIncomeInput={spouseIncomeInput}
-    inputOf401kValue={inputOf401kValue}
-    stocksBondsInput={stocksBondsInput} />
+    newClient={newClient} />
   )
 }
 

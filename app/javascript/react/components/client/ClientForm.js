@@ -14,7 +14,7 @@ const ClientForm = props => {
       <br/>
       <div className="center-input">
         <label htmlFor="age">Age</label><br/>
-        <input className="short-input-bar" name="age" value={newClient.age} onChange={props.handleFieldChange} id="age" type="number" min="18" max="120" required/>
+        <input className="short-input-bar" name="age" value={newClient.age} onChange={props.handleFieldChange} id="age" type="number" min="18" max="120"/>
       </div>
       <div className="question">
       <div className="center-question">
@@ -56,17 +56,17 @@ const ClientForm = props => {
     <ul className="kids-ages-options">
     <li><p>Ages (0-5)</p>
     <select>
-   <option selected name="kids0to5" onClick={props.handleSelectChange} value={newClient.kids0to5} selected></option>
-   <option name="kids0to5" onClick={props.handleSelectValue} value="1">1</option>
-   <option name="kids0to5" onClick={props.handleSelectValue} value="2">2</option>
-   <option name="kids0to5" onClick={props.handleSelectValue} value="3">3</option>
-   <option name="kids0to5" onClick={props.handleSelectValue} value="4">4</option>
-   <option name="kids0to5" onClick={props.handleSelectValue} value="5">5</option>
-   <option name="kids0to5" onClick={props.handleSelectValue} value="6+">6+</option>
+   <option></option>
+   <option onClick={props.handleKids0to5} value="1">1</option>
+   <option value="2">2</option>
+   <option value="3">3</option>
+   <option value="4">4</option>
+   <option value="5">5</option>
+   <option value="6+">6+</option>
  </select></li>
  <li><p>Ages (6-12)</p>
  <select>
-   <option selected onChange={props.handleSelectChange} value={newClient.kids6to12} selected></option>
+   <option selected onChange={props.handleFieldChange} selected></option>
    <option value="1" >1</option>
    <option value="2">2</option>
    <option value="3">3</option>
@@ -214,12 +214,12 @@ const ClientForm = props => {
            <div className="checkboxes">
              <div className="question-answer">
                <div>
-                 <input onChange={props.handleRadioTrue} type="radio" value={newClient.retirement} id="radio_13" name="retirement"/>
-                 <label htmlFor="radio_13" className="radio"><span>Yes</span></label>
+                 <input onChange={props.handle401kBoolean} type="radio" value={newClient.retirement} id="50" name="retirement"/>
+                 <label htmlFor="50" className="radio"><span>Yes</span></label>
                </div>
                <div>
-                 <input onChange={props.handleRadioFalse} type="radio" value={newClient.retirement} id="radio_14" name="retirement"/>
-                 <label htmlFor="radio_14" className="radio"><span>No</span></label>
+                 <input onChange={props.handle401kBoolean} type="radio" value={newClient.retirement} id="51" name="retirement"/>
+                 <label htmlFor="51" className="radio"><span>No</span></label>
                </div>
              </div>
            </div>
@@ -256,12 +256,12 @@ const ClientForm = props => {
            <div className="checkboxes">
              <div className="question-answer">
                <div>
-                 <input onClick={props.bonds} onChange={props.handleRadioTrue} type="radio" value={newClient.stocksbonds} id="radio_15" name="stocksbonds"/>
-                 <label htmlFor="radio_15" className="radio"><span>Yes</span></label>
+                 <input onClick={props.bonds} onChange={props.handleStocksBoolean} type="radio" value={newClient.stocksbonds} id="52" name="stocksbonds"/>
+                 <label htmlFor="52" className="radio"><span>Yes</span></label>
                </div>
                <div>
-                 <input onClick={props.noBonds} onChange={props.handleRadioFalse} type="radio" value={newClient.stocksbonds} id="radio_16" name="stocksbonds"/>
-                 <label htmlFor="radio_16" className="radio"><span>No</span></label>
+                 <input onClick={props.noBonds} onChange={props.handleStocksBoolean} type="radio" value={newClient.stocksbonds} id="53" name="stocksbonds"/>
+                 <label htmlFor="53" className="radio"><span>No</span></label>
                </div>
              </div>
            </div>
@@ -298,12 +298,12 @@ const ClientForm = props => {
            <div className="checkboxes">
              <div className="question-answer">
                <div>
-                 <input onChange={props.handleRadioTrue} value={newClient.pension} type="radio" id="radio_17" name="pension"/>
-                 <label htmlFor="radio_17" className="radio"><span>Yes</span></label>
+                 <input onChange={props.handlePensionInput} type="radio" id="54" name="pension"/>
+                 <label htmlFor="54" className="radio"><span>Yes</span></label>
                </div>
                  <div>
-                   <input onChange={props.handleRadioFalse} value={newClient.pension} type="radio" id="radio_18" name="pension"/>
-                   <label htmlFor="radio_18" className="radio"><span>No</span></label>
+                   <input onChange={props.handlePensionInput} type="radio" id="55" name="pension"/>
+                   <label htmlFor="55" className="radio"><span>No</span></label>
                  </div>
                </div>
              </div>
