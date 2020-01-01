@@ -4,17 +4,9 @@ import AdvisorForm from "./AdvisorForm"
 const AdvisorFormContainer = props => {
   let newAdvisor = props.newAdvisor;
   let setNewAdvisor = props.setNewAdvisor;
-  const [score, setScore] = useState(0)
-  const [clientTally, setClientTally] = useState(0)
-  const [assetTally, setAssetTally] = useState(0)
-  const [incomeTally, setIncomeTally] = useState(0)
-  const [annuitiesTally, setAnnuitiesTally] = useState(0)
-  const [stocksTally, setStocksTally] = useState(0)
-
-  const [lastValue, setLastValue] = useState()
-  const [lastValueTwo, setLastValueTwo] = useState()
-  const [lastValueThree, setLastValueThree] = useState()
-  const [lastValueFour, setLastValueFour] = useState()
+  const [clientNumber, setClientNumber] = useState(0)
+  const [assets, setAssets] = useState(0)
+  const [income, setIncome] = useState(0)
 
   const [cfp, setCfp] = useState("")
   const [aif, setAif] = useState("")
@@ -35,127 +27,52 @@ const AdvisorFormContainer = props => {
 
   const clientNumberInput = event => {
     let selectId = parseInt(event.currentTarget.id) - 19;
-    setClientTally(clientTally + 1);
-    if (clientTally < 1) {
     setNewAdvisor({
       ...newAdvisor,
-      [event.currentTarget.name]: clientAmount[selectId].key,
-      score: (newAdvisor.score + clientAmount[selectId].value) * 1
+      clientNumber: clientAmount[selectId].key
     });
-    setLastValue(clientAmount[selectId].value)
-  } else {
-      setNewAdvisor({
-        ...newAdvisor,
-        [event.currentTarget.name]: clientAmount[selectId].key,
-        score: (newAdvisor.score - lastValue + clientAmount[selectId].value) * 1
-      });
-      setLastValue(clientAmount[selectId].value)
-    }
+    setClientNumber(clientAmount[selectId].value)
   }
 
   const investableAssetsInput = event => {
     let selectId = parseInt(event.currentTarget.id) - 22;
-    setAssetTally(assetTally + 1);
-    if (assetTally < 1) {
       setNewAdvisor({
         ...newAdvisor,
-        [event.currentTarget.name]: investableAssets[selectId].key,
-        score: (newAdvisor.score + investableAssets[selectId].value) * 1
+        avgClientInvestableAssets: investableAssets[selectId].key
       });
-      setLastValueTwo(investableAssets[selectId].value)
-    } else {
-      setNewAdvisor({
-        ...newAdvisor,
-        [event.currentTarget.name]: investableAssets[selectId].key,
-        score: (newAdvisor.score - lastValueTwo + investableAssets[selectId].value) * 1
-      });
-      setLastValueTwo(investableAssets[selectId].value)
+      setAssets(investableAssets[selectId].value)
     }
-  }
 
   const clientIncomeInput = event => {
     let selectId = parseInt(event.currentTarget.id) - 25;
-    setIncomeTally(incomeTally + 1);
-    if (incomeTally < 1) {
       setNewAdvisor({
         ...newAdvisor,
-        [event.currentTarget.name]: combinedIncome[selectId].key,
-        score: (newAdvisor.score + combinedIncome[selectId].value) * 1
+        totalClientIncome: combinedIncome[selectId].key
       });
-      setLastValueThree(combinedIncome[selectId].value)
-    } else {
-      setNewAdvisor({
-        ...newAdvisor,
-        [event.currentTarget.name]: combinedIncome[selectId].key,
-        score: (newAdvisor.score - lastValueThree + combinedIncome[selectId].value) * 1
-      });
-      setLastValueThree(combinedIncome[selectId].value)
+      setIncome(combinedIncome[selectId].value)
     }
-  }
 
   const businessOwnersInput = event => {
     let selectId = parseInt(event.currentTarget.id) - 35;
     setNewAdvisor({
       ...newAdvisor,
-      [event.currentTarget.name]: businessOwners[selectId]
+      clientBusinessOwners: businessOwners[selectId]
     })
   }
 
-    const stocksAndBondsBoolean = event => {
-      let stocksAnswer
-      let selectId = parseInt(event.currentTarget.id);
-      if (selectId === 36) {
-        stocksAnswer = "true";
-        setStocksTally(stocksTally + 1);
-        setNewAdvisor({
-          ...newAdvisor,
-          stocksAndBonds: stocksAnswer,
-          score: newAdvisor.score + 10
-        })
-      } else if (selectId === 37) {
-        stocksAnswer = "false";
-        if (stocksTally > 0) {
-          setNewAdvisor({
-            ...newAdvisor,
-            score: newAdvisor.score - 10,
-            stocksAndBonds: stocksAnswer
-          })
-        } else {
-          setNewAdvisor({
-            ...newAdvisor,
-            stocksAndBonds: stocksAnswer
-          })
-        }
-      }
-    }
-
-  const annuitiesOrEmployerPensions = event => {
-    let annuitiesAnswer
-    let selectId = parseInt(event.currentTarget.id);
-    if (selectId === 40) {
-      annuitiesAnswer = "true";
-      setAnnuitiesTally(annuitiesTally + 1);
-      setNewAdvisor({
-        ...newAdvisor,
-        moreThan10PercentAnnuitiesOrEmployerPensions: annuitiesAnswer,
-        score: newAdvisor.score + 10
-      })
-  } else if (selectId === 41) {
-    annuitiesAnswer = "false";
-    if (annuitiesTally > 0) {
-      setNewAdvisor({
-        ...newAdvisor,
-        score: newAdvisor.score - 10,
-        moreThan10PercentAnnuitiesOrEmployerPensions: annuitiesAnswer
-      })
-    } else {
-      setNewAdvisor({
-        ...newAdvisor,
-        moreThan10PercentAnnuitiesOrEmployerPensions: annuitiesAnswer
-      })
-    }
+  const handleRadioTrue = event => {
+    setNewAdvisor({
+      ...newAdvisor,
+      [event.currentTarget.name]: "true"
+    })
   }
-}
+
+  const handleRadioFalse = event => {
+    setNewAdvisor({
+      ...newAdvisor,
+      [event.currentTarget.name]: "false"
+    })
+  }
 
   const cfpInput = event => {setCfp("CFP"); setCertificationCount(certificationCount + 1)}
   const aifInput = event => {setAif("AIF"); setCertificationCount(certificationCount + 1)}
@@ -167,24 +84,31 @@ const AdvisorFormContainer = props => {
   let certificationsList = [cfp, aif, pfs, chfc, napfa, fpa]
   let newList = certificationsList.toString()
 
-  const handleIndependentAnswer = event => {
-    let independentAnswer
-    let selectId = parseInt(event.currentTarget.id);
-    if (selectId === 48) {independentAnswer = "true"} else if (selectId === 49) {independentAnswer = "false"};
-    if (certificationCount > 1) {
-      setNewAdvisor({
-        ...newAdvisor,
-        independent: independentAnswer,
-        certifications: newList,
-        score: newAdvisor.score + 10
-      })
-    } else {
-      setNewAdvisor({
-        ...newAdvisor,
-        independent: independentAnswer,
-        certifications: newList,
-    })
+const handleScore = event => {
+  let level
+  let stocksBonds = 0
+  let annuities = 0
+  let certification = 0
+
+  if (newAdvisor.stocksAndBonds === "true") {
+    stocksBonds = 10
   }
+  if (newAdvisor.moreThan10PercentAnnuitiesOrEmployerPensions === "true") {
+    annuities = 10
+  }
+  if (certificationCount > 1) {
+    certification = 10
+  }
+
+  let score = clientNumber + assets + income + stocksBonds + annuities + certification
+  if (score < 25) {level = 1} else if (score > 24 && score < 45) {level = 2} else if (score > 44) {level = 3}
+
+  setNewAdvisor({
+    ...newAdvisor,
+    level: level,
+    score: score,
+    certifications: newList
+  })
 }
 
   return(
@@ -194,22 +118,19 @@ const AdvisorFormContainer = props => {
       handleFieldChange={props.handleFieldChange}
       handleSelectChange={props.handleSelectChange}
       handleSelectValue={props.handleSelectValue}
-      selected={props.selected}
-      handleRadioTrue={props.handleRadioTrue}
-      handleRadioFalse={props.handleRadioFalse}
+      handleRadioTrue={handleRadioTrue}
+      handleRadioFalse={handleRadioFalse}
       clientNumberInput={clientNumberInput}
       investableAssetsInput={investableAssetsInput}
       clientIncomeInput={clientIncomeInput}
       businessOwnersInput={businessOwnersInput}
-      annuitiesOrEmployerPensions={annuitiesOrEmployerPensions}
-      handleIndependentAnswer={handleIndependentAnswer}
-      stocksAndBondsBoolean={stocksAndBondsBoolean}
       cfpInput={cfpInput}
       aifInput={aifInput}
       pfsInput={pfsInput}
       chfcInput={chfcInput}
       napfaInput={napfaInput}
-      fpaInput={fpaInput} />
+      fpaInput={fpaInput}
+      handleScore={handleScore} />
   )
 }
 
