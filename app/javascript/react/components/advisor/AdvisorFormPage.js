@@ -31,52 +31,6 @@ const AdvisorFormPage = (props) => {
     firm: ""
   })
 
-  // const clientAmount = ["< 50", "$50 - 100", "100 <"]
-  // const investableAssets = ["< $50,000", "$50,000 - $100,000", "$100,000 - $200,000", "$200,000 <"]
-  // const spouseIncomeValues = ["< $50,000", "$50,000 - $100,000","$100,000 - $200,000", "$200,000 <"]
-  // const valuesOf401k = ["< $250,000", "$250,000 - $500,000", "$500,000 - $1,000,000", "$1,000,000 <"]
-  // const stocksValues = ["< $250,000", "$250,000 - $500,000", "$500,000 - $1,000,000", "$1,000,000 <"]
-
-  // const clientNumberInput = event => {
-  //   let selectId = parseInt(event.currentTarget.id) - 19;
-  //   setNewAdvisor({
-  //     ...newAdvisor,
-  //     [event.currentTarget.name]: clientAmount[selectId]
-  //   })
-  // }
-
-  // const incomeInput = event => {
-  //   let selectId = parseInt(event.currentTarget.id) - 3;
-  //   setNewAdvisor({
-  //     ...newAdvisor,
-  //     [event.currentTarget.name]: incomeValues[selectId]
-  //   })
-  // }
-  //
-  // const spouseIncomeInput = event => {
-  //   let selectId = parseInt(event.currentTarget.id) - 7;
-  //   setNewAdvisor({
-  //     ...newAdvisor,
-  //     [event.currentTarget.name]: spouseIncomeValues[selectId]
-  //   })
-  // }
-  //
-  // const inputOf401kValue = event => {
-  //   let selectId = parseInt(event.currentTarget.id) - 11;
-  //   setNewAdvisor({
-  //     ...newAdvisor,
-  //     [event.currentTarget.name]: valuesOf401k[selectId]
-  //   })
-  // }
-  //
-  // const stocksBondsInput = event => {
-  //   let selectId = parseInt(event.currentTarget.id) - 15;
-  //   setNewAdvisor({
-  //     ...newAdvisor,
-  //     [event.currentTarget.name]: stocksValues[selectId]
-  //   })
-  // }
-
   const handleFieldChange = event => {
     setNewAdvisor({
       ...newAdvisor,
@@ -84,32 +38,11 @@ const AdvisorFormPage = (props) => {
     })
   }
 
-  let selected
-
-  const handleSelectValue = event => {
-    let selected = event.currentTarget.value;
-    return selected;
-  }
-
   const handleSelectChange = event => {
     setNewAdvisor({
       ...newAdvisor,
       [event.currentTarget.name]: event.currentTarget.value
 
-    })
-  }
-
-  const handleRadioTrue = event => {
-    setNewAdvisor({
-      ...newAdvisor,
-      [event.currentTarget.name]: "true"
-    })
-  }
-
-  const handleRadioFalse = event => {
-    setNewAdvisor({
-      ...newAdvisor,
-      [event.currentTarget.name]: "false"
     })
   }
 
@@ -239,7 +172,7 @@ const addNewAdvisor = payload => {
   }
 
 if (shouldRedirect){
-  return <Redirect to="/match" />
+  return <Redirect to="/matches" />
 }
 
   return(
@@ -247,10 +180,6 @@ if (shouldRedirect){
     handleAdvisorSubmit={handleAdvisorSubmit}
     handleFieldChange={handleFieldChange}
     handleSelectChange={handleSelectChange}
-    handleSelectValue={handleSelectValue}
-    selected={selected}
-    handleRadioTrue={handleRadioTrue}
-    handleRadioFalse={handleRadioFalse}
     setNewAdvisor={setNewAdvisor}
     newAdvisor={newAdvisor} />
   )
