@@ -27,6 +27,7 @@ const [matches, setMatches] = useState([])
       <MatchTile
       key={match.id}
       id={match.id}
+      level={match.level}
       score={match.score}
       />
     )

@@ -111,6 +111,7 @@ const ClientFormContainer = props => {
     }
 
     const handleScore = event => {
+      let level
       let age = 0
       let spouse = 0
       let home = 0
@@ -135,10 +136,14 @@ const ClientFormContainer = props => {
         morethanOnehome = 5
       }
 
+      let score = age + spouse + home + morethanOnehome + income + spouseIncome + equity + four + stocks + pension
+      if (score < 20) {level = 1} else if (score > 19 && score < 45) {level = 2} else if (score > 44) {level = 3}
+
       setNewClient({
         ...newClient,
+        level: level,
         kidsNumber: "Kids (0-5) - " + kidsOne,
-        score: age + spouse + home + morethanOnehome + income + spouseIncome + equity + four + stocks + pension
+        score: score
       })
     }
 

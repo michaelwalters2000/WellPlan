@@ -1,6 +1,6 @@
 class Api::V1::MatchesController < ApplicationController
   def index
-    render json: Advisor.where(score:28)
+    render json: Client.where(level:2)
   end
 
   def create

@@ -5,6 +5,7 @@ const MatchTile = props => {
   return (
     <div className="grid-x">
           Id: {props.id}<br/>
+          Level: {props.level}<br/>
           Score: {props.score}
     </div>
   )
