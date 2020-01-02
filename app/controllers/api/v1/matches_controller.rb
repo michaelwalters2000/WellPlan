@@ -1,6 +1,8 @@
 class Api::V1::MatchesController < ApplicationController
   def index
-    render json: Advisor.where(score:28)
+    client = Client.order(:id).reverse_order.limit(1)
+    level = client.select(:level)
+    render json: Advisor.where(level: level)
   end
 
   def create

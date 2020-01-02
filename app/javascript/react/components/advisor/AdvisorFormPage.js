@@ -8,6 +8,7 @@ const AdvisorFormPage = (props) => {
   const[shouldRedirect, setShouldRedirect] = useState(false);
   const [selectNumber, setSelectNumber] = useState();
   const [select, setSelect] = useState();
+  const [user, setUser] = useState([])
   const [newAdvisor, setNewAdvisor] = useState({
     level: "",
     score: "",
