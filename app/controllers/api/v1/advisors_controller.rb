@@ -6,6 +6,7 @@ class Api::V1::AdvisorsController < ApplicationController
 
   def create
       advisor = Advisor.new(advisor_params)
+      advisor.user = current_user
       if advisor.save
         render json: {}
       else
