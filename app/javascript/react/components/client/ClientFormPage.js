@@ -173,7 +173,7 @@ const addNewClient = payload => {
   }
 
 if (shouldRedirect){
-  return <Redirect to="/" />
+  return <Redirect to="/matches" />
 }
 
   return(
