@@ -7,7 +7,6 @@ const AdvisorFormPage = (props) => {
   const[errors, setErrors] = useState({});
   const[shouldRedirect, setShouldRedirect] = useState(false);
   const [selectNumber, setSelectNumber] = useState();
-  const [select, setSelect] = useState();
   const [newAdvisor, setNewAdvisor] = useState({
     level: "",
     score: "",
@@ -28,7 +27,8 @@ const AdvisorFormPage = (props) => {
     clientRating: "",
     certifications: "",
     independent: "",
-    firm: ""
+    firm: "",
+    user_id: ""
   })
 
   const handleFieldChange = event => {
@@ -68,7 +68,8 @@ const AdvisorFormPage = (props) => {
       clientRating: "",
       certifications: "",
       independent: "",
-      firm: ""
+      firm: "",
+      user_id: ""
     })
     setErrors({})
   }
@@ -115,7 +116,8 @@ const AdvisorFormPage = (props) => {
     clientRating:newAdvisor.clientRating,
     certifications:newAdvisor.certifications,
     independent:newAdvisor.independent,
-    firm:newAdvisor.firm
+    firm:newAdvisor.firm,
+    user_id:newAdvisor.user_id
   }
 
   addNewAdvisor(payload)
@@ -139,7 +141,8 @@ const AdvisorFormPage = (props) => {
     clientRating: "",
     certifications: "",
     independent: "",
-    firm: ""
+    firm: "",
+    user_id: ""
   })
 }
 

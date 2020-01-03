@@ -36,8 +36,10 @@ ActiveRecord::Schema.define(version: 2019_12_28_222450) do
     t.string "certifications"
     t.boolean "independent"
     t.string "firm"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_advisors_on_user_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -58,8 +60,10 @@ ActiveRecord::Schema.define(version: 2019_12_28_222450) do
     t.boolean "stocksbonds"
     t.string "stocksbondsamount"
     t.boolean "pension"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_clients_on_user_id"
   end
 
   create_table "matches", force: :cascade do |t|

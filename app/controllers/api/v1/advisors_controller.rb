@@ -5,7 +5,11 @@ class Api::V1::AdvisorsController < ApplicationController
   end
 
   def create
-      advisor = Advisor.new(advisor_params)
+      advisor = Advisor.new(advisor_params.merge(user_id: current_user.id))
+  def as_json(options = {})
+    super(options.merge(include: :user))
+  end
+  
       if advisor.save
         render json: {}
       else
@@ -34,7 +38,8 @@ private
       :clientRating,
       :certifications,
       :independent,
-      :firm
+      :firm,
+      :user_id
     )
   end
 end
