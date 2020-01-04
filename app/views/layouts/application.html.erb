@@ -12,12 +12,24 @@
     <center><h1><a class="navbar-title" href="/">FibHub</a></h1><center/>
       <center class="navbar-options">
         <%- if current_user -%>
-          <ul class="navbar-selections"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></ul>
+          <%- if current_user.role == "Client"-%>
+          <ul class="navbar-selections"><%= link_to 'My Advisor', viewadvisor_path, method: :get %></ul>
           <ul class="navbar-selections"><%= link_to 'Edit Profile', edit_user_registration_path, method: :get %></ul>
-        <%- else -%>
-          <ul class="navbar-selections"><%= link_to 'Sign Up', new_user_registration_path %></ul>
-          <ul class="navbar-selections"><%= link_to 'Sign In', new_user_session_path %></ul>
-        <%- end -%>
+          <ul class="navbar-selections"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></ul>
+          <% end %>
+          <%- if current_user.role == "Advisor"-%>
+          <ul class="navbar-selections"><%= link_to 'My Clients', viewclients_path, method: :get %></ul>
+          <ul class="navbar-selections"><%= link_to 'Edit Profile', edit_user_registration_path, method: :get %></ul>
+          <ul class="navbar-selections"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></ul>
+          <%- end -%>
+          <%- if current_user.role == "user"-%>
+            <ul class="navbar-selections"><%= link_to 'Edit Profile', edit_user_registration_path, method: :get %></ul>
+            <ul class="navbar-selections"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></ul>
+          <%- end -%>
+        <% else %>
+        <ul class="navbar-selections"><%= link_to 'Sign Up', new_user_registration_path %></ul>
+        <ul class="navbar-selections"><%= link_to 'Sign In', new_user_session_path %></ul>
+        <% end %>
   </nav>
 
   <%- flash.each do |key, value| -%>

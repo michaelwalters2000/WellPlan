@@ -11,6 +11,7 @@ class Api::V1::AdvisorsController < ApplicationController
   end
 
       if advisor.save
+        User.update(role: "Advisor")
         render json: {}
       else
         render json: {status: "error"}

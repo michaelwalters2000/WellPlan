@@ -10,6 +10,7 @@ class Api::V1::ClientsController < ApplicationController
         super(options.merge(include: :user))
       end
       if client.save
+        User.update(role: "Client")
         render json: {}
       else
         render json: {status: "error"}
