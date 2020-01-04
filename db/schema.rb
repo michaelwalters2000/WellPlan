@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_28_222450) do
+ActiveRecord::Schema.define(version: 2020_01_04_093735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,8 +67,14 @@ ActiveRecord::Schema.define(version: 2019_12_28_222450) do
   end
 
   create_table "matches", force: :cascade do |t|
-    t.string "advisor"
-    t.string "client"
+    t.bigint "advisor_id"
+    t.bigint "client_id"
+    t.integer "a_user_id"
+    t.integer "c_user_id"
+    t.string "advisor_name"
+    t.string "client_name"
+    t.index ["advisor_id"], name: "index_matches_on_advisor_id"
+    t.index ["client_id"], name: "index_matches_on_client_id"
   end
 
   create_table "users", force: :cascade do |t|

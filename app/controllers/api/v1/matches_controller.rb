@@ -25,8 +25,20 @@ class Api::V1::MatchesController < ApplicationController
   end
 
   def create
-  
-
-    Match.create(advisor: @user.first_name)
+  #   match = Match.new(match_params.merge(c_user_id: current_user.id))
+  # def as_json(options = {})
+  # super(options.merge(include: :user))
+  # end
+  #
+  #   private
+  #   def match_params
+  #     params.require(:match).permit(
+  #       :advisor,
+  #       :client,
+  #       :a_user_id,
+  #       :c_user_id,
+  #       :advisor_name,
+  #       :client_name
+  #     )
+    end
   end
-end
