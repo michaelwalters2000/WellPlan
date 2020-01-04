@@ -7,7 +7,6 @@ const AdvisorTile = props => {
           Name: {props.first} {props.last}<br/>
           Phone: {props.phone}<br/>
           Email: {props.email}<br/>
-          id: {props.id}
     </div>
   )
 }

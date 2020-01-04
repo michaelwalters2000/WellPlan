@@ -6,7 +6,6 @@ const MatchPage = props => {
 const [advisor, setAdvisor] = useState([])
 const [info, setInfo] = useState([])
 
-
   useEffect(() => {
     fetch(`/api/v1/matches`)
     .then((response) => {
@@ -31,7 +30,6 @@ const [info, setInfo] = useState([])
       last={user.last_name}
       phone={user.phone}
       email={user.email}
-      id={user.id}
       />
     )
     })
