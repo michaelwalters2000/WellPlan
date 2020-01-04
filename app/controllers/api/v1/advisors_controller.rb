@@ -9,7 +9,7 @@ class Api::V1::AdvisorsController < ApplicationController
   def as_json(options = {})
     super(options.merge(include: :user))
   end
-  
+
       if advisor.save
         render json: {}
       else

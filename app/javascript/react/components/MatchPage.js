@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import MatchTile from './MatchTile'
 import UserTile from './UserTile'
 
 const MatchPage = props => {
@@ -25,22 +24,12 @@ const [info, setInfo] = useState([])
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
 
-  const matchTiles = advisor.map(match => {
-    return(
-      <MatchTile
-      key={match.id}
-      id={match.id}
-      level={match.level}
-      score={match.score}
-      user={info}
-      />
-    )
-    })
-
   const userTiles = info.map(user => {
     return(
       <UserTile
-      name={user.first_name}
+      first={user.first_name}
+      last={user.last_name}
+      phone={user.phone}
       email={user.email}
       />
     )
@@ -52,7 +41,6 @@ const [info, setInfo] = useState([])
     <form className="advisor-client-box">
       <div className="advisor-client-question">Match</div>
       <br/>
-      <div>{matchTiles}</div>
       <div>{userTiles}</div>
     </form>
   </center>

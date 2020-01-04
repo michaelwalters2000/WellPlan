@@ -4,7 +4,8 @@ import { Link } from "react-router-dom"
 const UserTile = props => {
   return (
     <div className="grid-x">
-          Name: {props.name}
+          Name: {props.first} {props.last}<br/>
+          Phone: {props.phone}<br/>
           Email: {props.email}
     </div>
   )

@@ -5,7 +5,10 @@ class Api::V1::ClientsController < ApplicationController
   end
 
   def create
-      client = Client.new(client_params)
+      client = Client.new(client_params.merge(user_id: current_user.id))
+      def as_json(options = {})
+        super(options.merge(include: :user))
+      end
       if client.save
         render json: {}
       else
