@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import UserTile from './UserTile'
+import AdvisorTile from './AdvisorTile'
 
 const MatchPage = props => {
 const [advisor, setAdvisor] = useState([])
 const [info, setInfo] = useState([])
+
 
   useEffect(() => {
     fetch(`/api/v1/matches`)
@@ -18,19 +19,19 @@ const [info, setInfo] = useState([])
       }
     })
     .then((body) => {
-      setAdvisor(body.advisor)
       setInfo(body.info)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
 
-  const userTiles = info.map(user => {
+  const advisorTiles = info.map(user => {
     return(
-      <UserTile
+      <AdvisorTile
       first={user.first_name}
       last={user.last_name}
       phone={user.phone}
       email={user.email}
+      id={user.id}
       />
     )
     })
@@ -41,7 +42,7 @@ const [info, setInfo] = useState([])
     <form className="advisor-client-box">
       <div className="advisor-client-question">Match</div>
       <br/>
-      <div>{userTiles}</div>
+      <div>{advisorTiles}</div>
     </form>
   </center>
   )

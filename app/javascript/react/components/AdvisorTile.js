@@ -1,14 +1,15 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-const UserTile = props => {
+const AdvisorTile = props => {
   return (
     <div className="grid-x">
           Name: {props.first} {props.last}<br/>
           Phone: {props.phone}<br/>
-          Email: {props.email}
+          Email: {props.email}<br/>
+          id: {props.id}
     </div>
   )
 }
 
-export default UserTile
+export default AdvisorTile

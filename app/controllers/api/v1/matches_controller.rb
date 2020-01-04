@@ -8,37 +8,24 @@ class Api::V1::MatchesController < ApplicationController
     advisor_id = advisors.select(:user_id)
     users = User.where(id: advisor_id)
 
-    list = []
-    advisors.each do |n|
-      list.push(n)
-    end
-
     user_list = []
     users.each do |n|
       user_list.push(n)
     end
 
-    @chosen = list.sample(1)
-    @user = user_list.sample(1)
+    user = user_list.sample(1)
 
-    render json: {info: @user}
-  end
+    user.map { |user|
+      @advisor_user_id = user.id
+      @af_name = user.first_name
+      @al_name = user.last_name
+     }
 
-  def create
-  #   match = Match.new(match_params.merge(c_user_id: current_user.id))
-  # def as_json(options = {})
-  # super(options.merge(include: :user))
-  # end
-  #
-  #   private
-  #   def match_params
-  #     params.require(:match).permit(
-  #       :advisor,
-  #       :client,
-  #       :a_user_id,
-  #       :c_user_id,
-  #       :advisor_name,
-  #       :client_name
-  #     )
-    end
+    a_name = @af_name + " " + @al_name
+    c_name = current_user.first_name + " " + current_user.last_name
+
+    Match.create({c_user_id: current_user.id, a_user_id: @advisor_user_id, advisor_name: a_name, client_name: c_name})
+
+    render json: {info: user}
   end
+end
