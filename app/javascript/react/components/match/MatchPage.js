@@ -35,8 +35,13 @@ const[link, setLink] = useState(<div></div>);
     )
     })
 
+    const reloadPage = (event) => {
+      document.reload()
+    }
+
   function redirect() {
-    setLink(<h1><Link to={`/viewadvisor/`} className="meet-advisor">Meet My Advisor !</Link></h1>)
+    setLink(<h1><Link onClick={reloadPage} to={`/viewadvisor/`} className="meet-advisor">Meet My Advisor !</Link></h1>);
+
   }
 
   function switchPage() {
