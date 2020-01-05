@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import AdvisorTile from './AdvisorTile'
+import MatchTile from './MatchTile'
 
 const MatchPage = props => {
 const [advisor, setAdvisor] = useState([])
 const [info, setInfo] = useState([])
+const[link, setLink] = useState(<div></div>);
 
   useEffect(() => {
     fetch(`/api/v1/matches`)
@@ -25,7 +26,7 @@ const [info, setInfo] = useState([])
 
   const advisorTiles = info.map(user => {
     return(
-      <AdvisorTile
+      <MatchTile
       first={user.first_name}
       last={user.last_name}
       phone={user.phone}
@@ -34,14 +35,20 @@ const [info, setInfo] = useState([])
     )
     })
 
+  function redirect() {
+    setLink(<h1><Link to={`/viewadvisor/`} className="meet-advisor">Meet My Advisor !</Link></h1>)
+  }
+
+  function switchPage() {
+    setTimeout(redirect, 3000)
+  }
 
   return(
   <center>
-    <form className="advisor-client-box">
-      <div className="advisor-client-question">Match</div>
+      <div className="advisor-client-question"></div>
       <br/>
-      <div>{advisorTiles}</div>
-    </form>
+      <div>{switchPage()}</div>
+      <center>{link}</center>
   </center>
   )
 }

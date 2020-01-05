@@ -1,7 +1,10 @@
 class Api::V1::ClientsController < ApplicationController
   skip_before_action :verify_authenticity_token
   def index
-    render json: { clients: Client.all }
+    matches = Match.where(a_user_id: current_user.id)
+    client_user_id = matches.select(:c_user_id)
+    clients = User.where(id: client_user_id, role:"Client")
+    render json: {clients: clients}
   end
 
   def create
@@ -10,7 +13,7 @@ class Api::V1::ClientsController < ApplicationController
         super(options.merge(include: :user))
       end
       if client.save
-        User.update(role: "Client")
+        current_user.update({role: "Client"})
         render json: {}
       else
         render json: {status: "error"}

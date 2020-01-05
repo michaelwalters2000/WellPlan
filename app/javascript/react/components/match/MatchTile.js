@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-const AdvisorTile = props => {
+const MatchTile = props => {
   return (
     <div className="grid-x">
           Name: {props.first} {props.last}<br/>
@@ -11,4 +11,4 @@ const AdvisorTile = props => {
   )
 }
 
-export default AdvisorTile
+export default MatchTile

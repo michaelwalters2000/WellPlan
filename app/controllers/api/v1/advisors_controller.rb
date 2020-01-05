@@ -1,7 +1,10 @@
 class Api::V1::AdvisorsController < ApplicationController
   skip_before_action :verify_authenticity_token
   def index
-    render json: { advisors: Advisor.all }
+    match = Match.where(c_user_id: current_user.id).limit(1)
+    advisor_user_id = match.select(:a_user_id)
+    advisors = User.where(id: advisor_user_id)
+    render json: { advisors: advisors }
   end
 
   def create

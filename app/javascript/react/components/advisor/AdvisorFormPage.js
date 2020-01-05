@@ -175,7 +175,7 @@ const addNewAdvisor = payload => {
   }
 
 if (shouldRedirect){
-  return <Redirect to="/matches" />
+  return <Redirect to="/" />
 }
 
   return(
