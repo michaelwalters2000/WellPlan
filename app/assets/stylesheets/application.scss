@@ -255,7 +255,7 @@
       }
 
       .navbar {
-    background-color: #cce6ff;
+    background-color: #0000e6;
     height: 150px;
   }
 
@@ -315,8 +315,9 @@
   position: relative;
   top: 240px; left: 0px;
   text-align:center;
-  background-color: #ccffff;
+  background-color: #0000e6;
   color: white;
+  text-decoration: none;
   font-size: 75px;
   margin-top: 50px;
   border-radius: 25px;
@@ -329,23 +330,44 @@
   position: relative;
   top: 240px; left: 0px;
   text-align:center;
-  background-color: #ccffff;
+  background-color: #0000e6;
   color: white;
+  text-decoration: none;
   font-size: 75px;
   margin-top: 50px;
   border-radius: 25px;
   font-family:Roboto, Arial, sans-serif
 }
 
+// .navbar-selections {
+//   background-color: white;
+//   color: white;
+//   padding: 14px 25px;
+//   text-align: center;
+//   display: inline-block;
+// }
 .navbar-selections {
-  background-color: white;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+  a:link, a:visited {
+    font-size: 15px;
+    background-color: #0000e6;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  a:hover, a:active {
+    font-size: 15px;
+    background-color: grey; opacity: .5;
+    border: 2px solid white; opacity: 1;
+    color: white; opacity: 1;
+  }
 }
 
  a.advisor-box:hover, a.client-box:hover {
-  background-color: #b3ffff;
+  background-color: grey; opacity: .5;
+  color: white;
+  text-decoration: none;
 }

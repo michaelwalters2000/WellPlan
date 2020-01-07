@@ -11,24 +11,25 @@
   <nav class="navbar">
     <center><h1><a class="navbar-title" href="/">FibHub</a></h1><center/>
       <center class="navbar-options">
+          <br/>
         <%- if current_user -%>
           <%- if current_user.role == "Client"-%>
-          <ul class="navbar-selections"><%= link_to 'My Advisor', viewadvisor_path, method: :get %></ul>
-          <ul class="navbar-selections"><%= link_to 'Edit Profile', edit_user_registration_path, method: :get %></ul>
-          <ul class="navbar-selections"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></ul>
+          <span class="navbar-selections"><%= link_to 'My Advisor', viewadvisor_path, method: :get %></span>
+          <span class="navbar-selections"><%= link_to 'Edit Profile', edit_user_registration_path, method: :get %></span>
+          <span class="navbar-selections"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></span>
           <% end %>
           <%- if current_user.role == "Advisor"-%>
-          <ul class="navbar-selections"><%= link_to 'My Clients', viewclients_path, method: :get %></ul>
-          <ul class="navbar-selections"><%= link_to 'Edit Profile', edit_user_registration_path, method: :get %></ul>
-          <ul class="navbar-selections"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></ul>
+          <span class="navbar-selections"><%= link_to 'My Clients', viewclients_path, method: :get %></span>
+          <span class="navbar-selections"><%= link_to 'Edit Profile', edit_user_registration_path, method: :get %></span>
+          <span class="navbar-selections"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></span>
           <%- end -%>
           <%- if current_user.role == "user"-%>
-            <ul class="navbar-selections"><%= link_to 'Edit Profile', edit_user_registration_path, method: :get %></ul>
-            <ul class="navbar-selections"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></ul>
+            <span class="navbar-selections"><%= link_to 'Edit Profile', edit_user_registration_path, method: :get %></span>
+            <span class="navbar-selections"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></span>
           <%- end -%>
         <% else %>
-        <ul class="navbar-selections"><%= link_to 'Sign Up', new_user_registration_path %></ul>
-        <ul class="navbar-selections"><%= link_to 'Sign In', new_user_session_path %></ul>
+        <span class="navbar-selections"><%= link_to 'Sign Up', new_user_registration_path %></span>
+        <span class="navbar-selections"><%= link_to 'Sign In', new_user_session_path %></span>
         <% end %>
   </nav>
 

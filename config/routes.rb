@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'matches', to: 'homes#index'
   get 'viewclients', to: 'homes#index'
   get 'viewadvisor', to: 'homes#index'
+  get 'choose', to: 'homes#index'
   devise_for :users
 
   namespace :api do
