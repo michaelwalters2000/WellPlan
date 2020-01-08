@@ -5,7 +5,13 @@ import MatchTile from './MatchTile'
 const MatchPage = props => {
 const [advisor, setAdvisor] = useState([])
 const [info, setInfo] = useState([])
-const[link, setLink] = useState(<div></div>);
+const[link, setLink] = useState(<div class="loader">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+);
 
   useEffect(() => {
     fetch(`/api/v1/matches`)
@@ -38,22 +44,24 @@ const[link, setLink] = useState(<div></div>);
     const reloadPage = (event) => {
       document.reload()
     }
-
+//<h1><Link onClick={reloadPage} to={`/viewadvisor/`} className="meet-advisor">Meet My Advisor!</Link></h1>
   function redirect() {
-    setLink(<h1><Link onClick={reloadPage} to={`/viewadvisor/`} className="meet-advisor">Meet My Advisor !</Link></h1>);
-
+    setLink(
+    <div class="container">
+    <br/><br/>
+      <a className="matchlink" onClick={reloadPage} href="/viewadvisor" class="button">Meet My Advisor</a>
+    </div>)
   }
 
   function switchPage() {
-    setTimeout(redirect, 3000)
+    setTimeout(redirect, 7000)
   }
 
   return(
   <center>
-      <div className="advisor-client-question"></div>
       <br/>
       <div>{switchPage()}</div>
-      <center>{link}</center>
+      <center><br/>{link}</center>
   </center>
   )
 }

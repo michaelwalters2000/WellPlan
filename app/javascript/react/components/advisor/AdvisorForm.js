@@ -39,6 +39,7 @@ const AdvisorForm = props => {
    <div className="center-question">
    <label>Number of Clients</label>
    </div>
+   <div className="question-answer">
    <div className="income">
    <ul className="client-amount">
    <div>
@@ -55,10 +56,12 @@ const AdvisorForm = props => {
    </div>
      </ul>
      </div>
+     </div>
      <div className="question">
      <div className="center-question">
        <label>Average Current Clients Investable Assets</label>
        </div>
+       <div className="question-answer">
        <div className="income">
        <ul className="income-options">
        <div>
@@ -75,11 +78,13 @@ const AdvisorForm = props => {
        </div>
          </ul>
          </div>
+         </div>
         </div>
         <div className="question">
         <div className="center-question">
           <label>Clients Combined Income</label>
           </div>
+          <div className="question-answer">
           <div className="income">
           <ul className="income-options">
           <div>
@@ -99,6 +104,7 @@ const AdvisorForm = props => {
             <label htmlFor="28" className="radio"><span>$1,000,000 {lessGreaterThan}</span></label>
           </div>
             </ul>
+            </div>
             </div>
            </div>
     <div className="center-question">
@@ -159,6 +165,7 @@ const AdvisorForm = props => {
         <div className="center-question">
         <label>Percent of Clients Who Own a Business</label>
         </div>
+        <div className="question-answer">
         <div className="income">
         <ul className="income-options">
         <div>
@@ -174,6 +181,7 @@ const AdvisorForm = props => {
           <label htmlFor="37" className="radio"><span>10% {lessGreaterThan}</span></label>
         </div>
           </ul>
+          </div>
           </div>
          </div>
          <div className="question">
@@ -222,6 +230,7 @@ const AdvisorForm = props => {
                 <div className="center-question">
                   <label>Certifications</label>
                   </div>
+                  <div className="question-answer">
                   <div className="income">
                   <ul className="income-options">
                   <div>
@@ -249,6 +258,7 @@ const AdvisorForm = props => {
                     <label htmlFor="47" className="radio"><span>FPA</span></label>
                   </div>
                     </ul>
+                    </div>
                     </div>
                    </div>
          <div className="question">

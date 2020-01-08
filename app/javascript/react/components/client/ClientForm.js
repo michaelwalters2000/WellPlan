@@ -72,6 +72,7 @@ const ClientForm = props => {
  <div className="center-question">
  <label>Home Equity Amount ?</label>
  </div>
+ <div className="question-answer">
  <div className="income">
  <ul className="equity-options">
  <div>
@@ -87,6 +88,7 @@ const ClientForm = props => {
    <label className="equity-title" htmlFor="2" className="radio"><span>$200,000 {lessGreaterThan}</span></label>
  </div>
    </ul>
+   </div>
    </div>
     <div className="center-question">
       <label>More than one Home ?</label>
@@ -125,6 +127,7 @@ const ClientForm = props => {
       <div className="center-question">
         <label>Income Bracket ?</label>
         </div>
+        <div className="question-answer">
         <div className="income">
         <ul className="income-options">
         <div>
@@ -144,6 +147,7 @@ const ClientForm = props => {
           <label htmlFor="6" className="radio"><span>$200,000 {lessGreaterThan}</span></label>
         </div>
           </ul>
+          </div>
           </div>
          </div>
          <div>{props.spouse}</div>
@@ -168,6 +172,7 @@ const ClientForm = props => {
          <div className="center-question">
          <label>Value of 401k ?</label>
          </div>
+         <div className="question-answer">
          <div className="income">
          <ul className="income-options">
          <div>
@@ -187,6 +192,7 @@ const ClientForm = props => {
            <label htmlFor="14" className="radio"><span>$1,000,000 {lessGreaterThan}</span></label>
          </div>
            </ul>
+           </div>
            </div>
           </div>
          <div className="question">
@@ -210,6 +216,7 @@ const ClientForm = props => {
          <div className="center-question">
          <label>Value of Stocks / Bonds ?</label>
          </div>
+         <div className="question-answer">
          <div className="income">
          <ul className="income-options">
          <div>
@@ -229,6 +236,7 @@ const ClientForm = props => {
            <label htmlFor="18" className="radio"><span>$1,000,000 {lessGreaterThan}</span></label>
          </div>
            </ul>
+           </div>
            </div>
           </div>
          <div className="question">
