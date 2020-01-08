@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'viewclients', to: 'homes#index'
   get 'viewadvisor', to: 'homes#index'
   get 'choose', to: 'homes#index'
+  get 'homepage', to: 'homes#index'
   devise_for :users
 
   namespace :api do
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
       resources :clients, only: [:index, :create]
       resources :advisors, only: [:index, :create]
       resources :matches, only: [:index, :create]
+      resources :sessions, only: [:index, :create]
     end
   end
 end

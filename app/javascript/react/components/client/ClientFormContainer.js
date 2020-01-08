@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ClientForm from "./ClientForm"
+import HiddenQuestions from "./HiddenQuestions"
 
 const ClientFormContainer = props => {
   let newClient = props.newClient;
@@ -17,6 +17,20 @@ const ClientFormContainer = props => {
   const [pension, setPension] = useState(0)
   const [kidsOne, setKidsOne] = useState(0)
 
+  const handleRadioTrue = event => {
+    setNewClient({
+      ...newClient,
+      [event.currentTarget.name]: "true"
+    })
+  }
+
+  const handleRadioFalse = event => {
+    setNewClient({
+      ...newClient,
+      [event.currentTarget.name]: "false"
+    })
+  }
+
   const handleFieldChange = event => {
       setNewClient({
         ...newClient,
@@ -24,8 +38,11 @@ const ClientFormContainer = props => {
       })
     }
 
-  const handleKids0to5 = event => {
-    setKidsOne(event.currentTarget.value);
+  const handleKids = event => {
+    setNewClient({
+      ...newClient,
+      kids: "true"
+    });
   }
 
   const handleSelectChange = event => {
@@ -48,7 +65,8 @@ const ClientFormContainer = props => {
       let selectId = parseInt(event.currentTarget.id) - 7;
       setNewClient({
         ...newClient,
-        [event.currentTarget.name]: incomeValues[selectId].key
+        [event.currentTarget.name]: incomeValues[selectId].key,
+        spouse: "true"
       })
       setSpouseIncome(incomeValues[selectId].value)
     }
@@ -148,16 +166,17 @@ const ClientFormContainer = props => {
     }
 
   return(
-    <ClientForm
-      newClient={props.newClient}
+    <HiddenQuestions
+      newClient={newClient}
+      setNewClient={setNewClient}
       handleClientSubmit={props.handleClientSubmit}
       handleSelectChange={props.handleSelectChange}
       handleSelectValue={props.handleSelectValue}
       handleFieldChange={handleFieldChange}
       handleScore={handleScore}
       selected={props.selected}
-      handleRadioTrue={props.handleRadioTrue}
-      handleRadioFalse={props.handleRadioFalse}
+      handleRadioTrue={handleRadioTrue}
+      handleRadioFalse={handleRadioFalse}
       incomeInput={incomeInput}
       spouseIncomeInput={spouseIncomeInput}
       equityInput={equityInput}
@@ -166,7 +185,7 @@ const ClientFormContainer = props => {
       handleStocksBoolean={handleStocksBoolean}
       stocksBondsInput={stocksBondsInput}
       handlePensionInput={handlePensionInput}
-      handleKids0to5={handleKids0to5} />
+      handleKids={handleKids} />
   )
 }
 

@@ -23,11 +23,11 @@ const ClientForm = props => {
       <div className="checkboxes">
         <div className="question-answer">
           <div>
-            <input onClick={props.handleSpouseAnswer} onChange={props.handleRadioTrue} type="radio" value={newClient.spouse} id="radio_1" name="spouse"/>
+            <input onClick={props.handleSpouseTrue} type="radio" value={newClient.spouse} id="radio_1" name="spouse"/>
             <label htmlFor="radio_1" className="radio"><span>Yes</span></label>
           </div>
           <div>
-            <input onClick={props.handleNoSpouseAnswer} onChange={props.handleRadioFalse} type="radio" value={newClient.spouse} id="radio_2" name="spouse"/>
+            <input onClick={props.handleSpouseFalse} type="radio" value={newClient.spouse} id="radio_2" name="spouse"/>
             <label htmlFor="radio_2" className="radio"><span>No</span></label>
           </div>
         </div>
@@ -40,53 +40,17 @@ const ClientForm = props => {
      <div className="checkboxes">
        <div className="question-answer">
          <div>
-           <input onChange={props.handleRadioTrue} type="radio" value={newClient.kids} id="radio_3" name="kids"/>
+           <input onChange={props.handleKidsTrue} type="radio" value={newClient.kids} id="radio_3" name="kids"/>
            <label htmlFor="radio_3" className="radio"><span>Yes</span></label>
          </div>
          <div>
-           <input onChange={props.handleRadioFalse} type="radio" value={newClient.kids} id="radio_4" name="kids"/>
+           <input onChange={props.handleKidsFalse} type="radio" value={newClient.kids} id="radio_4" name="kids"/>
            <label htmlFor="radio_4" className="radio"><span>No</span></label>
          </div>
        </div>
      </div>
    </div>
-   <div className="center-question">
-    <label>Number of Kids</label>
-    <div className="kids-options">
-    <ul className="kids-ages-options">
-    <li><p>Ages (0-5)</p>
-    <select>
-   <option></option>
-   <option onClick={props.handleKids0to5} value="1">1</option>
-   <option value="2">2</option>
-   <option value="3">3</option>
-   <option value="4">4</option>
-   <option value="5">5</option>
-   <option value="6+">6+</option>
- </select></li>
- <li><p>Ages (6-12)</p>
- <select>
-   <option selected onChange={props.handleFieldChange} selected></option>
-   <option value="1" >1</option>
-   <option value="2">2</option>
-   <option value="3">3</option>
-   <option value="4">4</option>
-   <option value="5">5</option>
-   <option value="6+">6+</option>
- </select></li>
-<li><p>Ages (13-18)</p>
- <select>
-   <option selected onChange={props.handleFieldChange} value={newClient.kids13to18} disabled selected></option>
-   <option value="1" >1</option>
-   <option value="2">2</option>
-   <option value="3">3</option>
-   <option value="4">4</option>
-   <option value="5">5</option>
-   <option value="6+">6+</option>
- </select></li>
- </ul>
- </div>
-</div>
+   <div>{props.kids}</div>
    <div className="question">
    <div className="center-question">
      <label>Are you a Home Owner ?</label>
@@ -182,31 +146,7 @@ const ClientForm = props => {
           </ul>
           </div>
          </div>
-         <div className="question">
-         <div className="center-question">
-         <label>Spouse's Income Bracket ?</label>
-         </div>
-         <div className="income">
-         <ul className="income-options">
-         <div>
-           <input name="spousesincome" onClick={props.spouseIncomeInput} type="radio" value={newClient.spousesincome} id="7"/>
-           <label htmlFor="7" className="radio"><span>{lessGreaterThan} $50,000<br/></span></label>
-         </div>
-         <div>
-           <input name="spousesincome" onClick={props.spouseIncomeInput} type="radio" value={newClient.spousesincome} id="8"/>
-           <label htmlFor="8" className="radio"><span>$50,000 - $100,000</span></label>
-         </div>
-         <div>
-           <input name="spousesincome" onClick={props.spouseIncomeInput} type="radio" value={newClient.spousesincome} id="9"/>
-           <label htmlFor="9" className="radio"><span>$100,000 - $200,000</span></label>
-         </div>
-         <div>
-           <input name="spousesincome" onClick={props.spouseIncomeInput} type="radio" value={newClient.spousesincome} id="10"/>
-           <label htmlFor="10" className="radio"><span>$200,000 {lessGreaterThan}</span></label>
-         </div>
-           </ul>
-           </div>
-          </div>
+         <div>{props.spouse}</div>
          <div className="question">
            <div className="center-question">
              <label>Do you have a 401k ?</label>

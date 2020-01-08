@@ -42,20 +42,6 @@ const ClientFormPage = (props) => {
     return selected;
   }
 
-  const handleRadioTrue = event => {
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: "true"
-    })
-  }
-
-  const handleRadioFalse = event => {
-    setNewClient({
-      ...newClient,
-      [event.currentTarget.name]: "false"
-    })
-  }
-
   const clearFields = (event) => {
     event.preventDefault()
     setNewClient({
@@ -182,8 +168,6 @@ if (shouldRedirect){
     handleFieldChange={handleFieldChange}
     handleSelectValue={handleSelectValue}
     selected={selected}
-    handleRadioTrue={handleRadioTrue}
-    handleRadioFalse={handleRadioFalse}
     setNewClient={setNewClient}
     newClient={newClient} />
   )
