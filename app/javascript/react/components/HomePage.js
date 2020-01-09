@@ -27,7 +27,7 @@ const HomePage = props => {
 
   return(
   <div class="section">
-    Homepage
+    Homepage {info}
   </div>
   )
 }
