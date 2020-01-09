@@ -12,8 +12,8 @@ export const App = (props) => {
   return (
     <BrowserRouter>
     <Switch>
-    <Route exact path="/" component={AdvisorOrClientPage}/>
-      <Route exact path="/homepage" component={HomePage}/>
+    <Route exact path="/choose" component={AdvisorOrClientPage}/>
+      <Route exact path="/" component={HomePage}/>
       <Route exact path="/clients" component={ClientFormPage}/>
       <Route exact path="/advisors" component={AdvisorFormPage}/>
       <Route exact path="/matches" component={MatchPage}/>

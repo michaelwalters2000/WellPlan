@@ -37,7 +37,7 @@
   </div>
 </div>
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up" do redirect_to choose_path, method: :get end %>
   </div>
   <div class="actions">
     <%= render "devise/shared/links" %>

@@ -5,7 +5,7 @@ const HomePage = props => {
   const [info, setInfo] = useState([])
 
   useEffect(() => {
-    fetch(`/api/v1/sessions`)
+    fetch(`/api/v1/signups`)
     .then((response) => {
       if (response.ok) {
         return response.json()
@@ -16,15 +16,19 @@ const HomePage = props => {
       }
     })
     .then((body) => {
-      setInfo(body.role)
+      setInfo(body.signups)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
 
+  if (info > 0) {
+    window.location.href = '/choose';
+  }
+
   return(
   <div class="section">
-
-      </div>
+    Homepage
+  </div>
   )
 }
 

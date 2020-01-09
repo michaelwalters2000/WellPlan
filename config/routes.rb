@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       resources :clients, only: [:index, :create]
       resources :advisors, only: [:index, :create]
       resources :matches, only: [:index, :create]
-      resources :sessions, only: [:index, :create]
+      resources :signups, only: [:index]
     end
   end
 end

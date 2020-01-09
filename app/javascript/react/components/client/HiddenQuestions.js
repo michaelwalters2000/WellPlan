@@ -19,6 +19,7 @@ const ClientFormContainer = props => {
     <div className="center-question">
     <label>Spouse's Income Bracket ?</label>
     </div>
+    <div className="question-answer">
     <div className="income">
     <ul className="income-options">
     <div>
@@ -38,6 +39,7 @@ const ClientFormContainer = props => {
       <label htmlFor="10" className="radio"><span>$200,000 {lessGreaterThan}</span></label>
     </div>
       </ul>
+      </div>
       </div>
      </div>
    )

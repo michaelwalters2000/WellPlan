@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import MatchTile from './MatchTile'
 
 const MatchPage = props => {
-const [advisor, setAdvisor] = useState([])
 const [info, setInfo] = useState([])
 const[link, setLink] = useState(<div class="loader">
   <span></span>
@@ -44,7 +43,6 @@ const[link, setLink] = useState(<div class="loader">
     const reloadPage = (event) => {
       document.reload()
     }
-//<h1><Link onClick={reloadPage} to={`/viewadvisor/`} className="meet-advisor">Meet My Advisor!</Link></h1>
   function redirect() {
     setLink(
     <div class="container">
