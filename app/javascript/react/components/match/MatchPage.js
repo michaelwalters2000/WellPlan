@@ -52,7 +52,7 @@ const[link, setLink] = useState(<div class="loader">
   }
 
   function switchPage() {
-    setTimeout(redirect, 7000)
+    setTimeout(redirect, 6000)
   }
 
   return(

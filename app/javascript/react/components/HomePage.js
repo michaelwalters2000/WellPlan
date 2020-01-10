@@ -21,13 +21,17 @@ const HomePage = props => {
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
 
-  if (info > 0) {
+  if (info === "user") {
     window.location.href = '/choose';
   }
 
   return(
-  <div class="section">
-    Homepage {info}
+    <div className="testbox">
+  <form>
+  <div className="banner">
+    <h1>Find With The Perfect<br/><br/><br/>Advisor For Your<br/><br/><br/>Future{info}</h1>
+  </div>
+  </form>
   </div>
   )
 }

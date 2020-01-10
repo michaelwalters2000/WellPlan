@@ -257,7 +257,7 @@
 
       .navbar {
     background-color: #0000e6;
-    height: 150px;
+    height: 100px;
   }
 
 .navbar-title {
@@ -397,6 +397,77 @@
   background-color: grey; opacity: .5;
   color: white;
   text-decoration: none;
+}
+
+.view-advisor {
+  color: white;
+  padding: 5%;
+  width:75%;
+  text-align:center;
+  background-color: #0000e6;
+  text-decoration: none;
+  font-size: 40px;
+  border-radius: 25px;
+  font-family:Roboto, Arial, sans-serif
+}
+
+//USER TILE
+
+@import 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300';
+
+$padding:15px;
+
+* { box-sizing: border-box; }
+
+.container {
+  /* Styling */
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+
+  /* Center it */
+  position: relative;
+  left: 27.5%;
+  margin-bottom: 200px;
+}
+.card {
+  /* Styling */
+  width: 700px;
+  height: 200px;
+  background: #0000e6;
+}
+
+
+/* Flip the card on hover */
+
+
+/* Front styling */
+.logo {
+  position: relative;
+  margin-top: 15px;
+  outline: 1px solid #3b3b3b;
+  display: inline-block;
+  padding: 15px 40px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4em;
+  font-weight: normal;
+  line-height: 32px;
+  letter-spacing: 8px;
+}
+
+/* Back styling */
+
+.info {
+  position: relative;
+  text-align: center;
+  margin-left: 5%;
+  color: white;
+}
+.property {
+  color: #fff;
 }
 
 

@@ -23,11 +23,13 @@ const [info, setInfo] = useState([])
   }, [])
 
   const advisorTiles = info.map(advisor => {
+    let phonearray = []
+    let area = advisor.phone[0] + advisor.phone[1] + advisor.phone[2] + '-' + advisor.phone[3] + advisor.phone[4] + advisor.phone[5] + '-' + advisor.phone[6] + advisor.phone[7] + advisor.phone[8] + advisor.phone[9]
     return(
       <UserTile
       first={advisor.first_name}
       last={advisor.last_name}
-      phone={advisor.phone}
+      phone={area}
       email={advisor.email}
       />
     )
@@ -36,9 +38,6 @@ const [info, setInfo] = useState([])
 
   return(
   <center>
-  <br/>
-    <div className="advisor-client-question">Advisor</div>
-    <br/>
     <div>{advisorTiles}</div>
   </center>
   )
