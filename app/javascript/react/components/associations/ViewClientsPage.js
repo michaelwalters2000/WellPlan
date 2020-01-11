@@ -22,11 +22,14 @@ const ViewClientsPage = props => {
     }, [])
 
     const clientTiles = info.map(clients => {
+      let clientphone = clients.phone
+      clientphone.toString()
+      let phone = clientphone.slice(0, 3) + "-" + clientphone.slice(3, 6) + "-" + clientphone.slice(6, 10)
       return(
         <UserTile
         first={clients.first_name}
         last={clients.last_name}
-        phone={clients.phone}
+        phone={phone}
         email={clients.email}
         />
       )
