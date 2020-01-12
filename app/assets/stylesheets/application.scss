@@ -236,12 +236,12 @@
         width: 100%;
       }
 
-      .income {
+      .inline {
         padding-right: 2.5%;
         text-align: center;
       }
 
-      .income-options div {
+      .inline-options div {
         display: inline-block;
         font-size: 20px;
         padding-left: 10px;
@@ -537,7 +537,7 @@ CORE STYLES
 
 	display: var(--uiaiElementDisplay);
 	position: relative;
-	overflow: hidden;
+	overflow: scroll;
 }
 
 a.ai-element{
@@ -1028,16 +1028,16 @@ $font: 'Abril Fatface', sans-serif;
 $slides: 4;
 $images: url(https://unsplash.it/g/1500/2200?image=838) url(https://unsplash.it/g/1500/1000?image=1078) url(https://unsplash.it/g/1500/1000?image=1077)  url(https://unsplash.it/g/1500/1200?image=345);
 
-html, body{
+html, body {
 	width: 100vw;
 	height: 100vh;
-	overflow: hidden;
 }
 
 .untitled{
 	position: absolute;
 	height: 100%;
 	width: 100%;
+  overflow: hidden;
 	@keyframes rotateHue {
 		0%{ filter: hue-rotate(0deg); }
 		20%{ filter: hue-rotate(0deg); }
@@ -1208,9 +1208,8 @@ html, body{
 		transform: translate3d(0px, 0px, 0);
 		box-shadow: -0px 0px 0 rgba(white, 0.5);
 	}
+
 }
-
-
 
 /*
 =====
@@ -1232,7 +1231,7 @@ $color: #0000ff;
     letter-spacing: .15rem;
     transition: all .3s;
     position: relative;
-    overflow: hidden;
+    overflow: scroll;
     z-index: 1;
     &:after {
         content: '';

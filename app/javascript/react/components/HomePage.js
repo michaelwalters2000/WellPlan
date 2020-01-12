@@ -249,7 +249,6 @@ if($('.main-content .slideshow').length > 1) {
 }
 
   return(
-
   <div class="untitled">
   	<div class="untitled__slides">
   		<div class="untitled__slide">

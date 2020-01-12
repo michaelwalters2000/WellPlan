@@ -20,8 +20,8 @@ const ClientFormContainer = props => {
     <label>Spouse's Income Bracket ?</label>
     </div>
     <div className="question-answer">
-    <div className="income">
-    <ul className="income-options">
+    <div className="inline">
+    <ul className="inline-options">
     <div>
       <input name="spousesincome" onClick={props.spouseIncomeInput} type="radio" value={newClient.spousesincome} id="7"/>
       <label htmlFor="7" className="radio"><span>{lessGreaterThan} $50,000<br/></span></label>

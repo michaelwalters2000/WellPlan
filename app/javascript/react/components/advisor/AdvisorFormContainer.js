@@ -8,6 +8,8 @@ const AdvisorFormContainer = props => {
   const [assets, setAssets] = useState(0)
   const [income, setIncome] = useState(0)
 
+  const [cfpTally, setCfpTally] = useState(0)
+
   const [cfp, setCfp] = useState("")
   const [aif, setAif] = useState("")
   const [pfs, setPfs] = useState("")
@@ -74,7 +76,7 @@ const AdvisorFormContainer = props => {
     })
   }
 
-  const cfpInput = event => {setCfp("CFP"); setCertificationCount(certificationCount + 1)}
+  const cfpInput = event => {setCfp("CFP"); setCertificationCount(certificationCount + 1); setCfpTally(cfpTally +1)}
   const aifInput = event => {setAif("AIF"); setCertificationCount(certificationCount + 1)}
   const pfsInput = event => {setPfs("PFS"); setCertificationCount(certificationCount + 1)}
   const chfcInput = event => {setChfc("CHFC"); setCertificationCount(certificationCount + 1)}
@@ -130,7 +132,8 @@ const handleScore = event => {
       chfcInput={chfcInput}
       napfaInput={napfaInput}
       fpaInput={fpaInput}
-      handleScore={handleScore} />
+      handleScore={handleScore}
+      cfpTally={cfpTally} />
   )
 }
 

@@ -40,7 +40,7 @@ const AdvisorForm = props => {
    <label>Number of Clients</label>
    </div>
    <div className="question-answer">
-   <div className="income">
+   <div className="inline">
    <ul className="client-amount">
    <div>
      <input name="clientNumber" onChange={props.clientNumberInput} type="radio" id="19"/>
@@ -62,8 +62,8 @@ const AdvisorForm = props => {
        <label>Average Current Clients Investable Assets</label>
        </div>
        <div className="question-answer">
-       <div className="income">
-       <ul className="income-options">
+       <div className="inline">
+       <ul className="inline-options">
        <div>
          <input value={newAdvisor.avgClientInvestableAssets} onChange={props.investableAssetsInput} type="radio" id="22" />
          <label htmlFor="22" className="radio"><span>{lessGreaterThan} $250,000<br/></span></label>
@@ -85,8 +85,8 @@ const AdvisorForm = props => {
           <label>Clients Combined Income</label>
           </div>
           <div className="question-answer">
-          <div className="income">
-          <ul className="income-options">
+          <div className="inline">
+          <ul className="inline-options">
           <div>
             <input name="totalClientIncome" onChange={props.clientIncomeInput} type="radio" id="25"/>
             <label htmlFor="25" className="radio"><span>{lessGreaterThan} $200,000<br/></span></label>
@@ -110,8 +110,9 @@ const AdvisorForm = props => {
     <div className="center-question">
       <label>Do you work with Mutual Funds / ETFs</label>
     </div>
-    <div className="checkboxes">
       <div className="question-answer">
+      <div className="inline">
+        <ul className="inline-options">
         <div>
           <input name="mutualFundsETFs" value={newAdvisor.mutualFundsETFs} onChange={props.handleRadioTrue} type="radio" id="29"/>
           <label htmlFor="29" className="radio"><span>Yes</span></label>
@@ -120,6 +121,7 @@ const AdvisorForm = props => {
           <input name="mutualFundsETFs" value={newAdvisor.mutualFundsETFs} onChange={props.handleRadioFalse} type="radio" id="30"/>
           <label htmlFor="30" className="radio"><span>No</span></label>
         </div>
+        </ul>
       </div>
     </div>
   </div>
@@ -127,8 +129,9 @@ const AdvisorForm = props => {
       <div className="center-question">
         <label>Individual Securities</label>
       </div>
-      <div className="checkboxes">
         <div className="question-answer">
+        <div className="inline">
+          <ul className="inline-options">
           <div>
             <input name="individualSecurities" value={newAdvisor.individualSecurities} onChange={props.handleRadioTrue} type="radio" id="31"/>
             <label htmlFor="31" className="radio"><span>Yes</span></label>
@@ -137,6 +140,7 @@ const AdvisorForm = props => {
               <input name="individualSecurities" value={newAdvisor.individualSecurities} onChange={props.handleRadioFalse} type="radio" id="32"/>
               <label htmlFor="32" className="radio"><span>No</span></label>
             </div>
+            </ul>
           </div>
         </div>
       </div>
@@ -144,8 +148,9 @@ const AdvisorForm = props => {
         <div className="center-question">
           <label>Do You Work with Stocks and Bonds</label>
         </div>
-        <div className="checkboxes">
           <div className="question-answer">
+          <div className="inline">
+            <ul className="inline-options">
             <div>
               <input name="stocksAndBonds" type="radio" onChange={props.handleRadioTrue} id="33" />
               <label htmlFor="33" className="radio"><span>Yes</span></label>
@@ -154,6 +159,7 @@ const AdvisorForm = props => {
                 <input name="stocksAndBonds" type="radio" onChange={props.handleRadioFalse} id="34"/>
                 <label htmlFor="34" className="radio"><span>No</span></label>
               </div>
+              </ul>
             </div>
           </div>
         </div>
@@ -166,8 +172,8 @@ const AdvisorForm = props => {
         <label>Percent of Clients Who Own a Business</label>
         </div>
         <div className="question-answer">
-        <div className="income">
-        <ul className="income-options">
+        <div className="inline">
+        <ul className="inline-options">
         <div>
           <input name="clientBusinessOwners" onChange={props.businessOwnersInput} type="radio" id="35"/>
           <label htmlFor="35" className="radio"><span>{lessGreaterThan} 5%</span></label>
@@ -188,8 +194,9 @@ const AdvisorForm = props => {
            <div className="center-question">
              <label>Discipinary Action</label>
            </div>
-           <div className="checkboxes">
              <div className="question-answer">
+             <div className="inline">
+               <ul className="inline-options">
                <div>
                  <input name="discipinaryAction" type="radio" value={newAdvisor.discipinaryAction} onChange={props.handleRadioTrue} id="38" />
                  <label htmlFor="38" className="radio"><span>Yes</span></label>
@@ -198,6 +205,7 @@ const AdvisorForm = props => {
                    <input name="discipinaryAction" type="radio" value={newAdvisor.discipinaryAction} onChange={props.handleRadioFalse} id="39"/>
                    <label htmlFor="39" className="radio"><span>No</span></label>
                  </div>
+                 </ul>
                </div>
              </div>
            </div>
@@ -209,8 +217,9 @@ const AdvisorForm = props => {
                 <div className="center-question">
                   <label>More than 10% of Clients have Annuities or Employer Pensions</label>
                 </div>
-                <div className="checkboxes">
                   <div className="question-answer">
+                  <div className="inline">
+                    <ul className="inline-options">
                     <div>
                       <input name="moreThan10PercentAnnuitiesOrEmployerPensions" onChange={props.handleRadioTrue} type="radio" id="40"/>
                       <label htmlFor="40" className="radio"><span>Yes</span></label>
@@ -219,6 +228,7 @@ const AdvisorForm = props => {
                         <input name="moreThan10PercentAnnuitiesOrEmployerPensions" onChange={props.handleRadioFalse} type="radio" id="41"/>
                         <label htmlFor="41" className="radio"><span>No</span></label>
                       </div>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -231,8 +241,8 @@ const AdvisorForm = props => {
                   <label>Certifications</label>
                   </div>
                   <div className="question-answer">
-                  <div className="income">
-                  <ul className="income-options">
+                    <div className="inline">
+                    <ul className="inline-options">
                   <div>
                     <input type="radio" id="42" name="CFP" onChange={props.cfpInput}/>
                     <label htmlFor="42" className="radio"><span>CFP<br/></span></label>
@@ -260,13 +270,15 @@ const AdvisorForm = props => {
                     </ul>
                     </div>
                     </div>
+                    {props.cfpTally}
                    </div>
          <div className="question">
            <div className="center-question">
              <label>Independent</label>
            </div>
-           <div className="checkboxes">
              <div className="question-answer">
+             <div className="inline">
+               <ul className="inline-options">
                <div>
                  <input name="independent" onChange={props.handleRadioTrue} type="radio" id="48"/>
                  <label htmlFor="48" className="radio"><span>Yes</span></label>
@@ -275,6 +287,7 @@ const AdvisorForm = props => {
                  <input name="independent" onChange={props.handleRadioFalse} type="radio" id="49"/>
                  <label htmlFor="49" className="radio"><span>No</span></label>
                </div>
+               </ul>
              </div>
            </div>
          </div>
