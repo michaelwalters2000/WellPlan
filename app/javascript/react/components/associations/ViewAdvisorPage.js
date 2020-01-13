@@ -25,7 +25,7 @@ const [info, setInfo] = useState([])
   const advisorTiles = info.map(advisor => {
     let advisorphone = advisor.phone
     advisorphone.toString()
-    let phone = clientphone.slice(0, 3) + "-" + clientphone.slice(3, 6) + "-" + clientphone.slice(6, 10)
+    let phone = advisorphone.slice(0, 3) + "-" + advisorphone.slice(3, 6) + "-" + advisorphone.slice(6, 10)
     return(
       <UserTile
         first={advisor.first_name}

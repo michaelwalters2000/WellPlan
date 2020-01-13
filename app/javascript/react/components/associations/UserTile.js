@@ -17,23 +17,5 @@ const UserTile = props => {
   </div>
   )
 }
-// <div class="container">
-//   <div class="card">
-//
-//     <div class="front side">
-//       <h1 class="logo">Zach Saucier</h1>
-//     </div>
-//
-//     <div class="back side">
-//
-//       <div class="info">
-//         <p><span class="property">Email: </span>hello@zachsaucier.com</p>
-//         <p><span class="property">Twitter: </span>@ZachSaucier</p>
-//         <p><span class="property">Phone: </span>(123) 456-7890</p>
-//         <p><span class="property">Website: </span>zachsaucier.com</p>
-//       </div>
-//     </div>
-//
-//   </div>
-// </div>
+
 export default UserTile

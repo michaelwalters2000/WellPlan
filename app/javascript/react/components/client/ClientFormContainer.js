@@ -73,11 +73,28 @@ const ClientFormContainer = props => {
 
     const equityInput = event => {
       let selectId = parseInt(event.currentTarget.id);
+      window.eKey = event.currentTarget.value
+      window.eValue = equityValues[selectId].value
+    }
+
+    const handleMoreTrue = event => {
       setNewClient({
         ...newClient,
-        [event.currentTarget.name]: equityValues[selectId].key
-      })
-      setEquity(equityValues[selectId].value)
+        morethan1home: "true",
+        equity: window.eKey,
+        homeowner: "true"
+      });
+      setEquity(window.eValue)
+    }
+
+    const handleMoreFalse = event => {
+      setNewClient({
+        ...newClient,
+        morethan1home: "false",
+        equity: window.eKey,
+        homeowner: "true"
+      });
+      setEquity(window.eValue)
     }
 
     const handle401kBoolean = event => {
@@ -94,7 +111,8 @@ const ClientFormContainer = props => {
       let selectId = parseInt(event.currentTarget.id) - 11;
       setNewClient({
         ...newClient,
-        retirementamount: stocks401kValues[selectId].key
+        retirementamount: stocks401kValues[selectId].key,
+        retirement: "true"
       })
       setFour(stocks401kValues[selectId].value)
     }
@@ -113,7 +131,8 @@ const ClientFormContainer = props => {
       let selectId = parseInt(event.currentTarget.id) - 15;
       setNewClient({
         ...newClient,
-        stocksbondsamount: stocks401kValues[selectId].key
+        stocksbondsamount: stocks401kValues[selectId].key,
+        stocksbonds: "true"
       })
       setStocks(stocks401kValues[selectId].value)
     }
@@ -185,7 +204,9 @@ const ClientFormContainer = props => {
       handleStocksBoolean={handleStocksBoolean}
       stocksBondsInput={stocksBondsInput}
       handlePensionInput={handlePensionInput}
-      handleKids={handleKids} />
+      handleKids={handleKids}
+      handleMoreTrue={handleMoreTrue}
+      handleMoreFalse={handleMoreFalse} />
   )
 }
 

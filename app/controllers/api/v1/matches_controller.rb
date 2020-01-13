@@ -26,8 +26,8 @@ class Api::V1::MatchesController < ApplicationController
 
     Match.create({c_user_id: current_user.id, a_user_id: @advisor_user_id, advisor_name: a_name, client_name: c_name})
     chosen_client = Client.where(user_id: current_user.id)
-    chosen_advisor = Advisor.where(user_id: @advisor_user_id)
-    chosen_client.update(role:"Client")
+    chosen_advisor = User.where(id: @advisor_user_id)
+    current_user.update(role:"Client")
     chosen_advisor.update(role:"Advisor")
     render json: {info: user}
   end
