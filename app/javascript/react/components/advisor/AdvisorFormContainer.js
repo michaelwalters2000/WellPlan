@@ -8,7 +8,12 @@ const AdvisorFormContainer = props => {
   const [assets, setAssets] = useState(0)
   const [income, setIncome] = useState(0)
 
-  const [cfpTally, setCfpTally] = useState(0)
+  const [cfpToggle, setCfpToggle] = useState(false);
+  const [aifToggle, setAifToggle] = useState(false);
+  const [pfsToggle, setPfsToggle] = useState(false);
+  const [chfcToggle, setChfcToggle] = useState(false);
+  const [napfaToggle, setNapfaToggle] = useState(false);
+  const [fpaToggle, setFpaToggle] = useState(false);
 
   const [cfp, setCfp] = useState("")
   const [aif, setAif] = useState("")
@@ -76,12 +81,79 @@ const AdvisorFormContainer = props => {
     })
   }
 
-  const cfpInput = event => {setCfp("CFP"); setCertificationCount(certificationCount + 1); setCfpTally(cfpTally +1)}
-  const aifInput = event => {setAif("AIF"); setCertificationCount(certificationCount + 1)}
-  const pfsInput = event => {setPfs("PFS"); setCertificationCount(certificationCount + 1)}
-  const chfcInput = event => {setChfc("CHFC"); setCertificationCount(certificationCount + 1)}
-  const napfaInput = event => {setNapfa("NAPFA"); setCertificationCount(certificationCount + 1)}
-  const fpaInput = event => {setFpa("FPA"); setCertificationCount(certificationCount + 1)}
+  const isEven = function(number) {
+    if(number % 2 === 0){
+      return("false");
+    } else {
+      return("true");
+    }
+  }
+
+  const cfpInput = event => {
+    setCertificationCount(certificationCount + 1);
+    if (cfpToggle === false) {
+      setCfpToggle(true);
+      setCfp("CFP");
+    } else {
+      setCfpToggle(false);
+      setCfp("");
+    }
+  }
+
+  const aifInput = event => {
+    setCertificationCount(certificationCount + 1);
+    if (aifToggle === false) {
+      setAifToggle(true)
+      setAif("AIF");
+    } else {
+      setAifToggle(false);
+      setAif("");
+    }
+  }
+
+  const pfsInput = event => {
+    setCertificationCount(certificationCount + 1);
+    if (pfsToggle === false) {
+      setPfsToggle(true)
+      setPfs("PFS");
+    } else {
+      setPfsToggle(false);
+      setPfs("");
+    }
+  }
+
+  const chfcInput = event => {
+    setCertificationCount(certificationCount + 1);
+    if (chfcToggle === false) {
+      setChfcToggle(true)
+      setChfc("CHFC");
+    } else {
+      setChfcToggle(false);
+      setChfc("");
+    }
+  }
+
+  const napfaInput = event => {
+    setCertificationCount(certificationCount + 1);
+    if (napfaToggle === false) {
+      setNapfaToggle(true)
+      setNapfa("NAPFA");
+    } else {
+      setNapfaToggle(false);
+      setNapfa("");
+    }
+  }
+
+  const fpaInput = event => {
+    setCertificationCount(certificationCount + 1);
+    if (fpaToggle === false) {
+      setFpaToggle(true)
+      setFpa("FPA");
+    } else {
+      setFpaToggle(false);
+      setFpa("");
+    }
+  }
 
   let certificationsList = [cfp, aif, pfs, chfc, napfa, fpa]
   let newList = certificationsList.toString()
@@ -133,7 +205,12 @@ const handleScore = event => {
       napfaInput={napfaInput}
       fpaInput={fpaInput}
       handleScore={handleScore}
-      cfpTally={cfpTally} />
+      cfpControl={cfpToggle}
+      aifControl={aifToggle}
+      pfsControl={pfsToggle}
+      chfcControl={chfcToggle}
+      napfaControl={napfaToggle}
+      fpaControl={fpaToggle} />
   )
 }
 

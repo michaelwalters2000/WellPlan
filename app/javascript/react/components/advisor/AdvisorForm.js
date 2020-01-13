@@ -244,34 +244,34 @@ const AdvisorForm = props => {
                     <div className="inline">
                     <ul className="inline-options">
                   <div>
-                    <input type="radio" id="42" name="CFP" onChange={props.cfpInput}/>
-                    <label htmlFor="42" className="radio"><span>CFP<br/></span></label>
+                    <input type="radio" id="42" checked={props.cfpControl} name="CFP" onClick={props.cfpInput}/>
+                    <label htmlFor="42" id="cfpRadio" className="radio"><span>CFP<br/></span></label>
                   </div>
                   <div>
-                    <input type="radio" id="43" name="AIF" onChange={props.aifInput}/>
+                    <input type="radio" id="43" checked={props.aifControl} name="AIF" onClick={props.aifInput}/>
                     <label htmlFor="43" className="radio"><span>AIF</span></label>
                   </div>
                   <div>
-                    <input type="radio" id="44" name="PFS" onChange={props.pfsInput}/>
+                    <input type="radio" id="44" checked={props.pfsControl} name="PFS" onClick={props.pfsInput}/>
                     <label htmlFor="44" className="radio"><span>PFS</span></label>
                   </div>
                   <div>
-                    <input type="radio" id="45" name="CHFC" onChange={props.chfcInput}/>
+                    <input type="radio" id="45" checked={props.chfcControl} name="CHFC" onClick={props.chfcInput}/>
                     <label htmlFor="45" className="radio"><span>CHFC</span></label>
                   </div>
                   <div>
-                    <input type="radio" id="46" name="NAPFA" onChange={props.napfaInput}/>
+                    <input type="radio" id="46" checked={props.napfaControl} name="NAPFA" onClick={props.napfaInput}/>
                     <label htmlFor="46" className="radio"><span>NAPFA</span></label>
                   </div>
                   <div>
-                    <input type="radio" id="47" name="FPA" onChange={props.fpaInput}/>
+                    <input type="radio" id="47" checked={props.fpaControl} name="FPA" onClick={props.fpaInput}/>
                     <label htmlFor="47" className="radio"><span>FPA</span></label>
                   </div>
                     </ul>
                     </div>
                     </div>
-                    {props.cfpTally}
                    </div>
+                   {props.cfpControl}
          <div className="question">
            <div className="center-question">
              <label>Independent</label>
