@@ -254,34 +254,26 @@ if($('.main-content .slideshow').length > 1) {
   		<div class="untitled__slide">
   			<div class="untitled__slideBg"></div>
   			<div class="untitled__slideContent">
-  				<span>London</span>
-  				<span>Scout</span>
-  				<a class="button" href="https://unsplash.com/@scoutthecity" target="/black">Unsplash Profile</a>
+          <span>A Future with</span><span>Financial Freedom</span>
   			</div>
   		</div>
   		<div class="untitled__slide">
   			<div class="untitled__slideBg"></div>
-  			<div class="untitled__slideContent">
-
-  				<span>Vladimir</span>
-  				<span>Kudinov</span>
-  				<a class="button" href="https://unsplash.com/@madbyte" target="/black">Unsplash Profile</a>
+  			<div class="untitled__slideContent2">
+  				<span>fi·​du·​cia·​ry</span>
+  				<a>A fiduciary is a person that acts on behalf of another person to manage assets</a><a>A fiduciary</a><p>owes to that other entity the duties of good faith and trust.</p>
   			</div>
   		</div>
   		<div class="untitled__slide">
   			<div class="untitled__slideBg"></div>
-  			<div class="untitled__slideContent">
-  				<span>Macio</span>
-  				<span>Amorim</span>
-  				<a class="button" href="https://unsplash.com/@maicoamorim" target="/black">Unsplash Profile</a>
+  			<div class="untitled__slideContent2">
+  				<span class="match">Match with an Advisor Today</span>
   			</div>
   		</div>
   		<div class="untitled__slide">
   			<div class="untitled__slideBg"></div>
-  			<div class="untitled__slideContent">
-  				<span>Mario</span>
-  				<span>Calvo</span>
-  				<a class="button" href="https://unsplash.com/@mariocalvo" target="/black">Unsplash Profile</a>
+  			<div class="untitled__slideContent2">
+  				<span>Your Future Awaits</span>
   			</div>
   		</div>
   	</div>

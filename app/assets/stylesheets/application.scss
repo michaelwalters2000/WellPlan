@@ -13,6 +13,8 @@
 
       html, body {
       min-height: 100%;
+      background-size: 100%;
+      background-image: url('brick.jpg');
       }
       body, div, form, input, select, textarea, label, p {
       padding: 0;
@@ -22,7 +24,7 @@
       font-size: 14px;
       color: #666;
       line-height: 22px;
-      }
+    }
       h1 {
       position: absolute;
       margin: 0;
@@ -258,6 +260,7 @@
       .navbar {
     background-color: #0000e6;
     height: 100px;
+    z-index: 1;
   }
 
 .navbar-title {
@@ -569,7 +572,6 @@ button.ai-element{
 .ai-element_type1{
 	--uiaiElementLineWeight: var(--aiElementLineWeight, 3px);
 	--uiaiElementLineColor: var(--aiElementLineColor, #000);
-  z-index: 2;
 }
 
 .ai-element_type1::before,
@@ -1028,16 +1030,16 @@ $font: 'Abril Fatface', sans-serif;
 $slides: 4;
 $images: url(https://unsplash.it/g/1500/2200?image=838) url(https://unsplash.it/g/1500/1000?image=1078) url(https://unsplash.it/g/1500/1000?image=1077)  url(https://unsplash.it/g/1500/1200?image=345);
 
-html, body {
+html, body{
 	width: 100vw;
 	height: 100vh;
+	overflow: hidden;
 }
 
 .untitled{
 	position: absolute;
 	height: 100%;
 	width: 100%;
-  overflow: hidden;
 	@keyframes rotateHue {
 		0%{ filter: hue-rotate(0deg); }
 		20%{ filter: hue-rotate(0deg); }
@@ -1161,7 +1163,7 @@ html, body {
 	}
 	&__slideContent{
 		position: absolute;
-		top: 50%;
+		top: 55%;
 		left: 50%;
 		transform: translate3d(-50%,-50%,0);
 		color: white;
@@ -1174,9 +1176,71 @@ html, body {
 		mix-blend-mode: lighten;
 		span{
 			display: block;
+      float: center;
+	    width: 1200px;
+      text-align: center;
 			font-size: 15vmin;
+      margin-bottom: 10px;
 		}
+    a {
+      display: block;
+      float: center;
+	    width: 1200px;
+      text-align: center;
+			font-size: 4vmin;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+    p {
+      display: block;
+      float: center;
+	    width: 1200px;
+      text-align: center;
+      color: white;
+      text-decoration: underline;
+			font-size: 4vmin;
+    }
 	}
+  &__slideContent2{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
+    color: white;
+    font-family: $font;
+    line-height: 0.8;
+    letter-spacing: -0.025em;
+    z-index: 2;
+    opacity: 1;
+    text-shadow: 0 0 0.5em rgba($color,0.25);
+    mix-blend-mode: lighten;
+    span{
+      display: block;
+      float: center;
+      width: 1200px;
+      text-align: center;
+      font-size: 15vmin;
+      margin-bottom: 10px;
+    }
+    a {
+      display: block;
+      float: center;
+      width: 1200px;
+      text-align: center;
+      font-size: 4vmin;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+    p {
+      display: block;
+      float: center;
+      width: 1200px;
+      text-align: center;
+      color: white;
+      text-decoration: underline;
+      font-size: 4vmin;
+    }
+  }
 }
 .button{
 	font-family:'Roboto Mono', sans-serif;
@@ -1208,8 +1272,9 @@ html, body {
 		transform: translate3d(0px, 0px, 0);
 		box-shadow: -0px 0px 0 rgba(white, 0.5);
 	}
-
 }
+
+
 
 /*
 =====

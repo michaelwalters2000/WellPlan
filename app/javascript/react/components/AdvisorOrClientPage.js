@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 const AdvisorOrClientPage = props => {
   return(
   <center>
+  <link rel="stylesheet" href="..../assets/images/brick.30.07.png"/>
     <form className="advisor-client-box">
       <div className="advisor-client-question">I am a</div>
       <div className="colums">
