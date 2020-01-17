@@ -25,6 +25,9 @@
       color: #666;
       line-height: 22px;
     }
+    .homepage div {
+      overflow: hidden;
+    }
       h1 {
       position: absolute;
       margin: 0;
@@ -260,7 +263,7 @@
       .navbar {
     background-color: #0000e6;
     height: 100px;
-    z-index: 1;
+    overflow: visible;
   }
 
 .navbar-title {
@@ -372,20 +375,16 @@
 
 .match-link {
   a:link, a:visited {
-    height: 200px;
-    width: 600px;
     font-size: 50px;
-    background-color: #0000e6;
     color: white;
     border: 2px solid white;
-    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    padding-top: 100px;
     position: absolute;
-    top: 75px; left: 475px;
+    top: 40%; left: 0%;
     border-radius: 25px;
+    opacity: 1;
   }
 
   a:hover, a:active {
@@ -1033,7 +1032,6 @@ $images: url(https://unsplash.it/g/1500/2200?image=838) url(https://unsplash.it/
 html, body{
 	width: 100vw;
 	height: 100vh;
-	overflow: hidden;
 }
 
 .untitled{
@@ -1107,12 +1105,14 @@ html, body{
 		top: 0;
 		left: 0;
 		background-color: $color;
+    overflow:hidden;
 	}
 	&__slide{
 		position: absolute;
 		height: 100%;
 		width: 100%;
 		opacity: 0;
+    overflow:hidden;
 		@keyframes showHideSlide{
 			0%{
 				opacity: 1;
@@ -1283,13 +1283,13 @@ Match Page
 */
 
 
-$color: #0000ff;
+$color: #000080;
 
 .button {
     display: inline-block;
     padding: 2rem 5rem;
     border-radius: 10rem;
-    color: #fff;
+    color: #000080;
     text-transform: uppercase;
     font-size: 2rem;
     text-decoration: none;
@@ -1307,7 +1307,6 @@ $color: #0000ff;
         height: 100%;
         background-color: $color;
         border-radius: 10rem;
-        z-index: -2;
     }
     &:before {
         content: '';
@@ -1316,10 +1315,9 @@ $color: #0000ff;
         left: 0;
         width: 0%;
         height: 100%;
-        background-color: darken($color, 15%);
+        background-color: #000080;
         transition: all .3s;
         border-radius: 10rem;
-        z-index: -1;
     }
     &:hover {
         color: #fff;

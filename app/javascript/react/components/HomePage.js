@@ -249,6 +249,8 @@ if($('.main-content .slideshow').length > 1) {
 }
 
   return(
+    <div>
+    <div className="homepage">
   <div class="untitled">
   	<div class="untitled__slides">
   		<div class="untitled__slide">
@@ -278,6 +280,8 @@ if($('.main-content .slideshow').length > 1) {
   		</div>
   	</div>
   	<div class="untitled__shutters"></div>
+  </div>
+  </div>
   </div>
   )
 }

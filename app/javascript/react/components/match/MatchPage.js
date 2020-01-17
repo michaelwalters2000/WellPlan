@@ -59,7 +59,7 @@ const[link, setLink] = useState(<div class="loader">
   <center>
       <br/>
       <div>{switchPage()}</div>
-      <center><br/>{link}</center>
+      <center className="match-link"><br/>{link}</center>
   </center>
   )
 }
