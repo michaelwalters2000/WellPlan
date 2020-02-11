@@ -185,11 +185,46 @@ const handleScore = event => {
   })
 }
 
+  const [securities, setSecurities] = useState(<div></div>)
+
+  const securitiesTrue = event => {
+    setSecurities(
+      <div className="center-input">
+        <label htmlFor="totalStocksAndBonds">Total of Individual Securities</label><br/>
+        <input className="individual-securities-input" name="totalStocksAndBonds" value={newAdvisor.totalStocksAndBonds} onChange={props.handleFieldChange} id="totalStocksAndBonds" type="number"/>
+      <br/><br/>
+      </div>
+    )
+  }
+
+  const securitiesFalse = event => {
+    setSecurities(<div></div>)
+  }
+
+  const [disciplinary, setDisciplinary] = useState(<div></div>)
+
+  const disciplinaryTrue = event => {
+    setDisciplinary(   <div className="question">
+         <div className="center-question">
+       <div className="center-input">
+         <label htmlFor="explanation">Discipinary Explanation</label><br/>
+         <input className="avg-input-bar" name="explanation" value={newAdvisor.explanation} onChange={props.handleFieldChange} id="explanation" type="text" />
+       </div>
+       </div>
+       <br/>
+       </div>)
+  }
+
+  const disciplinaryFalse = event => {
+    setDisciplinary(<div></div>)
+  }
+
   return(
     <AdvisorForm
       newAdvisor={props.newAdvisor}
       handleAdvisorSubmit={props.handleAdvisorSubmit}
       handleFieldChange={props.handleFieldChange}
+      handleFieldPercent={props.handleFieldPercent}
       handleSelectChange={props.handleSelectChange}
       handleSelectValue={props.handleSelectValue}
       handleRadioTrue={handleRadioTrue}
@@ -210,7 +245,13 @@ const handleScore = event => {
       pfsControl={pfsToggle}
       chfcControl={chfcToggle}
       napfaControl={napfaToggle}
-      fpaControl={fpaToggle} />
+      fpaControl={fpaToggle}
+      securities={securities}
+      securitiesTrue={securitiesTrue}
+      securitiesFalse={securitiesFalse}
+      disciplinary={disciplinary}
+      disciplinaryTrue={disciplinaryTrue}
+      disciplinaryFalse={disciplinaryFalse} />
   )
 }
 

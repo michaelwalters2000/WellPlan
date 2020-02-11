@@ -10,7 +10,7 @@ const AdvisorForm = props => {
     <div className="testbox">
       <form onSubmit={props.handleAdvisorSubmit}>
         <div className="banner">
-          <h1>Advisor Signup</h1>
+          <h1>Account Setup</h1>
         </div>
       <br/>
       <br/>
@@ -35,6 +35,7 @@ const AdvisorForm = props => {
     </ul>
     </div>
    </div>
+   <br/>
    <div className="question">
    <div className="center-question">
    <label>Number of Clients</label>
@@ -44,7 +45,7 @@ const AdvisorForm = props => {
    <ul className="client-amount">
    <div>
      <input name="clientNumber" onChange={props.clientNumberInput} type="radio" id="19"/>
-     <label htmlFor="19" className="radio"><span>{lessGreaterThan} 50<br/></span></label>
+     <label htmlFor="19" className="radio"><span>Less than 50<br/></span></label>
    </div>
    <div>
      <input name="clientNumber" onChange={props.clientNumberInput} type="radio" id="20"/>
@@ -52,11 +53,12 @@ const AdvisorForm = props => {
    </div>
    <div>
      <input name="clientNumber" onChange={props.clientNumberInput} type="radio" id="21"/>
-     <label htmlFor="21" className="radio"><span>100 {lessGreaterThan}</span></label>
+     <label htmlFor="21" className="radio"><span>Greater than 100</span></label>
    </div>
      </ul>
      </div>
      </div>
+     <br/>
      <div className="question">
      <div className="center-question">
        <label>Average Current Clients Investable Assets</label>
@@ -66,47 +68,49 @@ const AdvisorForm = props => {
        <ul className="inline-options">
        <div>
          <input value={newAdvisor.avgClientInvestableAssets} onChange={props.investableAssetsInput} type="radio" id="22" />
-         <label htmlFor="22" className="radio"><span>{lessGreaterThan} $250,000<br/></span></label>
+         <label htmlFor="22" className="radio"><span>Less than $250,000<br/></span></label>
        </div>
        <div>
          <input value={newAdvisor.avgClientInvestableAssets} onChange={props.investableAssetsInput} type="radio" id="23"/>
-         <label htmlFor="23" className="radio"><span>{lessGreaterThan} $1,000,000</span></label>
+         <label htmlFor="23" className="radio"><span>Less than $1,000,000</span></label>
        </div>
        <div>
          <input value={newAdvisor.avgClientInvestableAssets} onChange={props.investableAssetsInput} type="radio" id="24"/>
-         <label htmlFor="24" className="radio"><span>$1,000,000 {lessGreaterThan}</span></label>
+         <label htmlFor="24" className="radio"><span>Greater than $1,000,000</span></label>
        </div>
          </ul>
          </div>
          </div>
         </div>
+        <br/>
         <div className="question">
         <div className="center-question">
-          <label>Clients Combined Income</label>
+          <label>Average of Clients Combined Income</label>
           </div>
           <div className="question-answer">
           <div className="inline">
           <ul className="inline-options">
           <div>
-            <input name="totalClientIncome" onChange={props.clientIncomeInput} type="radio" id="25"/>
-            <label htmlFor="25" className="radio"><span>{lessGreaterThan} $200,000<br/></span></label>
+            <input name="avgClientIncomePercentUnder200" className="client-income-input" placeholder=" %" onChange={props.handleFieldPercent} id="25"/>
+            <label htmlFor="25"><span>Less than $200,000<br/></span></label>
           </div>
           <div>
-            <input name="totalClientIncome" onChange={props.clientIncomeInput} type="radio" id="26"/>
-            <label htmlFor="26" className="radio"><span>$200,000 - $500,000</span></label>
+            <input name="avgClientIncomePercent200to500" className="client-income-input" placeholder=" %" onChange={props.handleFieldPercent} id="26"/>
+            <label htmlFor="26"><span>$200,000 - $500,000</span></label>
           </div>
           <div>
-            <input name="totalClientIncome" onChange={props.clientIncomeInput} type="radio" id="27"/>
-            <label htmlFor="27" className="radio"><span>$500,000 - $1,000,000</span></label>
+            <input name="avgClientIncomePercent500to1000" className="client-income-input" placeholder=" %" onChange={props.handleFieldPercent} id="27"/>
+            <label htmlFor="27"><span>$500,000 - $1,000,000</span></label>
           </div>
           <div>
-            <input name="totalClientIncome" value={newAdvisor.totalClientIncome} onChange={props.clientIncomeInput} type="radio" id="28"/>
-            <label htmlFor="28" className="radio"><span>$1,000,000 {lessGreaterThan}</span></label>
+            <input name="avgClientIncomePercentOver1000" className="client-income-input" placeholder=" %" onChange={props.handleFieldPercent} id="28"/>
+            <label htmlFor="28"><span>Greater than $1,000,000</span></label>
           </div>
             </ul>
             </div>
             </div>
            </div>
+           <br/>
     <div className="center-question">
       <label>Do you work with Mutual Funds / ETFs</label>
     </div>
@@ -125,48 +129,28 @@ const AdvisorForm = props => {
       </div>
     </div>
   </div>
- <div className="question">
-      <div className="center-question">
-        <label>Individual Securities</label>
-      </div>
-        <div className="question-answer">
-        <div className="inline">
-          <ul className="inline-options">
-          <div>
-            <input name="individualSecurities" value={newAdvisor.individualSecurities} onChange={props.handleRadioTrue} type="radio" id="31"/>
-            <label htmlFor="31" className="radio"><span>Yes</span></label>
-          </div>
-            <div>
-              <input name="individualSecurities" value={newAdvisor.individualSecurities} onChange={props.handleRadioFalse} type="radio" id="32"/>
-              <label htmlFor="32" className="radio"><span>No</span></label>
-            </div>
-            </ul>
-          </div>
-        </div>
-      </div>
+  <br/>
       <div className="question">
         <div className="center-question">
-          <label>Do You Work with Stocks and Bonds</label>
+          <label>Do you work with Individual Securities</label>
         </div>
           <div className="question-answer">
           <div className="inline">
             <ul className="inline-options">
             <div>
-              <input name="stocksAndBonds" type="radio" onChange={props.handleRadioTrue} id="33" />
+              <input name="individualSecurities" type="radio" onClick={props.securitiesTrue} onChange={props.handleRadioTrue} id="33" />
               <label htmlFor="33" className="radio"><span>Yes</span></label>
             </div>
               <div>
-                <input name="stocksAndBonds" type="radio" onChange={props.handleRadioFalse} id="34"/>
+                <input name="individualSecurities" type="radio" onClick={props.securitiesFalse} onChange={props.handleRadioFalse} id="34"/>
                 <label htmlFor="34" className="radio"><span>No</span></label>
               </div>
               </ul>
             </div>
           </div>
         </div>
-      <div className="center-input">
-        <label htmlFor="totalStocksAndBonds">Total of Stocks & Bonds</label><br/>
-        <input className="short-input-bar" name="totalStocksAndBonds" value={newAdvisor.totalStocksAndBonds} onChange={props.handleFieldChange} id="totalStocksAndBonds" type="number"/>
-      </div>
+        <br/>
+        {props.securities}
         <div className="question">
         <div className="center-question">
         <label>Percent of Clients Who Own a Business</label>
@@ -176,43 +160,42 @@ const AdvisorForm = props => {
         <ul className="inline-options">
         <div>
           <input name="clientBusinessOwners" onChange={props.businessOwnersInput} type="radio" id="35"/>
-          <label htmlFor="35" className="radio"><span>{lessGreaterThan} 5%</span></label>
+          <label htmlFor="35" className="radio"><span>Less than 5%</span></label>
         </div>
         <div>
           <input name="clientBusinessOwners" onChange={props.businessOwnersInput} type="radio" id="36"/>
-          <label htmlFor="36" className="radio"><span>{lessGreaterThan} 10%</span></label>
+          <label htmlFor="36" className="radio"><span>Less than 10%</span></label>
         </div>
         <div>
           <input name="clientBusinessOwners" onChange={props.businessOwnersInput} type="radio" id="37"/>
-          <label htmlFor="37" className="radio"><span>10% {lessGreaterThan}</span></label>
+          <label htmlFor="37" className="radio"><span>Greater than 10%</span></label>
         </div>
           </ul>
           </div>
           </div>
          </div>
+         <br/>
          <div className="question">
            <div className="center-question">
-             <label>Discipinary Action</label>
+             <label>Are you or have you ever been involved in any disciplinary action related to your work in financial services?</label>
            </div>
              <div className="question-answer">
              <div className="inline">
                <ul className="inline-options">
                <div>
-                 <input name="discipinaryAction" type="radio" value={newAdvisor.discipinaryAction} onChange={props.handleRadioTrue} id="38" />
+                 <input name="discipinaryAction" type="radio" value={newAdvisor.discipinaryAction} onClick={props.disciplinaryTrue} onChange={props.handleRadioTrue} id="38" />
                  <label htmlFor="38" className="radio"><span>Yes</span></label>
                </div>
                  <div>
-                   <input name="discipinaryAction" type="radio" value={newAdvisor.discipinaryAction} onChange={props.handleRadioFalse} id="39"/>
+                   <input name="discipinaryAction" type="radio" value={newAdvisor.discipinaryAction} onClick={props.disciplinaryFalse} onChange={props.handleRadioFalse} id="39"/>
                    <label htmlFor="39" className="radio"><span>No</span></label>
                  </div>
                  </ul>
                </div>
              </div>
            </div>
-           <div className="center-input">
-             <label htmlFor="explanation">Discipinary Explanation</label><br/>
-             <input className="avg-input-bar" name="explanation" value={newAdvisor.explanation} onChange={props.handleFieldChange} id="explanation" type="text" />
-           </div>
+           <br/>
+        {props.disciplinary}
            <div className="question">
                 <div className="center-question">
                   <label>More than 10% of Clients have Annuities or Employer Pensions</label>
@@ -232,10 +215,12 @@ const AdvisorForm = props => {
                     </div>
                   </div>
                 </div>
+                <br/>
                 <div className="center-input">
                   <label htmlFor="clientCapacity">Number of New Clients Willing to Take On</label><br/>
                   <input className="short-input-bar" name="clientCapacity" value={newAdvisor.clientCapacity} onChange={props.handleFieldChange} id="clientCapacity" type="number" min="0" name="clientCapacity"/>
                 </div>
+                <br/>
                 <div className="question">
                 <div className="center-question">
                   <label>Certifications</label>
@@ -272,9 +257,10 @@ const AdvisorForm = props => {
                     </div>
                    </div>
                    {props.cfpControl}
+                   <br/>
          <div className="question">
            <div className="center-question">
-             <label>Independent</label>
+             <label>Are you and independent advisor?</label>
            </div>
              <div className="question-answer">
              <div className="inline">
@@ -291,11 +277,12 @@ const AdvisorForm = props => {
              </div>
            </div>
          </div>
+         <br/>
          <div className="center-input">
            <label className="" htmlFor="firm">Firm</label><br/>
            <input className="short-input-bar" value={newAdvisor.firm} onChange={props.handleFieldChange} id="firm" type="text" name="firm" />
          </div>
-
+         <br/>
       <div className="btn-block">
          <button type="submit" onClick={props.handleScore} href="/">Submit</button>
        </div>

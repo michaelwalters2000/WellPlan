@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
 const ClientForm = props => {
-  let lessGreaterThan = "<"
   let newClient = props.newClient
   let radio = "false"
   const radioClick = event => {
@@ -12,7 +11,7 @@ const ClientForm = props => {
     <div className="testbox">
       <form onSubmit={props.handleClientSubmit} action="/">
         <div className="banner">
-          <h1>Client Signup</h1>
+          <h1>Account Setup</h1>
         </div>
       <br/>
       <br/>
@@ -22,7 +21,7 @@ const ClientForm = props => {
       </div>
     <div className="question">
       <div className="center-question">
-        <label>Are you Planning with a Spouse / Partner ?</label>
+        <label>Are you planning with a Spouse / Partner ?</label>
       </div>
       <div className="question-answer">
         <div className="inline">
@@ -41,7 +40,7 @@ const ClientForm = props => {
     </div>
     <div className="question">
      <div className="center-question">
-       <label>Do you have Kids ?</label>
+       <label>Do you have kids ?</label>
      </div>
        <div className="question-answer">
        <div className="inline">
@@ -61,7 +60,7 @@ const ClientForm = props => {
    <div>{props.kids}</div>
    <div className="question">
    <div className="center-question">
-     <label>Are you a Home Owner ?</label>
+     <label>Are you a home owner ?</label>
    </div>
      <div className="question-answer">
      <div className="inline">
@@ -81,7 +80,7 @@ const ClientForm = props => {
 <div>{props.home}</div>
  <div className="question">
       <div className="center-question">
-        <label>Are you a Business Owner ?</label>
+        <label>Do you own your own business?</label>
       </div>
         <div className="question-answer">
         <div className="inline">
@@ -107,7 +106,7 @@ const ClientForm = props => {
         <ul className="inline-options">
         <div>
           <input onChange={props.incomeInput} type="radio" value={newClient.income} id="3" name="income"/>
-          <label htmlFor="3" className="radio"><span>{lessGreaterThan} $50,000<br/></span></label>
+          <label htmlFor="3" className="radio"><span>Less than $50,000<br/></span></label>
         </div>
         <div>
           <input onChange={props.incomeInput} type="radio" value={newClient.income} id="4" name="income"/>
@@ -119,7 +118,7 @@ const ClientForm = props => {
         </div>
         <div>
           <input onChange={props.incomeInput} type="radio" value={newClient.income} id="6" name="income"/>
-          <label htmlFor="6" className="radio"><span>$200,000 {lessGreaterThan}</span></label>
+          <label htmlFor="6" className="radio"><span>Greater than $200,000</span></label>
         </div>
           </ul>
           </div>
@@ -148,7 +147,7 @@ const ClientForm = props => {
          <div>{props.fourOne}</div>
          <div className="question">
            <div className="center-question">
-             <label>Do you have Individual Stocks or Bonds ?</label>
+             <label>Do you have individual Stocks or Bonds ?</label>
            </div>
              <div className="question-answer">
              <div className="inline">

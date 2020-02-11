@@ -346,13 +346,16 @@
   font-family:Roboto, Arial, sans-serif
 }
 
-// .navbar-selections {
-//   background-color: white;
-//   color: white;
-//   padding: 14px 25px;
-//   text-align: center;
-//   display: inline-block;
-// }
+.client-income-input {
+  width: 30px;
+  margin-left: 30px;
+}
+
+.individual-securities-input {
+  margin-top: 15px;
+  width:15%;
+}
+
 .navbar-selections {
   a:link, a:visited {
     font-size: 15px;
@@ -1444,4 +1447,8 @@ $color: #000080;
 			right: 0;
 		}
 	}
+}
+
+.signup-form {
+  background-color: red;
 }

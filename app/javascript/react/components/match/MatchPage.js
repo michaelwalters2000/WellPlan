@@ -44,22 +44,18 @@ const[link, setLink] = useState(<div class="loader">
       document.reload()
     }
   function redirect() {
-    setLink(
-    <div class="container">
-    <br/><br/>
-      <a className="matchlink" onClick={reloadPage} href="/viewadvisor" class="button">Meet My Advisor</a>
-    </div>)
+    window.location.replace("http://localhost:3000/viewadvisor")
   }
 
   function switchPage() {
-    setTimeout(redirect, 6000)
+    setTimeout(redirect, 5500)
   }
 
   return(
   <center>
       <br/>
       <div>{switchPage()}</div>
-      <center className="match-link"><br/>{link}</center>
+      <center><br/>{link}</center>
   </center>
   )
 }

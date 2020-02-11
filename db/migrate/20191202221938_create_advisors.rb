@@ -6,7 +6,10 @@ class CreateAdvisors < ActiveRecord::Migration[5.2]
       t.string :experienceYears
       t.string :clientNumber
       t.string :avgClientInvestableAssets
-      t.string :totalClientIncome
+      t.string :avgClientIncomePercentUnder200
+      t.string :avgClientIncomePercent200to500
+      t.string :avgClientIncomePercent500to1000
+      t.string :avgClientIncomePercentOver1000
       t.string :totalClientsInvestableAssets
       t.boolean :mutualFundsETFs
       t.boolean :individualSecurities

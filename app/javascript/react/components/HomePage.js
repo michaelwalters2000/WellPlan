@@ -263,7 +263,7 @@ if($('.main-content .slideshow').length > 1) {
   			<div class="untitled__slideBg"></div>
   			<div class="untitled__slideContent2">
   				<span>fi·​du·​cia·​ry</span>
-  				<a>A fiduciary is a person that acts on behalf of another person to manage assets</a><a>A fiduciary</a><p>owes to that other entity the duties of good faith and trust.</p>
+  				<a>A Fiduciary is a person who holds a legal or ethical relationship of trust,</a><a>a fiduciary prudently take care of money or assets for another person</a>
   			</div>
   		</div>
   		<div class="untitled__slide">

@@ -38,8 +38,6 @@ const ViewClientsPage = props => {
 
     return(
     <center>
-    <br/>
-      <div className="advisor-client-question">My Clients</div>
       <br/><br/>
       <div>{clientTiles}</div>
     </center>

@@ -13,7 +13,10 @@ const AdvisorFormPage = (props) => {
     experienceYears: "",
     clientNumber: "",
     avgClientInvestableAssets: "",
-    totalClientIncome: "",
+    avgClientIncomePercentUnder200: "",
+    avgClientIncomePercent200to500: "",
+    avgClientIncomePercent500to1000: "",
+    avgClientIncomePercentOver1000: "",
     totalClientsInvestableAssets: "",
     mutualFundsETFs: "",
     individualSecurities: "",
@@ -38,6 +41,13 @@ const AdvisorFormPage = (props) => {
     })
   }
 
+  const handleFieldPercent = event => {
+    setNewAdvisor({
+      ...newAdvisor,
+      [event.currentTarget.name]: event.currentTarget.value + "%"
+    })
+  }
+
   const handleSelectChange = event => {
     setNewAdvisor({
       ...newAdvisor,
@@ -54,7 +64,10 @@ const AdvisorFormPage = (props) => {
       experienceYears: "",
       clientNumber: "",
       avgClientInvestableAssets: "",
-      totalClientIncome: "",
+      avgClientIncomePercentUnder200: "",
+      avgClientIncomePercent200to500: "",
+      avgClientIncomePercent500to1000: "",
+      avgClientIncomePercentOver1000: "",
       totalClientsInvestableAssets: "",
       mutualFundsETFs: "",
       individualSecurities: "",
@@ -102,7 +115,10 @@ const AdvisorFormPage = (props) => {
     experienceYears:newAdvisor.experienceYears,
     clientNumber:newAdvisor.clientNumber,
     avgClientInvestableAssets:newAdvisor.avgClientInvestableAssets,
-    totalClientIncome:newAdvisor.totalClientIncome,
+    avgClientIncomePercentUnder200:newAdvisor.avgClientIncomePercentUnder200,
+    avgClientIncomePercent200to500:newAdvisor.avgClientIncomePercent200to500,
+    avgClientIncomePercent500to1000:newAdvisor.avgClientIncomePercent500to1000,
+    avgClientIncomePercentOver1000:newAdvisor.avgClientIncomePercentOver1000,
     totalClientsInvestableAssets:newAdvisor.totalClientsInvestableAssets,
     mutualFundsETFs:newAdvisor.mutualFundsETFs,
     individualSecurities:newAdvisor.individualSecurities,
@@ -127,7 +143,10 @@ const AdvisorFormPage = (props) => {
     experienceYears: "",
     clientNumber: "",
     avgClientInvestableAssets: "",
-    totalClientIncome: "",
+    avgClientIncomePercentUnder200: "",
+    avgClientIncomePercent200to500: "",
+    avgClientIncomePercent500to1000: "",
+    avgClientIncomePercentOver1000: "",
     totalClientsInvestableAssets: "",
     mutualFundsETFs: "",
     individualSecurities: "",
@@ -182,6 +201,7 @@ if (shouldRedirect){
     <AdvisorFormContainer
     handleAdvisorSubmit={handleAdvisorSubmit}
     handleFieldChange={handleFieldChange}
+    handleFieldPercent={handleFieldPercent}
     handleSelectChange={handleSelectChange}
     setNewAdvisor={setNewAdvisor}
     newAdvisor={newAdvisor} />
