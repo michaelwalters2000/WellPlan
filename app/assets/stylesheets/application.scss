@@ -25,9 +25,11 @@
       color: #666;
       line-height: 22px;
     }
-    .homepage div {
-      overflow: hidden;
+
+    .fibHub2 {
+      color: red;
     }
+
       h1 {
       position: absolute;
       margin: 0;
@@ -272,7 +274,9 @@
   padding-left: 50%;
   padding-bottom: 15px;
   text-decoration: none;
-  padding-top:75px;
+  padding-top:175px;
+  margin-top: 50px;
+  text-transform: none;
 }
 
 .navbar-options {
@@ -308,12 +312,14 @@
   text-align:center;
   font-size: 50px;
   width: 70%;
-  height: 500px;
+  height: 300px;
   margin-top: 75px;
 }
 
 .advisor-client-question {
   font-size: 50px;
+  margin-top: 25px;
+  color: #0000e6;
 }
 
 .client-box {
@@ -549,23 +555,70 @@ a.ai-element{
 	padding: var(--uiaiElementPadding);
 }
 
-button.ai-element{
+button.ai-element22{
+	--rButtonPadding: var(--uiaiElementPadding);
+}
+
+.ai-element22{
+	--uiaiElementDisplay: var(--aiElementDisplay, inline-flex);
+	--uiaiElementPadding: var(--aiElementPadding, var(--aiElementPaddingTop, 0) var(--aiElementPaddingRight, 0) var(--aiElementPaddingBottom, 0) var(--aiElementPaddingLeft, 0));
+	--uiaiElementColor: var(--aiElementColor);
+
+	display: var(--uiaiElementDisplay);
+	position: relative;
+	overflow: scroll;
+}
+
+a.ai-element22{
+	padding: var(--uiaiElementPadding);
+}
+
+button.ai-element22{
 	--rButtonPadding: var(--uiaiElementPadding);
 }
 
 .ai-element__label{
-  color: white;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 13px;
   padding-right: 13px;
   z-index: 2;
   a:link, a:visited {
-    color: white;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     z-index: 2;
+  }
+}
+
+.ai-element__label2{
+  color: #0000e6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 13px;
+  padding-right: 13px;
+  z-index: 2;
+  a:link, a:visited {
+    color: #0000e6;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    z-index: 2;
+  }
+}
+
+.blue {
+  color: #0000e6;
+  font-weight: 700;
+  text-transform: uppercase;
+  a:link, a:visited {
+    color: #0000e6;
+  }
+}
+.white {
+  color: #000;
+  a:link, a:visited {
+    color: white;
   }
 }
 
@@ -626,6 +679,22 @@ button.ai-element{
 	transition-property: transform, opacity;
 }
 
+.option-box2 {
+  position: absolute;
+  right: 6%;
+  top: 36%;
+}
+
+.option-box3 {
+  position: absolute;
+  left: 7%;
+  top: 36%;
+}
+
+#optionbox {
+  font-size: 50px;
+}
+
 .ai-element_type1:hover::before,
 .ai-element_type1:hover::after,
 .ai-element_type1:hover .ai-element__label::before,
@@ -633,6 +702,70 @@ button.ai-element{
 	opacity: 0;
   z-index: 2;
 }
+
+.ai-element_type22{
+	--uiaiElementLineWeight: var(--aiElementLineWeight, 3px);
+	--uiaiElementLineColor: var(--aiElementLineColor, #0000e6);
+}
+
+.ai-element_type22::before,
+.ai-element_type22::after{
+	width: 100%;
+	height: var(--uiaiElementLineWeight);
+	left: 0;
+  z-index: 2;
+}
+
+.ai-element_type22::before{
+	top: 0;
+  z-index: 2;
+}
+
+.ai-element_type22::after{
+	bottom: 0;
+  z-index: 2;
+}
+
+.ai-element_type22 .ai-element__label::before,
+.ai-element_type22 .ai-element__label::after{
+	width: var(--uiaiElementLineWeight);
+	height: 100%;
+	top: 0;
+  z-index: 2;
+}
+
+.ai-element_type22 .ai-element__label::before{
+	left: 0;
+  z-index: 2;
+}
+
+.ai-element_type22 .ai-element__label::after{
+	right: 0;
+  z-index: 2;
+}
+
+.ai-element_type22::before,
+.ai-element_type22::after,
+.ai-element_type22 .ai-element__label::before,
+.ai-element_type22 .ai-element__label::after{
+	content: "";
+	background-color: var(--uiaiElementLineColor);
+	position: absolute;
+	opacity: 1;
+  z-index: 2;
+
+	will-change: transform, opacity;
+	transition-property: transform, opacity;
+}
+
+.ai-element_type22:hover::before,
+.ai-element_type22:hover::after,
+.ai-element_type22:hover .ai-element__label::before,
+.ai-element_type22:hover .ai-element__label::after{
+	opacity: 0;
+  z-index: 2;
+}
+
 
 /*
 Styles of elements with the bottom border
@@ -742,6 +875,37 @@ EFFECTS
 	transform: translate3d(0%, 100%, 0);
 }
 
+.ai-element1::before,
+.ai-element1::after,
+.ai-element1 .ai-element__label::before,
+.ai-element1 .ai-element__label::after{
+	transform: translate3d(0, 0, 0);
+	transition-duration: .6s, .4s;
+}
+
+.ai-element1:hover::before,
+.ai-element1:hover::after,
+.ai-element1:hover .ai-element__label::before,
+.ai-element1:hover .ai-element__label::after{
+	transition-duration: .25s;
+}
+
+.ai-element1:hover::before{
+	transform: translate3d(-105%, 0, 0);
+}
+
+.ai-element1:hover::after{
+	transform: translate3d(105%, 0, 0);
+}
+
+.ai-element1:hover .ai-element__label::before{
+	transform: translate3d(0%, -100%, 0);
+}
+
+.ai-element1:hover .ai-element__label::after{
+	transform: translate3d(0%, 100%, 0);
+}
+
 /* effect 2 */
 
 .ai-element2::after{
@@ -752,6 +916,85 @@ EFFECTS
 .ai-element2:hover::after{
 	transform: translate3d(-100%, 0, 0);
 }
+
+
+
+
+.ai-element1::before,
+.ai-element1::after,
+.ai-element1 .ai-element__label::before,
+.ai-element1 .ai-element__label::after{
+	transform: translate3d(0, 0, 0);
+	transition-duration: .6s, .4s;
+}
+
+.ai-element1:hover::before,
+.ai-element1:hover::after,
+.ai-element1:hover .ai-element__label::before,
+.ai-element1:hover .ai-element__label::after{
+	transition-duration: .25s;
+}
+
+.ai-element1:hover::before{
+	transform: translate3d(-105%, 0, 0);
+}
+
+.ai-element1:hover::after{
+	transform: translate3d(105%, 0, 0);
+}
+
+.ai-element1:hover .ai-element__label::before{
+	transform: translate3d(0%, -100%, 0);
+}
+
+.ai-element1:hover .ai-element__label::after{
+	transform: translate3d(0%, 100%, 0);
+}
+
+.ai-element1::before,
+.ai-element1::after,
+.ai-element1 .ai-element__label::before,
+.ai-element1 .ai-element__label::after{
+	transform: translate3d(0, 0, 0);
+	transition-duration: .6s, .4s;
+}
+
+.ai-element1:hover::before,
+.ai-element1:hover::after,
+.ai-element1:hover .ai-element__label::before,
+.ai-element1:hover .ai-element__label::after{
+	transition-duration: .25s;
+}
+
+.ai-element1:hover::before{
+	transform: translate3d(-105%, 0, 0);
+}
+
+.ai-element1:hover::after{
+	transform: translate3d(105%, 0, 0);
+}
+
+.ai-element1:hover .ai-element__label::before{
+	transform: translate3d(0%, -100%, 0);
+}
+
+.ai-element1:hover .ai-element__label::after{
+	transform: translate3d(0%, 100%, 0);
+}
+
+/* effect 2 */
+
+.ai-element2::after{
+	transform: translate3d(0, 0, 0);
+	transition: transform .2s ease-in;
+}
+
+.ai-element2:hover::after{
+	transform: translate3d(-100%, 0, 0);
+}
+
+
+
 
 /* effect 3 */
 
@@ -1364,7 +1607,30 @@ $color: #000080;
 
 .ai-element{
 	--aiElementLineWeight: 5px;
-	--aiElementLineColor: white;
+	--aiElementColor: #1b255a;
+	--aiElementColorHover: #243aab;
+  --aiElementLineColor: white;
+}
+
+.white2 {
+  --aiElementLineColor: #000;
+}
+
+#blue {
+  color: #0000e6;
+  font-weight: 1000;
+  a:visited,a:link {
+    color: #0000e6;
+  }
+}
+
+.blue2 {
+  --aiElementLineColor: #0000e6;
+}
+
+.ai-element22{
+	--aiElementLineWeight: 5px;
+	--aiElementLineColor: #0000e6;
 	--aiElementColor: #1b255a;
 	--aiElementColorHover: #243aab;
 }

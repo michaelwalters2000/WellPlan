@@ -48,6 +48,7 @@ const AdvisorFormContainer = props => {
         avgClientInvestableAssets: investableAssets[selectId].key
       });
       setAssets(investableAssets[selectId].value)
+      console.log(newAdvisor)
     }
 
   const clientIncomeInput = event => {
