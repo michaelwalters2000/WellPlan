@@ -44,7 +44,7 @@ const[link, setLink] = useState(<div class="loader">
       document.reload()
     }
   function redirect() {
-    window.location.replace("http://localhost:3000/viewadvisor")
+    window.location.replace("https://sheltered-tor-66167.herokuapp.com/viewadvisor")
   }
 
   function switchPage() {
