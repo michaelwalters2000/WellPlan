@@ -4,7 +4,7 @@ const AdvisorForm = props => {
   let newAdvisor = props.newAdvisor;
   let lessGreaterThan = "<"
   let lessThanOne = "<1"
-  let greaterThanTen = "10<"
+  let greaterThanTen = "<10"
 
   return (
     <div className="testbox">
@@ -198,7 +198,7 @@ const AdvisorForm = props => {
         {props.disciplinary}
            <div className="question">
                 <div className="center-question">
-                  <label>More than 10% of Clients have Annuities or Employer Pensions</label>
+                  <label>Do more than 10% of your Clients have Annuities or Employer Pensions</label>
                 </div>
                   <div className="question-answer">
                   <div className="inline">

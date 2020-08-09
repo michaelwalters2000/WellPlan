@@ -15,40 +15,40 @@
         <%- if current_user -%>
           <%- if current_user.role == "Client"-%>
           <span class="r-link ai-element ai-element_type1 ai-element1">
-            <span class="ai-element__label white"><%= link_to 'My Advisor', viewadvisor_path, method: :get %></span>
+            <span id="white" class="ai-element__label white"><%= link_to 'My Advisor', viewadvisor_path, method: :get %></span>
           </span>
           <span class="r-link ai-element ai-element_type1 ai-element1">
-            <span class="ai-element__label white"><%= link_to 'Edit Profile', edit_user_registration_path, method: :get %></span>
+            <span id="white" class="ai-element__label white"><%= link_to 'Edit Profile', edit_user_registration_path, method: :get %></span>
           </span>
           <span class="r-link ai-element ai-element_type1 ai-element1">
-            <span class="ai-element__label white"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></span>
+            <span id="white" class="ai-element__label white"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></span>
           </span>
           <% end %>
           <%- if current_user.role == "Advisor"-%>
           <span class="r-link ai-element ai-element_type1 ai-element1">
-            <span class="ai-element__label white"><%= link_to 'My Clients', viewclients_path, method: :get %></span>
+            <span id="white" class="ai-element__label white"><%= link_to 'My Clients', viewclients_path, method: :get %></span>
           </span>
           <span class="r-link ai-element ai-element_type1 ai-element1">
-            <span class="ai-element__label white"><%= link_to 'Edit Profile', edit_user_registration_path, method: :get %></span>
+            <span id="white" class="ai-element__label white"><%= link_to 'Edit Profile', edit_user_registration_path, method: :get %></span>
           </span>
           <span class="r-link ai-element ai-element_type1 ai-element1">
-            <span class="ai-element__label white"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></span>
+            <span id="white" class="ai-element__label white"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></span>
           </span>
           <%- end -%>
           <%- if current_user.role == "user"-%>
           <span class="r-link ai-element ai-element_type1 ai-element1">
-            <span class="ai-element__label white"><%= link_to 'Edit Profile', edit_user_registration_path, method: :get %></span>
+            <span id="white" class="ai-element__label white"><%= link_to 'Edit Profile', edit_user_registration_path, method: :get %></span>
           </span>
           <span class="r-link ai-element ai-element_type1 ai-element1">
-            <span class="ai-element__label white"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></span>
+            <span id="white" class="ai-element__label white"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></span>
           </span>
           <%- end -%>
         <% else %>
         <span class="r-link ai-element ai-element_type1 ai-element1">
-        <span class="ai-element__label"><%= link_to 'Sign Up', new_user_registration_path %></span>
+        <span id="white" class="ai-element__label white"><%= link_to 'Sign Up', new_user_registration_path %></span>
         </span>
         <span class="r-link ai-element ai-element_type1 ai-element1">
-        <span class="ai-element__label"><%= link_to 'Sign In', new_user_session_path %></span>
+        <span id="white" class="ai-element__label white"><%= link_to 'Sign In', new_user_session_path %></span>
         </span>
         <% end %>
   </nav>

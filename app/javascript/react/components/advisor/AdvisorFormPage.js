@@ -105,6 +105,7 @@ const AdvisorFormPage = (props) => {
 
   const handleAdvisorSubmit = (event) => {
   event.preventDefault()
+  window.location.replace("http://localhost:3000/")
   if (!validForSubmission()){
     return
   }

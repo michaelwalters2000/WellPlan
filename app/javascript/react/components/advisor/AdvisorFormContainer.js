@@ -191,8 +191,8 @@ const handleScore = event => {
   const securitiesTrue = event => {
     setSecurities(
       <div className="center-input">
-        <label htmlFor="totalStocksAndBonds">Total of Individual Securities</label><br/>
-        <input className="individual-securities-input" name="totalStocksAndBonds" value={newAdvisor.totalStocksAndBonds} onChange={props.handleFieldChange} id="totalStocksAndBonds" type="number"/>
+        <label htmlFor="totalStocksAndBonds">Total Dollar Value of Individual Securities</label><br/>
+        <input className="individual-securities-input" name="totalStocksAndBonds"  onChange={props.handleFieldChange} id="totalStocksAndBonds" type="number"/>
       <br/><br/>
       </div>
     )
@@ -209,7 +209,7 @@ const handleScore = event => {
          <div className="center-question">
        <div className="center-input">
          <label htmlFor="explanation">Discipinary Explanation</label><br/>
-         <input className="avg-input-bar" name="explanation" value={newAdvisor.explanation} onChange={props.handleFieldChange} id="explanation" type="text" />
+         <input className="avg-input-bar" name="explanation" onChange={props.handleFieldChange} id="explanation" />
        </div>
        </div>
        <br/>

@@ -35,6 +35,11 @@ const ClientFormPage = (props) => {
     })
   }
 
+  $(document).ready(function(){
+  $("#radio_1").click(function(){
+  })
+})
+
   let selected
 
   const handleSelectValue = event => {
