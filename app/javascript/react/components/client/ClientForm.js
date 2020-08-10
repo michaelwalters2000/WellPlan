@@ -184,6 +184,26 @@ const ClientForm = props => {
                </div>
              </div>
            </div>
+           <div className="question">
+             <div className="center-question">
+               <label>Do you prefer to meet an advisor in person?</label>
+             </div>
+               <div className="question-answer">
+               <div className="inline">
+                 <ul className="inline-options">
+                 <div>
+                   <input onChange={props.handleInPerson} type="radio" id="98" name="zipcode"/>
+                   <label htmlFor="98" className="radio"><span>Yes</span></label>
+                 </div>
+                   <div>
+                     <input type="radio" id="99" name="zipcode"/>
+                     <label htmlFor="99" className="radio"><span>No</span></label>
+                   </div>
+                   </ul>
+                 </div>
+               </div>
+             </div>
+             {props.inPerson}
 
       <div className="btn-block">
          <button type="submit" onClick={props.handleScore} href="/">Submit</button>

@@ -10,6 +10,10 @@ const ClientFormContainer = props => {
   const [home, setHome] = useState(<div></div>)
   const [stocks, setStocks] = useState(<div></div>)
   const [fourOne, setFourOne] = useState(<div></div>)
+  const [inPerson, setInPerson] = useState(<div></div>)
+
+  $(document).ready(function(){
+  $("button").click(function(){
 
   const incomeValues = [{key:"< $50,000",value:1},{key:"$50,000 - $100,000",value:2},{key:"$100,000 - $200,000",value:3},{key:"$200,000 <",value:5}]
   const equityValues = [{key:"< $0",value:0},{key:"$0 - $200,000",value:3},{key:"$200,000 <",value:5}]
@@ -45,6 +49,15 @@ const ClientFormContainer = props => {
       </div>
      </div>
    )
+  }
+
+  const handleInPerson = event => {
+    setInPerson(
+      <div className="center-input">
+        <label className="" htmlFor="zip">Zip Code</label><br/>
+        <input className="short-input-bar" id="zip" type="text" name="zip" maxLength="5"/>
+      </div>
+    )
   }
 
   const handleSpouseFalse = event => {
@@ -268,7 +281,9 @@ const ClientFormContainer = props => {
       stocks={stocks}
       home={home}
       kids={kids}
-      spouse={spouse} />
+      spouse={spouse}
+      handleInPerson={handleInPerson}
+      inPerson={inPerson} />
   )
 }
 
