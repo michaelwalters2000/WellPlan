@@ -12,9 +12,6 @@ const ClientFormContainer = props => {
   const [fourOne, setFourOne] = useState(<div></div>)
   const [inPerson, setInPerson] = useState(<div></div>)
 
-  // $(document).ready(function(){
-  // $("button").click(function(){
-
   const incomeValues = [{key:"< $50,000",value:1},{key:"$50,000 - $100,000",value:2},{key:"$100,000 - $200,000",value:3},{key:"$200,000 <",value:5}]
   const equityValues = [{key:"< $0",value:0},{key:"$0 - $200,000",value:3},{key:"$200,000 <",value:5}]
   const stocks401kValues = [{key:"< $250,000",value:1},{key:"$250,000 - $500,000",value:3},{key:"$500,000 - $1,000,000",value:5},{key:"$1,000,000 <",value:10}]
