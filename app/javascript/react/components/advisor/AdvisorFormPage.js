@@ -105,7 +105,7 @@ const AdvisorFormPage = (props) => {
 
   const handleAdvisorSubmit = (event) => {
   event.preventDefault()
-  window.location.replace("http://localhost:3000/")
+  window.location.replace("https://sheltered-tor-66167.herokuapp.com/")
   if (!validForSubmission()){
     return
   }
