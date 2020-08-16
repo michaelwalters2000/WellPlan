@@ -4,7 +4,7 @@ const AdvisorForm = props => {
   let newAdvisor = props.newAdvisor;
   let lessGreaterThan = "<"
   let lessThanOne = "<1"
-  let greaterThanTen = "<10"
+  let greaterThanTen = ">10"
 
   return (
     <div className="testbox">

@@ -8,7 +8,7 @@
 
 user = User.new
 user.first_name = "Bill"
-user.last_name = "Belicheck"
+user.last_name = "Belichick"
 user.phone = "9007894000"
 user.email = 'bill@pats.com'
 user.role = "Advisor"
